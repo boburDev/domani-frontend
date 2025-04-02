@@ -1,6 +1,12 @@
 import "@/styles/globals.css";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Metadata } from "next";
+import Header from "@/components/Header";
+
+export const metadata: Metadata = {
+  title: "Domani artichests",
+  description: "Modern Buildings",
+};
 
 export default function RootLayout({
   children,
@@ -8,12 +14,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </head>
       <body>
-        <Navbar />
+        <Header />
         <main className="p-8">{children}</main>
         <Footer />
       </body>
