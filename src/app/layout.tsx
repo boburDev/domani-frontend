@@ -14,13 +14,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <head>
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </head>
-      <body>
+      <body suppressHydrationWarning className="font-poppins">
         <Header />
-        <main className="p-8">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
