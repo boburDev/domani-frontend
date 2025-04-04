@@ -21,7 +21,7 @@ const Header = () => {
                 Bosh sahifa
               </Link>
               <Link
-                href="/"
+                href="#projects"
                 className="text-textWhite relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-textWhite after:transition-all after:duration-200 hover:after:w-full"
               >
                 Loyihalar
@@ -33,7 +33,7 @@ const Header = () => {
                 Maqola
               </Link>
               <Link
-                href="/"
+                href="#about"
                 className="text-textWhite relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-textWhite after:transition-all after:duration-200 hover:after:w-full"
               >
                 Biz haqimizda
@@ -46,7 +46,7 @@ const Header = () => {
               </Link>
             </div>
             <div className="flex">
-              <div className="flex gap-4 text-[22px]">
+              <div className="flex gap-4 items-center text-[22px]">
                 <button className="text-textWhite font-semibold">O’Z</button>
                 <button className="text-lightGrey">EN</button>
                 <button className="text-lightGrey">RU</button>

@@ -40,6 +40,7 @@ module.exports = {
       textWhite: "#FFFFFF",
       lightGrey: "#D9D9D9",
       gainsboro: "#DFDFDF",
+      iron: "#D8D8D8",
     },
   },
   plugins: [],

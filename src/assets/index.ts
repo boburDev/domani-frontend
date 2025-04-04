@@ -8,6 +8,15 @@ import phoneHeader from "./images/phone-header.png";
 import map from "./images/map.png";
 import iskanderPartner from "./images/iskandar-partner.png";
 import osiyoPartner from "./images/osiyo-partner.png";
+import insidePartner from "./images/inside-partner.png";
+import muradB_partner from "./images/muradB-partner.png";
+import aboutBuilding from "./images/about-building.png";
+import functionImg from "./icons/functions.png";
+import leaf from "./icons/leaf.png";
+import city from "./icons/city.png";
+import architecture from "./icons/architecture.png";
+import shake from "./icons/shake.png";
+import mavridBuilding from "./images/mavrid-building.png";
 
 export {
   phoneIcon,
@@ -20,4 +29,13 @@ export {
   map,
   iskanderPartner,
   osiyoPartner,
+  insidePartner,
+  muradB_partner,
+  aboutBuilding,
+  functionImg,
+  leaf,
+  city,
+  architecture,
+  shake,
+  mavridBuilding,
 };

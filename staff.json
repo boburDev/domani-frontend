@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Azamat Bayxanov",
+    "position": "Bosh arxitektor asoschi domani architects byurosi",
+    "img": "/staff.png"
+  },
+  {
+    "name": "Murtazoyev Sherzod",
+    "position": "Art direktor asoschi domani architects byurosi",
+    "img": "/staff.png"
+  },
+  {
+    "name": "Yo’ldoshov Murod",
+    "position": "Bosh arxitektor",
+    "img": "/staff.png"
+  },
+  {
+    "name": "Abidov Akmal",
+    "position": "Bosh konstruktor",
+    "img": "/staff.png"
+  },
+  {
+    "name": "Negmatov Fahriddin",
+    "position": "CG vizualizator",
+    "img": "/staff.png"
+  },
+  {
+    "name": "Mahammadjonov Akbarali",
+    "position": "Texnik direktor",
+    "img": "/staff.png"
+  },
+  {
+    "name": "Shaxiyev Komiljon",
+    "position": "Proyekt menejer",
+    "img": "/staff.png"
+  },
+  {
+    "name": "Ibrohim",
+    "position": "Bosh dizayner",
+    "img": "/staff.png"
+  }
+]
