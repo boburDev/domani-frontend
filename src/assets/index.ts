@@ -17,6 +17,12 @@ import city from "./icons/city.png";
 import architecture from "./icons/architecture.png";
 import shake from "./icons/shake.png";
 import mavridBuilding from "./images/mavrid-building.png";
+import telegramIcon from "./icons/telegram.png";
+import instagramIcon from "./icons/instagram.png";
+import youtubeIcon from "./icons/youtube.png";
+import archBereau from "./images/arch-bureau.png";
+import aboutSecond from "./images/about-second.png";
+import abouThird from "./images/about-third.png";
 
 export {
   phoneIcon,
@@ -38,4 +44,10 @@ export {
   architecture,
   shake,
   mavridBuilding,
+  telegramIcon,
+  instagramIcon,
+  youtubeIcon,
+  archBereau,
+  aboutSecond,
+  abouThird,
 };

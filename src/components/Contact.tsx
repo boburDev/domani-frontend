@@ -5,15 +5,15 @@ import { mavridBuilding } from "@/assets";
 const Contact = () => {
   return (
     <div className="container mx-auto">
-      <div className="flex pt-[230px] pb-[230px]">
-        <div className="w-[733px] pb-[36px] pr-6" id="about">
-          <p className="text-black font-semibold text-[48px]">
+      <div className="flex pt-[100px] lg:pt-[230px] pb-[100px] lg:pb-[230px]">
+        <div className="w-full lg:w-[733px] pb-[36px] lg:pr-6" id="about">
+          <p className="text-black font-semibold text-[32px] lg:text-[48px]">
             Kontakt qoldiring{" "}
           </p>
           <div>
             <div className="w-full">
-              <form className="px-8 pb-8">
-                <div className="pt-[95px]">
+              <form className="lg:px-8 pb-8">
+                <div className="pt-[32px] lg:pt-[95px] max-w-[539px]">
                   <label
                     className="block text-black text-[18px] mb-2"
                     htmlFor="username"
@@ -21,7 +21,7 @@ const Contact = () => {
                     Ism-familiya
                   </label>
                   <input
-                    className="shadow appearance-none focus:outline-none focus:shadow-outline border border-lightGrey rounded-2xl w-[539px] h-[60px] text-[#9696A1] text-[18px] pl-6"
+                    className="shadow appearance-none focus:outline-none focus:shadow-outline border border-lightGrey rounded-2xl w-full h-[60px] text-[#9696A1] text-[18px] pl-6"
                     type="text"
                     placeholder="Rustamov Ali"
                     required
@@ -29,7 +29,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <div className="pt-10">
+                <div className="pt-10 max-w-[539px]">
                   <label
                     className="block text-black text-[18px] mb-2"
                     htmlFor="email"
@@ -37,7 +37,7 @@ const Contact = () => {
                     Email
                   </label>
                   <input
-                    className="shadow appearance-none focus:outline-none focus:shadow-outline border border-lightGrey rounded-2xl w-[539px] h-[60px] text-[#9696A1] text-[18px] pl-6"
+                    className="shadow appearance-none focus:outline-none focus:shadow-outline border border-lightGrey rounded-2xl w-full h-[60px] text-[#9696A1] text-[18px] pl-6"
                     type="email"
                     placeholder="rustamov@gmail.com"
                     required
@@ -47,7 +47,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <div className="mb-4 pt-10">
+                <div className="mb-4 pt-10 max-w-[539px]">
                   <label
                     className="block text-black text-[18px] mb-2"
                     htmlFor="tel"
@@ -55,7 +55,7 @@ const Contact = () => {
                     Telefon raqam
                   </label>
                   <input
-                    className="shadow appearance-none focus:outline-none focus:shadow-outline border border-lightGrey rounded-2xl w-[539px] h-[60px] text-[#9696A1] text-[18px] pl-6"
+                    className="shadow appearance-none focus:outline-none focus:shadow-outline border border-lightGrey rounded-2xl w-full h-[60px] text-[#9696A1] text-[18px] pl-6"
                     type="tel"
                     placeholder="+998 (99) 885 30 10"
                     required
@@ -64,18 +64,19 @@ const Contact = () => {
                     autoComplete="tel"
                   />
                 </div>
-
-                <button
-                  className="required bg-black text-textWhite mt-[57px] h-[60px] w-[539px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-2xl focus:outline-none focus:shadow-outline"
-                  type="submit"
-                >
-                  Yuborish
-                </button>
+                <div className=" max-w-[539px]">
+                  <button
+                    className="required bg-black text-textWhite mt-[57px] w-full h-[60px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-2xl focus:outline-none focus:shadow-outline"
+                    type="submit"
+                  >
+                    Yuborish
+                  </button>
+                </div>
               </form>
             </div>
           </div>
         </div>
-        <div className="pt-[20px]">
+        <div className="pt-[20px] hidden lg:flex">
           <Image
             src={mavridBuilding}
             alt="img"

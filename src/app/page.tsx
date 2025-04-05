@@ -16,19 +16,20 @@ import {
   osiyoPartner,
   shake,
 } from "@/assets";
-import Projects from "@/components/Projects";
 import Team from "@/components/Staff";
 import Contact from "@/components/Contact";
 import Counter from "@/components/Counter";
 
 // Map
 import dynamic from "next/dynamic";
+import Card from "@/components/Card";
 
 // Dynamically import with SSR disabled
 const WorldMap = dynamic(() => import("@/components/WorldMap"), {
   ssr: false,
 });
 
+console.log(Card);
 const Home = () => {
   return (
     <main>
@@ -83,7 +84,7 @@ const Home = () => {
           </div>
         </div>
         <div className="pt-[181px]" id="projects">
-          <Projects />
+          <Card />
         </div>
       </section>
       <section className="container mx-auto">

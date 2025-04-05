@@ -1,15 +1,17 @@
 "use client";
-import staff from "../../staff.json";
+import staff from "../data/staff.json";
 
 const Team = () => {
   return (
-    <div className="pt-[230px]">
-      <p className="text-black font-semibold text-[48px]">Bizning jamoa </p>
-      <div className="grid grid-cols-4 gap-8 pt-[80px]">
+    <div className="pt-[100px] lg:pt-[230px]">
+      <p className="text-black font-semibold text-[32px] lg:text-[48px]">
+        Bizning jamoa{" "}
+      </p>
+      <div className="flex flex-wrap justify-center md:grid md:grid-cols-2 xxl:grid-cols-3 2xl:grid-cols-4 gap-8 pt-[80px]">
         {staff.map((person, index) => (
           <div
             key={index}
-            className="w-[378px] h-[542px] relative bg-cover rounded-xl overflow-hidden group"
+            className="w-[290px] h-[427px]  lg:w-[378px] lg:h-[542px] relative bg-cover rounded-xl overflow-hidden group"
             style={{
               backgroundImage: `url('${person.img}')`,
             }}

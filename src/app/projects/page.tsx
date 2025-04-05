@@ -1,20 +1,13 @@
-import Link from "next/link";
+import React from "react";
 
-export default function Projects() {
+const Projects = () => {
   return (
-    <div>
-      <h1 className="text-2xl font-bold">Loyihalar</h1>
-      <ul className="mt-4">
-        <li>
-          <Link href="/projects/multi">Ko‘p qavatli</Link>
-        </li>
-        <li>
-          <Link href="/projects/single">Bir qavatli</Link>
-        </li>
-        <li>
-          <Link href="/projects/commercial">Noturar</Link>
-        </li>
-      </ul>
+    <div className="h-screen">
+      <p className="text-black font-semibold text-[48px]">
+        Bizning tamoyillarimiz
+      </p>
     </div>
   );
-}
+};
+
+export default Projects;

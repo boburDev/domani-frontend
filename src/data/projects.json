@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "xyz",
+    "location": "Tashkent",
+    "imgPath": "xyz.jpg",
+    "type": "more",
+    "images": []
+  },
+  {
+    "id": 2,
+    "name": "xyz",
+    "location": "Tashkent",
+    "imgPath": "xyz.jpg",
+    "type": "less",
+    "images": []
+  },
+  {
+    "id": 3,
+    "name": "xyz",
+    "location": "Tashkent",
+    "imgPath": "xyz.jpg",
+    "type": "nostayed",
+    "images": []
+  }
+]

@@ -40,6 +40,7 @@ const WorldMap = () => {
       center={center}
       zoom={2}
       style={{ height: "100%", width: "100%" }}
+      className="relative z-0"
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
