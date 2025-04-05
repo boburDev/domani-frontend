@@ -12,22 +12,29 @@ const markerIcon = new L.Icon({
   popupAnchor: [1, -34],
 });
 
-// Sample marker locations
+// Locations
 const locations = [
-  { lat: 40.7128, lng: -74.006, label: "New York, USA" },
-  { lat: 51.5074, lng: -0.1278, label: "London, UK" },
-  { lat: 48.8566, lng: 2.3522, label: "Paris, France" },
-  { lat: 52.52, lng: 13.405, label: "Berlin, Germany" },
-  { lat: 55.7558, lng: 37.6173, label: "Moscow, Russia" },
-  { lat: 41.0082, lng: 28.9784, label: "Istanbul, Turkey" },
+  // Uzbekistan
   { lat: 41.2995, lng: 69.2401, label: "Tashkent, Uzbekistan" },
-  { lat: 43.222, lng: 76.8512, label: "Almaty, Kazakhstan" },
-  { lat: 39.9042, lng: 116.4074, label: "Beijing, China" },
+  { lat: 39.6542, lng: 66.9597, label: "Samarqand, Uzbekistan" },
+  { lat: 40.9983, lng: 71.6726, label: "Namangan, Uzbekistan" },
+  { lat: 40.7821, lng: 72.3442, label: "Andijon, Uzbekistan" },
+  { lat: 40.3894, lng: 71.7874, label: "Farg'ona, Uzbekistan" },
+  { lat: 37.2242, lng: 67.2783, label: "Termiz, Uzbekistan" },
+  { lat: 40.0844, lng: 65.3792, label: "Navoiy, Uzbekistan" },
+  { lat: 43.7683, lng: 59.0012, label: "Qoraqalpog'iston, Uzbekistan" },
+  { lat: 40.1236, lng: 67.828, label: "Jizzax, Uzbekistan" },
+
+  // International
+  { lat: 61.524, lng: 105.3188, label: "Russia" },
+  { lat: 37.0902, lng: -95.7129, label: "USA" },
+  { lat: 48.0196, lng: 66.9237, label: "Kazakhstan" },
+  { lat: 38.861, lng: 71.2761, label: "Tajikistan" },
 ];
 
 const center: LatLngExpression = [20, 0];
 
-export default function WorldMap() {
+const WorldMap = () => {
   return (
     <MapContainer
       center={center}
@@ -46,4 +53,5 @@ export default function WorldMap() {
       ))}
     </MapContainer>
   );
-}
+};
+export default WorldMap;

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
@@ -14,13 +16,18 @@ import {
   osiyoPartner,
   shake,
 } from "@/assets";
-import WorldMap from "@/components/WorldMap";
 import Projects from "@/components/Projects";
 import Team from "@/components/Staff";
 import Contact from "@/components/Contact";
 import Counter from "@/components/Counter";
 
 // Map
+import dynamic from "next/dynamic";
+
+// Dynamically import with SSR disabled
+const WorldMap = dynamic(() => import("@/components/WorldMap"), {
+  ssr: false,
+});
 
 const Home = () => {
   return (
@@ -35,30 +42,6 @@ const Home = () => {
       </section>
       <section className="container mx-auto ">
         <div className="flex pt-[283px]">
-          {/* <div className="flex justify-between w-full">
-            <div className="border-l-4 border-gainsboro pl-12">
-              <p className="text-black font-medium text-[64px]">6</p>
-              <p className="text-black font-medium text-[22px] pt-6">Tajriba</p>
-            </div>
-            <div className="border-l-4 border-gainsboro pl-12">
-              <p className="text-black font-medium text-[64px]">158+</p>
-              <p className="text-black font-medium text-[22px] pt-6">
-                Proyektlar
-              </p>
-            </div>
-            <div className="border-l-4 border-gainsboro pl-12">
-              <p className="text-black font-medium text-[64px]">420+</p>
-              <p className="text-black font-medium text-[22px] pt-6">
-                Lorem ipsum
-              </p>
-            </div>
-            <div className="border-l-4 border-gainsboro pl-12">
-              <p className="text-black font-medium text-[64px]">14</p>
-              <p className="text-black font-medium text-[22px] pt-6">
-                Lorem ipsum
-              </p>
-            </div>
-          </div> */}
           <Counter />
         </div>
         <div className="pt-[246px]">
@@ -74,27 +57,28 @@ const Home = () => {
               <Image
                 src={iskanderPartner}
                 alt="img"
-                className="opacity-20 bg-lightGrey hover:opacity-100 duration-300"
+                className="opacity-20 bg-lightGrey hover:opacity-100 hover:scale-105 transition-transform duration-300"
               />
             </Link>
 
             <Image
               src={osiyoPartner}
               alt="img"
-              className="w-[251px] h-[129px] opacity-20 bg-lightGrey hover:opacity-100 duration-300"
+              className="w-[251px] h-[129px] opacity-20 bg-lightGrey hover:opacity-100 hover:scale-105 transition-transform duration-300"
             />
 
             <Link href="https://mbc.uz/">
               <Image
                 src={muradB_partner}
                 alt="img"
-                className="duration-300 opacity-20 bg-lightGrey hover:opacity-100 w-[165px] h-[165px]"
+                className="duration-300 opacity-20 bg-lightGrey hover:opacity-100 hover:scale-105 transition-transform w-[165px] h-[165px]"
               />
             </Link>
+
             <Image
               src={insidePartner}
               alt="img"
-              className="w-[205px] h-[120px] opacity-20 bg-lightGrey hover:opacity-100 duration-300"
+              className="w-[205px] h-[120px] opacity-20 bg-lightGrey hover:opacity-100 hover:scale-105 transition-transform duration-300"
             />
           </div>
         </div>

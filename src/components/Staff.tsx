@@ -2,8 +2,6 @@
 import staff from "../../staff.json";
 
 const Team = () => {
-  console.log(staff);
-
   return (
     <div className="pt-[230px]">
       <p className="text-black font-semibold text-[48px]">Bizning jamoa </p>

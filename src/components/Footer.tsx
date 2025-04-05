@@ -29,7 +29,7 @@ const Footer = () => {
             </Link>
 
             <Link
-              href="/"
+              href="/projects"
               className="text-lightGrey shadow-lg hover:underline hover:decoration-2 hover:decoration-blue-500 hover:underline-offset-8 duration-200"
             >
               Loyihalar
@@ -41,13 +41,13 @@ const Footer = () => {
               Maqola
             </Link>
             <Link
-              href="/"
+              href="/about"
               className="text-lightGrey shadow-lg hover:underline hover:decoration-2 hover:decoration-blue-500 hover:underline-offset-8 duration-200"
             >
               Biz haqimizda
             </Link>
             <Link
-              href="/"
+              href="/social"
               className="text-lightGrey shadow-lg hover:underline hover:decoration-2 hover:decoration-blue-500 hover:underline-offset-8 duration-200"
             >
               Ijtimoiy tarmoq

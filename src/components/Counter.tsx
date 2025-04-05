@@ -14,14 +14,14 @@ const Counter = () => {
   );
 
   useEffect(() => {
-    const duration = 3000;
+    const duration = 2500;
     const intervalTime = 20;
 
     const updatedCounts = [...counts];
 
     stats.forEach((stat, index) => {
       const step = stat.value / (duration / intervalTime);
-      let currentCount = 0;
+      let currentCount = 1;
 
       const interval = setInterval(() => {
         currentCount += step;
@@ -50,7 +50,7 @@ const Counter = () => {
           <div className="w-[130px]">
             {" "}
             {/* Fixed width for number */}
-            <p className="text-black font-medium text-[64px] leading-none">
+            <p className="text-black font-semibold text-[64px] leading-none">
               {counts[index]}+
             </p>
           </div>
