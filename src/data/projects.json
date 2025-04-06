@@ -1,26 +1,74 @@
 [
   {
     "id": 1,
-    "name": "xyz",
+    "name": "Marvid mavzesi",
     "location": "Tashkent",
-    "imgPath": "xyz.jpg",
-    "type": "more",
+    "imgPath": "forCard.png",
+    "type": "multi-storey",
     "images": []
   },
   {
     "id": 2,
-    "name": "xyz",
+    "name": "Qo'yliq mavzesi",
     "location": "Tashkent",
-    "imgPath": "xyz.jpg",
-    "type": "less",
+    "imgPath": "forCard.png",
+    "type": "low-rise",
     "images": []
   },
   {
     "id": 3,
-    "name": "xyz",
+    "name": "Sergeli mavzesi",
+    "location": "Chilonzor mavzesi",
+    "imgPath": "forCard.png",
+    "type": "non-residential",
+    "images": []
+  },
+  {
+    "id": 4,
+    "name": "Chilonzor mavzesi",
     "location": "Tashkent",
-    "imgPath": "xyz.jpg",
-    "type": "nostayed",
+    "imgPath": "forCard.png",
+    "type": "low-rise",
+    "images": []
+  },
+  {
+    "id": 5,
+    "name": "Yunusobod mavzesi",
+    "location": "Tashkent",
+    "imgPath": "forCard.png",
+    "type": "non-residential",
+    "images": []
+  },
+  {
+    "id": 6,
+    "name": "Qo'yliq mavzesi",
+    "location": "Tashkent",
+    "imgPath": "forCard.png",
+    "type": "low-rise",
+    "images": []
+  },
+  {
+    "id": 7,
+    "name": "Sergeli mavzesi",
+    "location": "Chilonzor mavzesi",
+    "imgPath": "forCard.png",
+    "type": "non-residential",
+    "images": []
+  },
+  {
+    "id": 8,
+    "name": "Chilonzor mavzesi",
+    "location": "Tashkent",
+    "imgPath": "forCard.png",
+    "type": "low-rise",
+    "images": []
+  },
+  {
+    "id": 9,
+    "name": "Yunusobod mavzesi",
+    "location": "Tashkent",
+    "imgPath": "forCard.png",
+    "type": "non-residential",
     "images": []
   }
 ]
