@@ -5,7 +5,35 @@
     "location": "Tashkent",
     "imgPath": "forCard.png",
     "type": "multi-storey",
-    "images": []
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "images": [
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png"
+    ]
   },
   {
     "id": 2,
@@ -13,7 +41,25 @@
     "location": "Tashkent",
     "imgPath": "forCard.png",
     "type": "low-rise",
-    "images": []
+    "images": [
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png"
+    ]
   },
   {
     "id": 3,
@@ -21,7 +67,19 @@
     "location": "Chilonzor mavzesi",
     "imgPath": "forCard.png",
     "type": "non-residential",
-    "images": []
+    "images": [
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png"
+    ]
   },
   {
     "id": 4,
@@ -29,7 +87,42 @@
     "location": "Tashkent",
     "imgPath": "forCard.png",
     "type": "low-rise",
-    "images": []
+    "images": [
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png",
+      "forCard.png"
+    ]
   },
   {
     "id": 5,
@@ -65,6 +158,30 @@
   },
   {
     "id": 9,
+    "name": "Yunusobod mavzesi",
+    "location": "Tashkent",
+    "imgPath": "forCard.png",
+    "type": "non-residential",
+    "images": []
+  },
+  {
+    "id": 10,
+    "name": "Sergeli mavzesi",
+    "location": "Chilonzor mavzesi",
+    "imgPath": "forCard.png",
+    "type": "non-residential",
+    "images": []
+  },
+  {
+    "id": 11,
+    "name": "Chilonzor mavzesi",
+    "location": "Tashkent",
+    "imgPath": "forCard.png",
+    "type": "low-rise",
+    "images": []
+  },
+  {
+    "id": 12,
     "name": "Yunusobod mavzesi",
     "location": "Tashkent",
     "imgPath": "forCard.png",

@@ -23,32 +23,32 @@ const Footer = () => {
           <div className="flex flex-col gap-5">
             <Link
               href="/"
-              className="text-lightGrey shadow-lg hover:underline hover:decoration-2 hover:decoration-blue-500 hover:underline-offset-8 duration-200"
+              className="text-lightGrey shadow-lg hover:underline hover:decoration-2 hover:underline-offset-8 duration-200"
             >
               Bosh sahifa
             </Link>
 
             <Link
               href="/projects"
-              className="text-lightGrey shadow-lg hover:underline hover:decoration-2 hover:decoration-blue-500 hover:underline-offset-8 duration-200"
+              className="text-lightGrey shadow-lg hover:underline hover:decoration-2  hover:underline-offset-8 duration-200"
             >
               Loyihalar
             </Link>
             <Link
               href="/"
-              className="text-lightGrey shadow-lg hover:underline hover:decoration-2 hover:decoration-blue-500 hover:underline-offset-8 duration-200"
+              className="text-lightGrey shadow-lg hover:underline hover:decoration-2  hover:underline-offset-8 duration-200"
             >
               Maqola
             </Link>
             <Link
               href="/about"
-              className="text-lightGrey shadow-lg hover:underline hover:decoration-2 hover:decoration-blue-500 hover:underline-offset-8 duration-200"
+              className="text-lightGrey shadow-lg hover:underline hover:decoration-2 hover:underline-offset-8 duration-200"
             >
               Biz haqimizda
             </Link>
             <Link
               href="/social"
-              className="text-lightGrey shadow-lg hover:underline hover:decoration-2 hover:decoration-blue-500 hover:underline-offset-8 duration-200"
+              className="text-lightGrey shadow-lg hover:underline hover:decoration-2  hover:underline-offset-8 duration-200"
             >
               Ijtimoiy tarmoq
             </Link>

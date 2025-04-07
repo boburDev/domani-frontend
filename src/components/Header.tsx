@@ -78,7 +78,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 30) {
+      if (window.scrollY > 20) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -110,12 +110,39 @@ const Header = () => {
               >
                 Bosh sahifa
               </Link>
-              <Link
+              {/* <Link
                 href="/projects"
-                className="text-textWhite relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-textWhite after:transition-all after:duration-200 hover:after:w-full"
+                className="text-textWhite relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px]group "
               >
                 Loyihalar
+                <div className="hidden group-hover:flex">
+                  <div className="w-[142px] h-[125px] p-5 text-[14px] text-textBlack   absolute bg-textWhite font-semibold rounded-xl flex flex-col gap-[15px] mt-2">
+                    <Link href="">Ko’p qavatli</Link>
+                    <Link href="">Kam qavatli</Link>
+                    <Link href="">Noturarjoy</Link>
+                  </div>
+                </div>
+              </Link> */}
+              <Link
+                href="/projects"
+                className="text-textWhite relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] group"
+              >
+                Loyihalar
+                <div className="hidden group-hover:flex">
+                  <div className="w-[142px] h-[125px] p-5 text-[14px] text-textBlack absolute bg-textWhite font-semibold rounded-xl flex flex-col gap-[15px] mt-1">
+                    <Link href="/projects">
+                      <div>Ko’p qavatli</div>
+                    </Link>
+                    <Link href="/projects">
+                      <div>Kam qavatli</div>
+                    </Link>
+                    <Link href="/projects">
+                      <div>Noturarjoy</div>
+                    </Link>
+                  </div>
+                </div>
               </Link>
+
               <Link
                 href="/"
                 className="text-textWhite relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-textWhite after:transition-all after:duration-200 hover:after:w-full"

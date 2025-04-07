@@ -3,6 +3,11 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import Team from "@/components/Staff";
+import Contact from "@/components/Contact";
+import Counter from "@/components/Counter";
+import dynamic from "next/dynamic";
+import projectData from "@/data/projects.json";
 
 import {
   aboutBuilding,
@@ -16,20 +21,14 @@ import {
   osiyoPartner,
   shake,
 } from "@/assets";
-import Team from "@/components/Staff";
-import Contact from "@/components/Contact";
-import Counter from "@/components/Counter";
-
-// Map
-import dynamic from "next/dynamic";
 import Card from "@/components/Card";
 
-// Dynamically import with SSR disabled
+// Dynamically import
 const WorldMap = dynamic(() => import("@/components/WorldMap"), {
   ssr: false,
+  loading: () => <p>Loading map...</p>,
 });
 
-console.log(Card);
 const Home = () => {
   return (
     <main>
@@ -50,7 +49,6 @@ const Home = () => {
             <WorldMap />
           </div>
         </div>
-
         <div className="pt-[256px]">
           <p className="text-black font-semibold text-[48px]">Hamkorlarimiz</p>
           <div className="flex justify-between items-center w-full pt-[91px]">
@@ -83,8 +81,30 @@ const Home = () => {
             />
           </div>
         </div>
+        {/* CARD DATA */}
         <div className="pt-[181px]" id="projects">
-          <Card />
+          <p className="text-black font-semibold text-18 sm:text-[28px] lg:text-[48px] pb-[80px]">
+            Loyihalarimiz
+          </p>
+          <div className="flex flex-wrap justify-center lg:grid grid-cols-2 xxl:grid-cols-3 gap-8 ">
+            {projectData.map((item) => (
+              <Card
+                key={item.id}
+                name={item.name}
+                location={item.location}
+                img={item.imgPath}
+                id={item.id}
+                type={item.type}
+              />
+            ))}
+          </div>
+          {/* Link to projects */}
+          <Link
+            href="/projects"
+            className="pt-[90px] flex justify-center items-center group text-[32px] font-medium text-black pb-1 after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[2px]"
+          >
+            Barchasini ko’rish
+          </Link>
         </div>
       </section>
       <section className="container mx-auto">

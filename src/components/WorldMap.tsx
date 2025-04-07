@@ -1,9 +1,9 @@
-"use client";
-
+import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L, { LatLngExpression } from "leaflet";
 import "leaflet.awesome-markers";
+
 const markerIcon = new L.Icon({
   iconUrl:
     "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png",
@@ -12,9 +12,7 @@ const markerIcon = new L.Icon({
   popupAnchor: [1, -34],
 });
 
-// Locations
 const locations = [
-  // Uzbekistan
   { lat: 41.2995, lng: 69.2401, label: "Tashkent, Uzbekistan" },
   { lat: 39.6542, lng: 66.9597, label: "Samarqand, Uzbekistan" },
   { lat: 40.9983, lng: 71.6726, label: "Namangan, Uzbekistan" },
@@ -24,8 +22,6 @@ const locations = [
   { lat: 40.0844, lng: 65.3792, label: "Navoiy, Uzbekistan" },
   { lat: 43.7683, lng: 59.0012, label: "Qoraqalpog'iston, Uzbekistan" },
   { lat: 40.1236, lng: 67.828, label: "Jizzax, Uzbekistan" },
-
-  // International
   { lat: 61.524, lng: 105.3188, label: "Russia" },
   { lat: 37.0902, lng: -95.7129, label: "USA" },
   { lat: 48.0196, lng: 66.9237, label: "Kazakhstan" },
@@ -35,6 +31,14 @@ const locations = [
 const center: LatLngExpression = [20, 0];
 
 const WorldMap = () => {
+  const [mapLoaded, setMapLoaded] = useState(false);
+
+  useEffect(() => {
+    setMapLoaded(true); // Ensure the map is only loaded once
+  }, []);
+
+  if (!mapLoaded) return null; // Optionally, return a loading state
+
   return (
     <MapContainer
       center={center}
@@ -55,4 +59,5 @@ const WorldMap = () => {
     </MapContainer>
   );
 };
+
 export default WorldMap;

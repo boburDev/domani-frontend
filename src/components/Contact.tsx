@@ -66,7 +66,7 @@ const Contact = () => {
                 </div>
                 <div className=" max-w-[539px]">
                   <button
-                    className="required bg-black text-textWhite mt-[57px] w-full h-[60px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-2xl focus:outline-none focus:shadow-outline"
+                    className="required bg-black text-textWhite mt-[57px] w-full h-[60px] font-bold py-2 px-4 rounded-2xl focus:outline-none focus:shadow-outline"
                     type="submit"
                   >
                     Yuborish
