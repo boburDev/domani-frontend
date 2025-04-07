@@ -2,15 +2,30 @@
 
 import React from "react";
 import Contact from "@/components/Contact";
-import projectData from "@/data/projects.json";
+import projectJson from "@/data/projects.json";
 import Card from "@/components/Card";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
 const Projects = () => {
+  const params = useParams();
+  const projectData = ["non-residential", "low-rise", "multi-storey"].includes(
+    params.name as string
+  )
+    ? projectJson.filter((p) => p.type === params.name)
+    : projectJson;
+  const projectsNames = {
+    "non-residential": "Noturar joy",
+    "low-rise": "Kam qavatli",
+    "multi-storey": "Ko'p qavatli",
+    all: "Barcha",
+  };
   return (
     <div>
       <div className="container mx-auto pt-[262px]">
-        <p className="text-black px-5 font-semibold text-18 sm:text-[28px] lg:text-[48px]">
+        <p className="text-black px-0 font-semibold text-18 sm:text-[28px] lg:text-[48px]">
+          {projectsNames[params.name as keyof typeof projectsNames] ||
+            "Noma’lum"}{" "}
           Loyihalar
         </p>
 
@@ -19,14 +34,14 @@ const Projects = () => {
           <div className="flex justify-between items-center pt-[65px] gap-[30px]">
             {projectData.slice(0, 3).map((project, index) => (
               <Link
-                href={`/projects/${project.id}`}
+                href={`/projects/${project.type}/${project.id}`}
                 key={index}
                 className="group"
               >
                 <div className="relative w-[335px] h-[238px] lg:w-[546px] lg:h-[441px] rounded-xl overflow-hidden shadow-md">
                   <div className="w-full h-full">
                     <img
-                      src={project.imgPath}
+                      src={`/images/${project.imgPath}`}
                       alt="Card"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
@@ -49,7 +64,7 @@ const Projects = () => {
           <div className="flex justify-between gap-[30px]">
             {projectData.slice(3, 5).map((project, index) => (
               <Link
-                href={`/projects/${project.id}`}
+                href={`/projects/${project.type}/${project.id}`}
                 key={project.id}
                 className="group"
               >
@@ -60,7 +75,7 @@ const Projects = () => {
                 >
                   <div className="w-full h-full">
                     <img
-                      src={project.imgPath}
+                      src={`/images/${project.imgPath}`}
                       alt="Card"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
@@ -83,7 +98,7 @@ const Projects = () => {
           <div className="flex justify-between items-end gap-[30px] -mt-[170px]">
             {projectData.slice(5, 8).map((project, index) => (
               <Link
-                href={`/projects/${project.id}`}
+                href={`/projects/${project.type}/${project.id}`}
                 key={index}
                 className="group"
               >
@@ -94,7 +109,7 @@ const Projects = () => {
                 >
                   <div className="w-full h-full">
                     <img
-                      src={project.imgPath}
+                      src={`/images/${project.imgPath}`}
                       alt="Card"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
