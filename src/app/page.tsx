@@ -32,7 +32,7 @@ const WorldMap = dynamic(() => import("@/components/WorldMap"), {
 const Home = () => {
   return (
     <main>
-      <section className="relative bg-cover bg-[url('/main-bg.png')] w-full h-[100vh]">
+      <section className="relative bg-cover bg-center bg-[url('/images/home-bg.jpg')] w-full h-[100vh]">
         <div className="absolute inset-0 bg-black opacity-55 z-0" />
         <div className="container mx-auto relative z-10">
           <p className="text-[84px] font-bold text-center text-textWhite pt-[401px] font-playfair">
@@ -90,8 +90,8 @@ const Home = () => {
             {projectData.map((item) => (
               <Card
                 key={item.id}
-                name={item.name}
-                location={item.location}
+                name={item.name_uz}
+                location={item.location_uz}
                 img={item.imgPath}
                 id={item.id}
                 type={item.type}

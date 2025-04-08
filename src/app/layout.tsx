@@ -1,3 +1,4 @@
+
 import "@/styles/globals.css";
 import Footer from "@/components/Footer";
 import { Metadata } from "next";
@@ -20,7 +21,7 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning className="font-poppins">
         <Header />
-        <main>{children}</main>
+        {children}
         <Footer />
       </body>
     </html>
