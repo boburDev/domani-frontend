@@ -3,11 +3,11 @@ import staff from "../data/staff.json";
 
 const Team = () => {
   return (
-    <div className="pt-[100px] lg:pt-[230px]">
-      <p className="text-black font-semibold text-[32px] lg:text-[48px]">
+    <div className="pt-[40px] md:pt-[100px] lg:pt-[230px]">
+      <p className="text-black font-semibold text-[18px] md:text-[32px] lg:text-[48px] px-5">
         Bizning jamoa
       </p>
-      <div className="flex flex-wrap justify-center md:grid md:grid-cols-2 xxl:grid-cols-3 2xl:grid-cols-4 gap-8 pt-[80px]">
+      <div className="flex flex-wrap justify-center md:grid md:grid-cols-2 xxl:grid-cols-3 2xl:grid-cols-4 gap-8 pt-[30px] md:pt-[80px]">
         {staff.map((person, index) => (
           <div
             key={index}
@@ -25,10 +25,10 @@ const Team = () => {
 
             {/* Text */}
             <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
-              <p className="text-textWhite font-bold text-[24px] transition-all duration-500 ease-out group-hover:-translate-y-2">
+              <p className="text-textWhite font-bold text-[18px] md:text-[24px] transition-all duration-500 ease-out group-hover:-translate-y-2">
                 {person.name}
               </p>
-              <p className="text-[20px] text-iron opacity-0 translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0">
+              <p className="text-[14px] md:text-[20px] text-iron opacity-0 translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0">
                 {person.position}
               </p>
             </div>

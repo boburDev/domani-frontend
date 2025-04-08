@@ -22,12 +22,12 @@ module.exports = {
         iron: "#D8D8D8",
       },
       screens: {
-        sm: "480px", // Small screens (phones in portrait mode)
-        md: "768px", // Tablets in portrait mode
-        lg: "1024px", // Tablets in landscape mode
-        xl: "1440px", // Large screens (laptops, desktops)
-        xxl: "1650px", // Extra large screens
-        "2xl": "1920px", // Full HD (base size)
+        sm: "480px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1440px",
+        xxl: "1650px",
+        "2xl": "1920px",
       },
       container: {
         center: true,

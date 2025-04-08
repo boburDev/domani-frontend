@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { useEffect, useState } from "react";
 
 const stats = [
@@ -41,20 +41,18 @@ const Counter = () => {
   }, []);
 
   return (
-    <div className="flex justify-between w-full">
+    <div className="w-full flex flex-wrap md:flex-nowrap justify-between gap-y-10">
       {stats.map((stat, index) => (
         <div
           key={stat.id}
-          className="border-l-4 border-gainsboro pl-12 flex flex-col items-start"
+          className="w-1/2 md:w-auto border-l-4 border-gainsboro pl-6 md:pl-12 flex flex-col items-start"
         >
           <div className="w-[130px]">
-            {" "}
-            {/* Fixed width for number */}
-            <p className="text-black font-semibold text-[64px] leading-none">
+            <p className="text-black font-semibold text-[24px] md:text-[48px] lg:text-[64px] leading-none">
               {counts[index]}+
             </p>
           </div>
-          <p className="text-black font-medium text-[22px] pt-6">
+          <p className="text-black font-medium text-[14px] md:text-[22px] pt-6">
             {stat.label}
           </p>
         </div>

@@ -86,7 +86,11 @@ const About = () => {
             </p>
           </div>
           <div className="pt-10">
-            <Image src={abouThird} alt="img" className="w-[793px] h-[509px]" />
+            <Image
+              src={abouThird}
+              alt="img"
+              className="w-[793px] h-[full] lg:h-[509px]"
+            />
           </div>
         </div>
       </section>

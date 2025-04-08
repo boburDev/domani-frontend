@@ -2,7 +2,11 @@ import { notFound } from "next/navigation";
 import projectData from "@/data/projects.json";
 import Contact from "@/components/Contact";
 
-export default function ProjectDetails({ params }: { params: { id: string } }) {
+export default async function ProjectDetails({
+  params,
+}: {
+  params: { id: string };
+}) {
   const project = projectData.find((p) => p.id === Number(params.id));
 
   if (!project) notFound();
@@ -19,21 +23,20 @@ export default function ProjectDetails({ params }: { params: { id: string } }) {
 
   return (
     <div className="container mx-auto px-5">
-      <p className="pt-[120px] sm:pt-[180px] lg:pt-[306px] px-5 text-black font-semibold text-18 sm:text-[28px] lg:text-[48px] ">
+      <p className="pt-[120px] pb-5 sm:pt-[180px] lg:pt-[306px] px-5 text-black font-semibold text-[18px] sm:text-[28px] lg:text-[48px]">
         {project.name}
       </p>
 
       {project?.description && (
-        <p className="text-[26px] text-black/70 mt-4 px-5 pb-[65px] ">
+        <p className="text-[26px] text-black/70 mt-4 px-5 pb-[65px]">
           {project.description}
         </p>
       )}
 
-      {/* Styled Images Section */}
       <div className="flex-col gap-8 hidden lg:flex">
         {imageRows.map((row, rowIndex) => (
           <div key={rowIndex}>
-            {/* Row 1*/}
+            {/* Row 1 */}
             {row[0] && (
               <div className="flex justify-between items-center gap-[30px]">
                 <div className="relative w-[335px] h-[238px] lg:w-full lg:h-[441px] rounded-xl overflow-hidden group shadow-md">
@@ -46,7 +49,7 @@ export default function ProjectDetails({ params }: { params: { id: string } }) {
               </div>
             )}
 
-            {/* Row 2*/}
+            {/* Row 2 */}
             {(row[1] || row[2]) && (
               <div className="flex justify-between gap-[30px] mt-8">
                 {row[1] && row.length === 2 ? (
@@ -82,7 +85,7 @@ export default function ProjectDetails({ params }: { params: { id: string } }) {
               </div>
             )}
 
-            {/* Row 3*/}
+            {/* Row 3 */}
             {(row[3] || row[4]) && (
               <div className="flex justify-between items-end gap-[30px] mt-8">
                 {row[3] && !row[4] ? (
@@ -117,6 +120,21 @@ export default function ProjectDetails({ params }: { params: { id: string } }) {
                 )}
               </div>
             )}
+          </div>
+        ))}
+      </div>
+      {/* Responsive Version */}
+      <div className="flex flex-wrap justify-center items-center gap-5 lg:hidden">
+        {project.images.map((img, idx) => (
+          <div
+            key={idx}
+            className="relative w-[335px] h-[238px] rounded-xl overflow-hidden group shadow-md "
+          >
+            <img
+              src={`/images/${img}`}
+              alt={`Project image ${idx + 1}`}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
           </div>
         ))}
       </div>
