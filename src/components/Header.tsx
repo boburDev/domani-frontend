@@ -118,9 +118,13 @@ import Link from "next/link";
 import { phoneHeader } from "@/assets";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import useLanguage from "../hooks/useLanguage"; // Hookni import qiling
+import useTranslation from "../hooks/useTranslation"; // Tilni tarjima qilish hookini import qiling
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { language, changeLanguage } = useLanguage(); // Tilni boshqarish
+  const translations = useTranslation(language); // Tilga mos matnlarni olish
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -135,6 +139,9 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (!translations) return <div></div>;
+  console.log(translations);
 
   return (
     <div>
@@ -167,7 +174,7 @@ const Header = () => {
                   href="/"
                   className="text-textWhite relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-textWhite after:transition-all after:duration-200 hover:after:w-full"
                 >
-                  Bosh sahifa
+                  {translations && translations.home}
                 </Link>
                 <div className="text-textWhite relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] group">
                   Loyihalar

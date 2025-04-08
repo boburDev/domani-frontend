@@ -2,10 +2,10 @@
 import { useEffect, useState } from "react";
 
 const stats = [
-  { id: 1, value: 6, label: "Tajriba" },
-  { id: 2, value: 158, label: "Proyektlar" },
-  { id: 3, value: 420, label: "Lorem ipsum" },
-  { id: 4, value: 14, label: "Lorem ipsum" },
+  { id: 1, value: 14, label: "Tajriba" },
+  { id: 2, value: 350, label: "Loyihalar" },
+  { id: 3, value: 13, label: "Gektar - eng katta yer maydoni" },
+  { id: 4, value: 20, label: "Etaj - eng baland loyiha" },
 ];
 
 const Counter = () => {
