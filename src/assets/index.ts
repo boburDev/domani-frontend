@@ -5,6 +5,7 @@ import telegram from "./images/telegram.png";
 import youtube from "./images/youtube.png";
 import instagram from "./images/instagram.png";
 import phoneHeader from "./images/phone-header.png";
+import phoneHeaderBlack from "./images/phone-headerBlack.png";
 import map from "./images/map.png";
 import iskanderPartner from "./images/iskandar-partner.png";
 import osiyoPartner from "./images/osiyo-partner.png";
@@ -23,6 +24,10 @@ import youtubeIcon from "./icons/youtube.png";
 import archBereau from "./images/arch-bureau.png";
 import aboutSecond from "./images/about-second.png";
 import abouThird from "./images/about-third.png";
+import firstService from "./images/firstService.png";
+import secondService from "./images/secondService.png";
+import thirdService from "./images/thirdService.png";
+import fourthService from "./images/fourthService.png";
 
 export {
   phoneIcon,
@@ -32,6 +37,7 @@ export {
   youtube,
   instagram,
   phoneHeader,
+  phoneHeaderBlack,
   map,
   iskanderPartner,
   osiyoPartner,
@@ -50,4 +56,8 @@ export {
   archBereau,
   aboutSecond,
   abouThird,
+  firstService,
+  secondService,
+  thirdService,
+  fourthService,
 };

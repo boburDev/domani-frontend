@@ -1,157 +1,52 @@
-// "use client";
-
-// import React, { useEffect, useState } from "react";
-// import Link from "next/link";
-// import { phoneHeader } from "@/assets";
-// import Image from "next/image";
-
-// const Header = () => {
-//   const [isScrolled, setIsScrolled] = useState(false);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       if (window.scrollY > 20) {
-//         setIsScrolled(true);
-//       } else {
-//         setIsScrolled(false);
-//       }
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   return (
-//     <div>
-//       <div className="fixed z-50 top-0 left-0 right-0 transition-all duration-300">
-//         <div
-//           className={` ${
-//             isScrolled
-//               ? "pt-[25px] pb-5 bg-black border-b border-textWhite bg-opacity-45"
-//               : "lg:pt-[82px] lg:pb-10 pt-[29px] pb-2"
-//           } xxl:pl-[120px] xxl:pr-[109px] transition-all duration-500`}
-//         >
-//           <div className="container mx-auto flex justify-between items-start">
-//             <Link
-//               href="/"
-//               className="w-[113px] h-[28px] md:w-[244px] md:h-[61px]"
-//             >
-//               <Image
-//                 width={100}
-//                 height={100}
-//                 src="Logo.svg"
-//                 alt="img"
-//                 className="w-full h-full"
-//               />
-//             </Link>
-//             <div className="hidden lg:flex gap-[60px] text-[20px] font-medium">
-//               <Link
-//                 href="/"
-//                 className="text-textWhite relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-textWhite after:transition-all after:duration-200 hover:after:w-full"
-//               >
-//                 Bosh sahifa
-//               </Link>
-//               <div className="text-textWhite relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] group">
-//                 Loyihalar
-//                 <div className="hidden group-hover:flex">
-//                   <div className="w-[172px] h-[185px] p-5 text-[14px] text-textBlack absolute bg-textWhite font-semibold rounded-xl flex flex-col gap-[15px] mt-1">
-//                     <Link href="/projects/all">
-//                       <div>Barcha loyihalar</div>
-//                     </Link>
-//                     <Link href="/projects/multi-storey">
-//                       <div>Ko’p qavatli</div>
-//                     </Link>
-//                     <Link href="/projects/low-rise">
-//                       <div>Kam qavatli</div>
-//                     </Link>
-//                     <Link href="/projects/non-residential">
-//                       <div>Noturarjoy</div>
-//                     </Link>
-//                   </div>
-//                 </div>
-//               </div>
-
-//               <Link
-//                 href="/"
-//                 className="text-textWhite relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-textWhite after:transition-all after:duration-200 hover:after:w-full"
-//               >
-//                 Maqola
-//               </Link>
-//               <Link
-//                 href="/about"
-//                 className="text-textWhite relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-textWhite after:transition-all after:duration-200 hover:after:w-full"
-//               >
-//                 Biz haqimizda
-//               </Link>
-//               <Link
-//                 href="/social"
-//                 className="text-textWhite relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-textWhite after:transition-all after:duration-200 hover:after:w-full"
-//               >
-//                 Ijtimoiy tarmoqlar
-//               </Link>
-//             </div>
-//             <div className="hidden lg:flex ">
-//               <div className="flex gap-4 justify-between items-center text-[22px]">
-//                 <button className="text-textWhite font-semibold">O’Z</button>
-//                 <button className="text-lightGrey">EN</button>
-//                 <button className="text-lightGrey">RU</button>
-//               </div>
-//               <div className="flex gap-2 items-center pl-6">
-//                 <Image src={phoneHeader} alt="img" />
-//                 <p className="text-5 font-bold text-textWhite">
-//                   +998(99) 944 30 30
-//                 </p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Header;
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
-import { phoneHeader } from "@/assets";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { phoneHeader, phoneHeaderBlack } from "@/assets";
 import { Menu, X } from "lucide-react";
-import useLanguage from "../hooks/useLanguage"; // Hookni import qiling
-import useTranslation from "../hooks/useTranslation"; // Tilni tarjima qilish hookini import qiling
+import useLanguage from "../hooks/useLanguage";
+import useTranslation from "../hooks/useTranslation";
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const { language, changeLanguage } = useLanguage(); // Tilni boshqarish
-  const translations = useTranslation(language); // Tilga mos matnlarni olish
+  const pathname = usePathname();
+  const isDark = pathname === "/" || pathname === "/social";
+  const { language, changeLanguage } = useLanguage();
+  const translations = useTranslation(language);
+
+  const [isOpen, setIsOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const textColor = isDark ? "text-textWhite" : "text-textBlack";
+  const logoSrc = isDark ? "/Logo.svg" : "/LogoBlack.png";
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  if (!translations) return <div></div>;
-  console.log(translations);
+  if (!translations) return null;
 
   return (
     <div>
-      <div className="fixed z-50 top-0 left-0 right-0 transition-all duration-300">
+      <div
+        className={`absolute z-50 top-0 left-0 right-0 transition-all duration-300`}
+      >
         <div
-          className={` ${
-            isScrolled
-              ? "pt-[25px] pb-5 bg-black border-b border-textWhite bg-opacity-45"
-              : "lg:pt-[82px] lg:pb-10 pt-[29px] pb-2"
-          } xxl:pl-[120px] xxl:pr-[109px] transition-all duration-500`}
+          className={`pt-[25px] pb-5 ${
+            isDark ? "bg-transparent" : "bg-white"
+          } border-textWhite lg:pt-[82px] xxl:pl-[120px] xxl:pr-[109px]`}
         >
           <div className="container mx-auto px-5">
             <div className="w-full flex justify-between items-start">
@@ -162,8 +57,8 @@ const Header = () => {
                 <Image
                   width={100}
                   height={100}
-                  src="/Logo.svg"
-                  alt="img"
+                  src={logoSrc}
+                  alt="logo"
                   className="w-full h-full"
                 />
               </Link>
@@ -172,44 +67,73 @@ const Header = () => {
               <div className="hidden lg:flex gap-[60px] text-[20px] font-medium">
                 <Link
                   href="/"
-                  className="text-textWhite relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-textWhite after:transition-all after:duration-200 hover:after:w-full"
+                  className={`${textColor} relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] ${
+                    isDark ? "after:bg-textWhite" : "after:bg-textBlack"
+                  } after:transition-all after:duration-200 hover:after:w-full`}
                 >
-                  {translations && translations.home}
+                  {translations.home}
                 </Link>
-                <div className="text-textWhite relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] group">
-                  Loyihalar
-                  <div className="hidden group-hover:flex">
-                    <div className="w-[172px] h-[185px] p-5 text-[14px] text-textBlack absolute bg-textWhite font-semibold rounded-xl flex flex-col gap-[15px] mt-1">
-                      <Link href="/projects/all">
-                        <div>Barcha loyihalar</div>
-                      </Link>
-                      <Link href="/projects/multi-storey">
-                        <div>Ko’p qavatli</div>
-                      </Link>
-                      <Link href="/projects/low-rise">
-                        <div>Kam qavatli</div>
-                      </Link>
-                      <Link href="/projects/non-residential">
-                        <div>Noturarjoy</div>
-                      </Link>
-                    </div>
+
+                <div
+                  ref={dropdownRef}
+                  className={`relative ${textColor} pb-[2px] cursor-pointer font-medium`}
+                >
+                  <div
+                    onClick={() => setIsOpen((prev) => !prev)}
+                    className="font-medium"
+                  >
+                    Loyihalar
                   </div>
+
+                  {isOpen && (
+                    <div className="w-[158px] h-[185px] p-5 text-[14px] text-textBlack absolute bg-textWhite font-semibold rounded-xl flex flex-col gap-[15px] mt-1 z-50 ">
+                      {[
+                        { href: "/projects/all", label: "Barcha loyihalar" },
+                        {
+                          href: "/projects/multi-storey",
+                          label: "Ko’p qavatli",
+                        },
+                        { href: "/projects/low-rise", label: "Kam qavatli" },
+                        {
+                          href: "/projects/non-residential",
+                          label: "Noturarjoy",
+                        },
+                      ].map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className="relative w-fit pb-1 group"
+                        >
+                          <span className="after:content-[''] after:block after:h-[2px] after:bg-transparent group-hover:after:bg-textBlack after:transition-all after:duration-300 after:w-0 group-hover:after:w-full">
+                            {link.label}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
+
                 <Link
                   href="/"
-                  className="text-textWhite relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-textWhite after:transition-all after:duration-200 hover:after:w-full"
+                  className={`${textColor} relative font-medium pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] ${
+                    isDark ? "after:bg-textWhite" : "after:bg-textBlack"
+                  } after:transition-all after:duration-200 hover:after:w-full`}
                 >
                   Maqola
                 </Link>
                 <Link
                   href="/about"
-                  className="text-textWhite relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-textWhite after:transition-all after:duration-200 hover:after:w-full"
+                  className={`${textColor} relative font-medium pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] ${
+                    isDark ? "after:bg-textWhite" : "after:bg-textBlack"
+                  } after:transition-all after:duration-200 hover:after:w-full`}
                 >
                   Biz haqimizda
                 </Link>
                 <Link
                   href="/social"
-                  className="text-textWhite relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-textWhite after:transition-all after:duration-200 hover:after:w-full"
+                  className={`${textColor} relative font-medium pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] ${
+                    isDark ? "after:bg-textWhite" : "after:bg-textBlack"
+                  } after:transition-all after:duration-200 hover:after:w-full`}
                 >
                   Ijtimoiy tarmoqlar
                 </Link>
@@ -218,13 +142,16 @@ const Header = () => {
               {/* Contact + Lang - Desktop */}
               <div className="hidden lg:flex">
                 <div className="flex gap-4 justify-between items-center text-[22px]">
-                  <button className="text-textWhite font-semibold">O’Z</button>
+                  <button className={textColor}>O’Z</button>
                   <button className="text-lightGrey">EN</button>
                   <button className="text-lightGrey">RU</button>
                 </div>
                 <div className="flex gap-2 items-center pl-6">
-                  <Image src={phoneHeader} alt="img" />
-                  <p className="text-5 font-bold text-textWhite">
+                  <Image
+                    src={isDark ? phoneHeader : phoneHeaderBlack}
+                    alt="img"
+                  />
+                  <p className={`text-5 font-bold ${textColor}`}>
                     +998(99) 944 30 30
                   </p>
                 </div>
@@ -234,9 +161,9 @@ const Header = () => {
               <div className="lg:hidden flex items-center">
                 <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
                   {isMenuOpen ? (
-                    <X size={32} color="white" />
+                    <X size={32} color={isDark ? "white" : "black"} />
                   ) : (
-                    <Menu size={32} color="white" />
+                    <Menu size={32} color={isDark ? "white" : "black"} />
                   )}
                 </button>
               </div>
@@ -247,7 +174,6 @@ const Header = () => {
         {/* Mobile menu */}
         {isMenuOpen && (
           <div className="lg:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 z-40 flex flex-col pt-8 items-center text-textWhite text-xl font-semibold gap-y-4">
-            {/* X belgisini ekranning yuqori o'ng burchagiga joylashtiramiz */}
             <button
               onClick={() => setIsMenuOpen(false)}
               className="absolute top-6 right-6 z-50"
@@ -255,7 +181,6 @@ const Header = () => {
               <X size={32} color="white" />
             </button>
 
-            {/* Mobil menyu linklari */}
             <Link
               href="/"
               className="pt-12"
@@ -294,7 +219,6 @@ const Header = () => {
               Ijtimoiy tarmoqlar
             </Link>
 
-            {/* Lang & Phone */}
             <div className="flex gap-4 pt-6">
               <button className="text-white">O’Z</button>
               <button className="text-lightGrey">EN</button>

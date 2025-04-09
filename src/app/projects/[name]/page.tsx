@@ -22,8 +22,8 @@ const Projects = () => {
   };
   return (
     <div>
-      <div className="container mx-auto pt-[262px]">
-        <p className="text-black px-0 font-semibold text-18 sm:text-[28px] lg:text-[48px]">
+      <div className="container mx-auto pt-[100px] md:pt-[150px] lg:pt-[262px]">
+        <p className="text-black px-5 font-semibold text-18 sm:text-[28px] lg:text-[48px]">
           {projectsNames[params.name as keyof typeof projectsNames] ||
             "Noma’lum"}{" "}
           Loyihalar
@@ -49,10 +49,10 @@ const Projects = () => {
                   <div className="absolute inset-0 group-hover:bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
                   <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
                     <p className="text-textWhite font-bold text-[24px] opacity-0 translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0">
-                      {project.name}
+                      {project.name_uz}
                     </p>
                     <p className="text-[20px] text-iron opacity-0 translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0 mt-1">
-                      {project.location}
+                      {project.location_uz}
                     </p>
                   </div>
                 </div>
@@ -83,10 +83,10 @@ const Projects = () => {
                   <div className="absolute inset-0 group-hover:bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
                   <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
                     <p className="text-textWhite font-bold text-[24px] opacity-0 translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0">
-                      {project.name}
+                      {project.name_uz}
                     </p>
                     <p className="text-[20px] text-iron opacity-0 translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0 mt-1">
-                      {project.location}
+                      {project.location_uz}
                     </p>
                   </div>
                 </div>
@@ -117,10 +117,10 @@ const Projects = () => {
                   <div className="absolute inset-0 group-hover:bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
                   <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
                     <p className="text-textWhite font-bold text-[24px] opacity-0 translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0">
-                      {project.name}
+                      {project.name_uz}
                     </p>
                     <p className="text-[20px] text-iron opacity-0 translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0 mt-1">
-                      {project.location}
+                      {project.location_uz}
                     </p>
                   </div>
                 </div>
@@ -134,8 +134,8 @@ const Projects = () => {
           {projectData.map((item) => (
             <Link href={`/projects/${item.id}`} key={item.id} className="group">
               <Card
-                name={item.name}
-                location={item.location}
+                name={item.name_uz}
+                location={item.location_uz}
                 img={item.imgPath}
                 id={item.id}
                 type={item.type}
@@ -144,7 +144,9 @@ const Projects = () => {
           ))}
         </div>
       </div>
-      <Contact />
+      <div className="container mx-auto px-5">
+        <Contact />
+      </div>
     </div>
   );
 };

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L, { LatLngExpression } from "leaflet";
-import "leaflet.awesome-markers";
 
 const markerIcon = new L.Icon({
   iconUrl:
@@ -32,19 +31,43 @@ const center: LatLngExpression = [20, 0];
 
 const WorldMap = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
+  const [zoomLevel, setZoomLevel] = useState(2);
 
   useEffect(() => {
-    setMapLoaded(true); // Ensure the map is only loaded once
+    setMapLoaded(true);
   }, []);
 
-  if (!mapLoaded) return null; // Optionally, return a loading state
+  // Wheel hodisasi faqat Ctrl + Scroll bosilganda zoom qilish uchun
+  const handleWheel = (e: WheelEvent) => {
+    if (e.ctrlKey) {
+      e.preventDefault(); // Boshqa standart amallarni bloklash
+      const map = e.target as any;
+      const zoom = map.getZoom();
+      const delta = e.deltaY < 0 ? 1 : -1; // Delta = 1 yoki -1 ga teng
+      let newZoom = zoom + delta;
+
+      // Zoom limitlarini tekshirish
+      if (newZoom >= 2 && newZoom <= 10) {
+        map.setZoom(newZoom);
+        setZoomLevel(newZoom); // Zoom darajasini yangilash
+      }
+    }
+  };
+
+  if (!mapLoaded) return null;
 
   return (
     <MapContainer
       center={center}
-      zoom={2}
-      style={{ height: "100%", width: "100%" }}
+      zoom={zoomLevel} // Dastlabki zoom darajasi
+      style={{ height: "80%", width: "80%" }}
       className="relative z-0"
+      minZoom={2} // Minimal zoom darajasi
+      maxZoom={10} // Maksimal zoom darajasi
+      dragging={false} // Xarita ustida drag qilishni bloklash
+      scrollWheelZoom={false} // Scroll orqali zoom qilishni bloklash
+      onWheel={handleWheel} // Wheel hodisasi faqat Ctrl + Scroll uchun
+      zoomControl={true}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
