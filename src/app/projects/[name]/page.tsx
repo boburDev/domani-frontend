@@ -7,6 +7,7 @@ import Card from "@/components/Card";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useLanguage } from "@/components/LanguageProvider";
+import Image from "next/image";
 
 const Projects = () => {
   const { language, t } = useLanguage();
@@ -43,7 +44,8 @@ const Projects = () => {
               >
                 <div className="relative w-[335px] h-[238px] lg:w-[546px] lg:h-[441px] rounded-xl overflow-hidden shadow-md">
                   <div className="w-full h-full">
-                    <img
+                    <Image
+                      width="100"
                       src={`/images/${project.imgPath}`}
                       alt="Card"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -77,7 +79,8 @@ const Projects = () => {
                   } rounded-xl overflow-hidden shadow-md`}
                 >
                   <div className="w-full h-full">
-                    <img
+                    <Image
+                      w-full
                       src={`/images/${project.imgPath}`}
                       alt="Card"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -111,7 +114,8 @@ const Projects = () => {
                   } rounded-xl overflow-hidden shadow-md`}
                 >
                   <div className="w-full h-full">
-                    <img
+                    <Image
+                      w-full
                       src={`/images/${project.imgPath}`}
                       alt="Card"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
