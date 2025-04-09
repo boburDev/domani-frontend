@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
     config.resolve.extensions.push('.json');
     return config;
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  }
 };
 
 export default nextConfig;

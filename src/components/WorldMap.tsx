@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L, { LatLngExpression } from "leaflet";
 
@@ -11,7 +11,13 @@ const markerIcon = new L.Icon({
   popupAnchor: [1, -34],
 });
 
-const locations = [
+type Location = {
+  lat: number;
+  lng: number;
+  label: string;
+};
+
+const locations: Location[] = [
   { lat: 41.2995, lng: 69.2401, label: "Tashkent, Uzbekistan" },
   { lat: 39.6542, lng: 66.9597, label: "Samarqand, Uzbekistan" },
   { lat: 40.9983, lng: 71.6726, label: "Namangan, Uzbekistan" },
@@ -29,6 +35,36 @@ const locations = [
 
 const center: LatLngExpression = [20, 0];
 
+// 👇 Custom component: map konteynerga wheel event qo‘shamiz
+const WheelZoomHandler = ({ onZoom }: { onZoom: (zoom: number) => void }) => {
+  const map = useMap();
+
+  useEffect(() => {
+    const container = map.getContainer();
+
+    const handleWheel = (e: WheelEvent) => {
+      if (e.ctrlKey) {
+        e.preventDefault();
+        const currentZoom = map.getZoom();
+        const delta = e.deltaY < 0 ? 1 : -1;
+        const newZoom = currentZoom + delta;
+        if (newZoom >= 2 && newZoom <= 10) {
+          map.setZoom(newZoom);
+          onZoom(newZoom);
+        }
+      }
+    };
+
+    container.addEventListener("wheel", handleWheel, { passive: false });
+
+    return () => {
+      container.removeEventListener("wheel", handleWheel);
+    };
+  }, [map, onZoom]);
+
+  return null;
+};
+
 const WorldMap = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(2);
@@ -37,45 +73,33 @@ const WorldMap = () => {
     setMapLoaded(true);
   }, []);
 
-  // Wheel hodisasi faqat Ctrl + Scroll bosilganda zoom qilish uchun
-  const handleWheel = (e: WheelEvent) => {
-    if (e.ctrlKey) {
-      e.preventDefault(); // Boshqa standart amallarni bloklash
-      const map = e.target as any;
-      const zoom = map.getZoom();
-      const delta = e.deltaY < 0 ? 1 : -1; // Delta = 1 yoki -1 ga teng
-      const newZoom = zoom + delta;
-
-      // Zoom limitlarini tekshirish
-      if (newZoom >= 2 && newZoom <= 10) {
-        map.setZoom(newZoom);
-        setZoomLevel(newZoom); // Zoom darajasini yangilash
-      }
-    }
-  };
-
   if (!mapLoaded) return null;
 
   return (
     <MapContainer
       center={center}
-      zoom={zoomLevel} // Dastlabki zoom darajasi
+      zoom={zoomLevel}
       style={{ height: "80%", width: "80%" }}
       className="relative z-0"
-      minZoom={2} // Minimal zoom darajasi
-      maxZoom={10} // Maksimal zoom darajasi
-      dragging={false} // Xarita ustida drag qilishni bloklash
-      scrollWheelZoom={false} // Scroll orqali zoom qilishni bloklash
-      onWheel={handleWheel} // Wheel hodisasi faqat Ctrl + Scroll uchun
+      minZoom={2}
+      maxZoom={10}
+      dragging={false}
+      scrollWheelZoom={false}
       zoomControl={true}
     >
+      <WheelZoomHandler onZoom={setZoomLevel} />
+
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       />
 
       {locations.map((loc, index) => (
-        <Marker key={index} position={[loc.lat, loc.lng]} icon={markerIcon}>
+        <Marker
+          key={index}
+          position={[loc.lat, loc.lng] as LatLngExpression}
+          icon={markerIcon}
+        >
           <Popup>{loc.label}</Popup>
         </Marker>
       ))}
