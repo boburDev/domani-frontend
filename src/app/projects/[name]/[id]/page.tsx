@@ -1,6 +1,9 @@
+"use client";
+
 import { notFound } from "next/navigation";
 import projectData from "@/data/projects.json";
 import Contact from "@/components/Contact";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default async function ProjectDetails({
   params,
@@ -20,11 +23,12 @@ export default async function ProjectDetails({
   };
 
   const imageRows = chunkImages(project.images);
+  const { language, t } = useLanguage();
 
   return (
     <div className="container mx-auto px-5">
       <p className="pt-[120px] pb-5 sm:pt-[180px] lg:pt-[306px] px-5 text-black font-semibold text-[18px] sm:text-[28px] lg:text-[48px]">
-        {project.name}
+        {project[`name_${language}`]}
       </p>
 
       {project?.description && (
