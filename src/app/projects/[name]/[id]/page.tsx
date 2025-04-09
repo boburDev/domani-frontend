@@ -4,14 +4,10 @@ import Contact from "@/components/Contact";
 import Image from "next/image";
 
 interface ProjectParams {
-  id: string;
+  params: Promise<{ id: string }>;
 }
 
-export default async function ProjectDetails({
-  params,
-}: {
-  params: ProjectParams;
-}) {
+export default async function ProjectDetails({ params }: ProjectParams) {
   const { id } = await params;
   const project = projectData.find((p) => p.id === Number(id));
 
