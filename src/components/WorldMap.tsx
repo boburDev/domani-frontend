@@ -44,7 +44,7 @@ const WorldMap = () => {
       const map = e.target as any;
       const zoom = map.getZoom();
       const delta = e.deltaY < 0 ? 1 : -1; // Delta = 1 yoki -1 ga teng
-      let newZoom = zoom + delta;
+      const newZoom = zoom + delta;
 
       // Zoom limitlarini tekshirish
       if (newZoom >= 2 && newZoom <= 10) {
