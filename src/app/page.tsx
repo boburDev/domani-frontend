@@ -22,6 +22,7 @@ import {
   shake,
 } from "@/assets";
 import Card from "@/components/Card";
+import { useLanguage } from "@/components/LanguageProvider";
 
 // Dynamically import
 const WorldMap = dynamic(() => import("@/components/WorldMap"), {
@@ -30,6 +31,7 @@ const WorldMap = dynamic(() => import("@/components/WorldMap"), {
 });
 
 const Home = () => {
+  const { t } = useLanguage();
   return (
     <main>
       <section className="relative bg-cover bg-center bg-[url('/images/home-bg.jpg')] w-full h-[100vh]">
@@ -37,12 +39,12 @@ const Home = () => {
         <div className="container mx-auto relative z-10">
           <div className="text-[25px] md:text-[48px] lg:text-[84px] font-bold text-center text-textWhite pt-[247px] md:pt-[250px] lg:pt-[401px] font-playfair px-5">
             <span className="hidden sm:flex justify-center">
-              Minimalizm. Bu Funktsionallik. Mukammallik
+              {t.slogan1}
             </span>
             <div className="flex justify-center flex-wrap sm:hidden">
-              <span className="inline-block">Minimalizm.</span>
+              <span className="inline-block">{t.slogan2}</span>
               <span className="inline-block">
-                Bu Funktsionallik. Mukammallik
+                {t.slogan3}
               </span>
             </div>
           </div>
@@ -59,7 +61,7 @@ const Home = () => {
         </div>
         <div className="pt-[50px] md:pt-[150px] lg:pt-[256px]">
           <p className="text-black font-semibold text-[18px] md:text-[28px] lg:text-[48px]">
-            Hamkorlarimiz
+            {t.partners}
           </p>
           <div className="flex justify-between items-center w-full pt-[30px] lg:pt-[91px]">
             <Link href="https://iskanderbuildings.uz/">
@@ -94,7 +96,7 @@ const Home = () => {
         {/* CARD DATA */}
         <div className="pt-[50px] md:pt-[80px] lg:pt-[181px]" id="projects">
           <p className="text-black font-semibold text-[18px] md:text-[28px] lg:text-[48px] pb-[40px] lg:pb-[80px]">
-            Loyihalarimiz
+            {t.projects}
           </p>
           <div className="flex flex-wrap justify-center lg:grid grid-cols-2 xxl:grid-cols-3 gap-x-16 gap-y-8 ">
             {projectData.map((item) => (
@@ -121,23 +123,19 @@ const Home = () => {
         <div className="flex pt-[70px] md:pt-[230px]">
           <div className="xl:w-[733px] pb-[36px] pr-6" id="about">
             <p className="text-black font-semibold text-[18px]  md:text-[48px]">
-              Biz haqimizda
+              {t.about}
             </p>
             <p className="pt-[30px] md:pt-[80px] text-[14px] md:text-[26px] text-textBlack">
-              Domani architects byurosi 2019 yilda tashkil etilgan. O‘zbekiston
-              bozorida faoliyati yuritib keladi. Ekologik va funksional
-              arxitekturasining qarashlari va estetikasini targ‘ib qilmoqda,
+              {t.show1}
             </p>
             <div className="pt-[20px] w-[909px] h-[235px] md:h-[635px] flex xl:hidden">
               <Image src={aboutBuilding} alt="img" className="w-full h-full" />
             </div>
             <p className="pt-[50px] md:pt-[101px] text-black text-[18px]  md:text-[32px] font-semibold">
-              Domani Architects Missiyasi
+              {t.mission_title}
             </p>
             <p className="pt-[20px] text-[14px] md:text-[26px] text-textBlack ">
-              Biz O‘zbekiston arxitekturasida innovatsion va funksional
-              dizaynlar bilan boyitish orqali zamonaviy, exclusive va ekologik
-              yechimlar yaratishga intilamiz.
+              {t.show2}
             </p>
           </div>
           <div className="pt-[20px] hidden xl:flex">
@@ -151,14 +149,14 @@ const Home = () => {
         <div className="pt-[80px] md:pt-[230px]">
           <div className="font-semibold text-[48px] text-black">
             <p className="text-black font-semibold text-[18px] md:text-[48px]">
-              Xizmatlarimiz
+              {t.services}
             </p>
             <div></div>
           </div>
         </div>
         <div className="pt-[186px]">
           <p className="text-black font-semibold text-[18px] md:text-[48px]">
-            Bizning tamoyillarimiz
+            {t.principles}
           </p>
           <div className="pt-[80px] flex justify-between flex-wrap gap-[50px]">
             <div className="hover:shadow-md p-4 duration-300 rounded-xl">
@@ -166,11 +164,10 @@ const Home = () => {
                 <Image src={functionImg} alt="img" className="pb-6" />
               </div>
               <p className="text-[16px] md:text-[26px] font-semibold text-black pt-5 ">
-                Funktsional va Minimalistik Arxitektura
+                {t.principle1_title}
               </p>
               <p className="pt-5 text-[14px] mdtext-[26px] text-textBlack max-w-[665px]">
-                Biz binolarni nafaqat estetik, balki amaliy jihatdan ham qulay,
-                samarali va chidamli loyihalashtiramiz.
+                {t.show3}
               </p>
             </div>
             <div className="hover:shadow-md p-4 duration-300 rounded-xl">
@@ -178,11 +175,10 @@ const Home = () => {
                 <Image src={leaf} alt="img" className="pb-6" />
               </div>
               <p className="text-[16px] md:text-[26px] font-semibold text-black pt-5 ">
-                Ekologik va Energiya Tejamkor Yondashuv{" "}
+                {t.principle2_title}
               </p>
               <p className="pt-5 text-[14px] md:text-[26px] text-textBlack max-w-[665px]">
-                Biz yashil texnologiyalar, ekologik materiallar va passiv uy
-                konsepsiyasiga asoslangan loyihalar ishlab chiqamiz.
+                {t.show4}
               </p>
             </div>
             <div className="hover:shadow-md p-4 duration-300 rounded-xl">
@@ -190,11 +186,10 @@ const Home = () => {
                 <Image src={city} alt="img" className="pb-6" />
               </div>
               <p className="text-[16px] md:text-[26px] font-semibold text-black pt-5 ">
-                Shahar Muhitiga Moslashuv{" "}
+                {t.principle3_title}
               </p>
               <p className="pt-5 text-[14px] md:text-[26px] text-textBlack max-w-[665px]">
-                Toshkent va O‘zbekistonning o‘ziga xos me’moriy an’analarini
-                zamonaviy yondashuv bilan uyg‘unlashtirish.
+                {t.show5}
               </p>
             </div>
             <div className="hover:shadow-md p-4 duration-300 rounded-xl">
@@ -202,12 +197,10 @@ const Home = () => {
                 <Image src={architecture} alt="img" className="pb-6" />
               </div>
               <p className="text-[16px] md:text-[26px] font-semibold text-black pt-5 ">
-                Arxitekturada Innovatsiya va Texnologiyalar{" "}
+                {t.principle4_title}
               </p>
               <p className="pt-5 text-[14px] md:text-[26px] text-textBlack max-w-[665px]">
-                Biz BIM (Building Information Modeling) tizimi va Revit kabi
-                ilg‘or texnologiyalarni joriy qilish orqali samaradorlik va
-                sifatni oshiramiz.
+                {t.show6}
               </p>
             </div>
             <div className="hover:shadow-md p-4 duration-300 rounded-xl">
@@ -215,12 +208,10 @@ const Home = () => {
                 <Image src={shake} alt="img" className="pb-6" />
               </div>
               <p className="text-[16px] md:text-[26px] font-semibold text-black pt-5 ">
-                Mijozlarga Yo‘naltirilgan Yondashuv{" "}
+                {t.principle5_title}
               </p>
               <p className="pt-5 text-[14px] md:text-[26px] text-textBlack max-w-[665px]">
-                Biz har bir loyihani mijozning ehtiyojlari va orzulari asosida
-                ishlab chiqamiz. Bizning ishimiz har bir mijozga individual
-                yondashuvga asoslanadi.
+                {t.show7}
               </p>
             </div>
           </div>

@@ -1,4 +1,5 @@
 // LinkComponent.tsx
+import Link from "next/link";
 import React from "react";
 
 const LinkComponent: React.FC = ({ children, href, className }) => {
