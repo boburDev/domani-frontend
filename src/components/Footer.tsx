@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import {
   instagram,
   locationIcon,
@@ -14,19 +14,32 @@ import { useLanguage } from "./LanguageProvider";
 
 const Footer = () => {
   const { t } = useLanguage();
+
   return (
     <div className="bg-rangoonGreen">
       <div className="container mx-auto px-5">
         <div className="flex flex-col">
           <div className="flex justify-center md:hidden pt-10">
             <Link href="#">
-              <Image width={200} height={50} className="w-[244px] h-[60px]" src="Logo.svg" alt="Logo" />
+              <Image
+                width={200}
+                height={50}
+                className="w-[244px] h-[60px]"
+                src="Logo.svg"
+                alt="Logo"
+              />
             </Link>
           </div>
           <div className="flex pt-[92px] sm:gap-5 xl:pr-[340px] justify-between w-full">
             <div className="hidden md:flex">
               <Link href="#">
-                <Image width={200} height={50} className="w-[244px] h-[60px]" src="Logo.svg" alt="Logo" />
+                <Image
+                  width={200}
+                  height={50}
+                  className="w-[244px] h-[60px]"
+                  src="Logo.svg"
+                  alt="Logo"
+                />
               </Link>
             </div>
             <div className="flex flex-col gap-5">

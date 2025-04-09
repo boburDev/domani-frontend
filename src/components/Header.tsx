@@ -4,10 +4,9 @@ import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { phoneHeader, phoneHeaderBlack } from "@/assets";
+import { phoneHeader, phoneHeaderBlack } from "@/assets"; // images to be conditionally loaded
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "./LanguageProvider";
-import PhoneIcon from "@/assets/icons/PhoneIcon";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,10 +14,15 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
+  const [isDark, setIsDark] = useState(false);
+  const [logoSrc, setLogoSrc] = useState("/Logo.svg");
+  const [textColor, setTextColor] = useState("text-textWhite");
 
-  const isDark = pathname === "/" || pathname === "/social";
-  const textColor = isDark ? "text-textWhite" : "text-textBlack";
-  const logoSrc = isDark ? "/Logo.svg" : "/LogoBlack.png";
+  useEffect(() => {
+    setIsDark(pathname === "/" || pathname === "/social");
+    setTextColor(isDark ? "text-textBlack" : "text-textWhite");
+    setLogoSrc(isDark ? "/LogoBlack.png" : "/Logo.svg");
+  }, [pathname]);
 
   const toggleLanguage = (lang: string) => {
     changeLanguage(lang as "uz" | "en" | "ru");
@@ -39,7 +43,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <div
         className={`absolute z-50 top-0 left-0 right-0 transition-all duration-300`}
       >
@@ -74,39 +78,42 @@ const Header = () => {
                   {t.home}
                 </Link>
 
-                <div className="text-textWhite relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] group">
-                  {t.allProjects}
-                  <div className="hidden group-hover:flex">
-                    <div className="w-[172px] h-[185px] p-5 text-[14px] text-textBlack absolute bg-textWhite font-semibold rounded-xl flex flex-col gap-[15px] mt-1">
-                      <Link href="/projects/all">{t.allProjects}</Link>
-                      <Link href="/projects/multi-storey">{t.multiStorey}</Link>
-                      <Link href="/projects/low-rise">{t.lowRise}</Link>
-                      <Link href="/projects/non-residential">
-                        {t.nonResidential}
-                      </Link>
-                    </div>
+                {/* Dropdown menu */}
+
+                <div
+                  ref={dropdownRef}
+                  className={`relative ${textColor} pb-[2px] cursor-pointer font-medium`}
+                >
+                  <div
+                    onClick={() => setIsOpen((prev) => !prev)}
+                    className="font-medium"
+                  >
+                    {t.countert2}
                   </div>
 
                   {isOpen && (
-                    <div className="w-[158px] h-[185px] p-5 text-[14px] text-textBlack absolute bg-textWhite font-semibold rounded-xl flex flex-col gap-[15px] mt-1 z-50 ">
+                    <div className="w-[158px] h-[180px] p-5 text-[14px] text-textBlack absolute bg-[#f0f0f0] font-semibold rounded-xl flex flex-col gap-[15px] mt-1 z-50">
                       {[
-                        { href: "/projects/all", label: "Barcha loyihalar" },
+                        { href: "/projects/all", label: `${t.allProjects} ` },
                         {
                           href: "/projects/multi-storey",
-                          label: "Ko’p qavatli",
+                          label: `${t.multiStorey} `,
                         },
-                        { href: "/projects/low-rise", label: "Kam qavatli" },
+                        {
+                          href: "/projects/low-rise",
+                          label: `${t.lowRise} `,
+                        },
                         {
                           href: "/projects/non-residential",
-                          label: "Noturarjoy",
+                          label: `${t.nonResidential} `,
                         },
                       ].map((link) => (
                         <Link
                           key={link.href}
                           href={link.href}
-                          className="relative w-fit pb-1 group"
+                          className="relative w-fit group"
                         >
-                          <span className="after:content-[''] after:block after:h-[2px] after:bg-transparent group-hover:after:bg-textBlack after:transition-all after:duration-300 after:w-0 group-hover:after:w-full">
+                          <span className="border-b-2 border-transparent group-hover:border-textBlack transition-all duration-300 font-semibold text-[14px]">
                             {link.label}
                           </span>
                         </Link>
@@ -117,21 +124,27 @@ const Header = () => {
 
                 <Link
                   href="/"
-                  className="text-textWhite hover:after:w-full relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-textWhite after:transition-all after:duration-200"
+                  className={`${textColor} relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] ${
+                    isDark ? "after:bg-textWhite" : "after:bg-textBlack"
+                  } after:transition-all after:duration-200 hover:after:w-full`}
                 >
                   {t.articles}
                 </Link>
 
                 <Link
                   href="/about"
-                  className="text-textWhite hover:after:w-full relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-textWhite after:transition-all after:duration-200"
+                  className={`${textColor} relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] ${
+                    isDark ? "after:bg-textWhite" : "after:bg-textBlack"
+                  } after:transition-all after:duration-200 hover:after:w-full`}
                 >
                   {t.about}
                 </Link>
 
                 <Link
                   href="/social"
-                  className="text-textWhite hover:after:w-full relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-textWhite after:transition-all after:duration-200"
+                  className={`${textColor} relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] ${
+                    isDark ? "after:bg-textWhite" : "after:bg-textBlack"
+                  } after:transition-all after:duration-200 hover:after:w-full`}
                 >
                   {t.social}
                 </Link>
@@ -144,8 +157,12 @@ const Header = () => {
                     onClick={() => toggleLanguage("uz")}
                     className={
                       language === "uz"
-                        ? "text-textWhite font-semibold xl:text-[20px] text-base"
-                        : "text-lightGrey xl:text-[20px] text-base"
+                        ? `text-${
+                            isDark ? "textWhite" : "textBlack"
+                          } font-semibold xl:text-[20px] text-base`
+                        : `text-${
+                            isDark ? "lightGrey" : "textBlack"
+                          } xl:text-[20px] text-base`
                     }
                   >
                     UZ
@@ -154,8 +171,12 @@ const Header = () => {
                     onClick={() => toggleLanguage("en")}
                     className={
                       language === "en"
-                        ? "text-textWhite font-semibold xl:text-[20px] text-base"
-                        : "text-lightGrey xl:text-[20px] text-base"
+                        ? `text-${
+                            isDark ? "textWhite" : "textBlack"
+                          } font-semibold xl:text-[20px] text-base`
+                        : `text-${
+                            isDark ? "lightGrey" : "textBlack"
+                          } xl:text-[20px] text-base`
                     }
                   >
                     EN
@@ -164,19 +185,34 @@ const Header = () => {
                     onClick={() => toggleLanguage("ru")}
                     className={
                       language === "ru"
-                        ? "text-textWhite font-semibold xl:text-[20px] text-base"
-                        : "text-lightGrey xl:text-[20px] text-base"
+                        ? `text-${
+                            isDark ? "textWhite" : "textBlack"
+                          } font-semibold xl:text-[20px] text-base`
+                        : `text-${
+                            isDark ? "lightGrey" : "textBlack"
+                          } xl:text-[20px] text-base`
                     }
                   >
                     РУ
                   </button>
                 </div>
-                <div className="flex lg:gap-2 gap-1 items-center">
-                  <PhoneIcon className="w-[22px] h-[22px] xl:w-[27px] xl:h-[27px]" />
-                  <p className="xl:text-xl text-base font-bold text-textWhite">
+                <Link
+                  href="tel:+998999443030"
+                  className="flex lg:gap-2 gap-1 items-center"
+                >
+                  <Image
+                    src={!isDark ? phoneHeaderBlack : phoneHeader} // 'phoneHeaderBlack' yoki 'phoneHeader'ni to'g'ri import qiling
+                    alt="img"
+                    className="w-[22px] h-[22px] xl:w-[26px] xl:h-[26px]"
+                  />
+                  <p
+                    className={`${
+                      isDark ? "text-white" : "text-textBlack"
+                    } xl:text-xl text-base font-bold`}
+                  >
                     {t.phone}
                   </p>
-                </div>
+                </Link>
               </div>
 
               {/* Hamburger button */}
@@ -262,13 +298,13 @@ const Header = () => {
               </button>
             </div>
             <div className="flex gap-2 items-center pt-4">
-              <Image src={phoneHeader} alt="img" />
+              <Image src={isDark ? phoneHeaderBlack : phoneHeader} alt="img" />
               <p className="text-white font-bold text-lg">{t.phone}</p>
             </div>
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 };
 

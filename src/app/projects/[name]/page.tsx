@@ -6,19 +6,22 @@ import projectJson from "@/data/projects.json";
 import Card from "@/components/Card";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import { useLanguage } from "@/components/LanguageProvider";
 
 const Projects = () => {
+  const { t } = useLanguage();
   const params = useParams();
+
   const projectData = ["non-residential", "low-rise", "multi-storey"].includes(
     params.name as string
   )
     ? projectJson.filter((p) => p.type === params.name)
     : projectJson;
   const projectsNames = {
-    "non-residential": "Noturar joy",
-    "low-rise": "Kam qavatli",
-    "multi-storey": "Ko'p qavatli",
-    all: "Barcha",
+    "non-residential": `${t.serviceNonresidentialAll}`,
+    "low-rise": `${t.serviceLowriseAll}`,
+    "multi-storey": `${t.servicemultiAll}`,
+    all: `${t.allName}`,
   };
   return (
     <div>
@@ -26,7 +29,7 @@ const Projects = () => {
         <p className="text-black px-5 font-semibold text-18 sm:text-[28px] lg:text-[48px]">
           {projectsNames[params.name as keyof typeof projectsNames] ||
             "Noma’lum"}{" "}
-          Loyihalar
+          {t.theName}
         </p>
 
         <div className="flex-col gap-8 hidden lg:flex">

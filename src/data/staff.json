@@ -1,42 +1,83 @@
 [
   {
-    "name": "Azamat Bayxanov",
-    "position": "Bosh arxitektor asoschi domani architects byurosi",
+    "name_uz": "Azamat Bayxanov",
+    "name_ru": "Азамат Байханов",
+    "name_en": "Azamat Baykhanov",
+    "position_uz": "Bosh arxitektor, Domani architects byurosi asoschisi",
+    "position_ru": "Главный архитектор, соучредитель Domani architects бюро",
+    "position_en": "Chief Architect, Co-founder of Domani Architects Bureau",
     "img": "/staff.png"
   },
   {
-    "name": "Murtazoyev Sherzod",
-    "position": "Art direktor asoschi domani architects byurosi",
+    "name_uz": "Sherzod Murtazoyev",
+    "name_ru": "Шерзод Муртазаев",
+    "name_en": "Sherzod Murtazoyev",
+    "position_uz": "Art direktor, Domani architects byurosi asoschisi",
+    "position_ru": "Арт-директор, соучредитель Domani architects бюро",
+    "position_en": "Art Director, Co-founder of Domani Architects Bureau",
     "img": "/staff.png"
   },
   {
-    "name": "Yo’ldoshov Murod",
-    "position": "Bosh arxitektor",
+    "name_uz": "Murod Yoʻldashev",
+    "name_ru": "Мурод Юлдашев",
+    "name_en": "Murod Yuldashev",
+    "position_uz": "Bosh arxitektor",
+    "position_ru": "Главный архитектор",
+    "position_en": "Chief Architect",
     "img": "/staff.png"
   },
   {
-    "name": "Abidov Akmal",
-    "position": "Bosh konstruktor",
+    "name_uz": "Akmal Abidov",
+    "name_ru": "Акмал Абидов",
+    "name_en": "Akmal Abidov",
+    "position_uz": "Bosh konstruktor",
+    "position_ru": "Главный конструктор",
+    "position_en": "Chief Structural Engineer",
     "img": "/staff.png"
   },
   {
-    "name": "Negmatov Fahriddin",
-    "position": "CG vizualizator",
+    "name_uz": "Fahriddin Negmatov",
+    "name_ru": "Фариддин Негматов",
+    "name_en": "Fahriddin Negmatov",
+    "position_uz": "CGI mutaxassis",
+    "position_ru": "CGI специалист",
+    "position_en": "CGI Specialist",
     "img": "/staff.png"
   },
   {
-    "name": "Mahammadjonov Akbarali",
-    "position": "Texnik direktor",
+    "name_uz": "Islom Odilov",
+    "name_ru": "Ислам Одилов",
+    "name_en": "Islom Odilov",
+    "position_uz": "CGI mutaxassis",
+    "position_ru": "CGI специалист",
+    "position_en": "CGI Specialist",
     "img": "/staff.png"
   },
   {
-    "name": "Shaxiyev Komiljon",
-    "position": "Proyekt menejer",
+    "name_uz": "Abdulloh Yusufjonov",
+    "name_ru": "Абдуллох Юсуфжонов",
+    "name_en": "Abdulloh Yusufjonov",
+    "position_uz": "Arxitektor",
+    "position_ru": "Архитектор",
+    "position_en": "Architect",
     "img": "/staff.png"
   },
   {
-    "name": "Ibrohim",
-    "position": "Bosh dizayner",
+    "name_uz": "Komil Shaxiyev",
+    "name_ru": "Комил Шахиев",
+    "name_en": "Komil Shakhiev",
+    "position_uz": "Proyekt menejer",
+    "position_ru": "Менеджер проекта",
+    "position_en": "Project Manager",
+    "img": "/staff.png"
+  },
+  {
+    "name_uz": "Ilhom Tohirjonov",
+    "name_ru": "   Тахиржанов",
+    "name_en": "Ilhom Tokhirjonov",
+    "position_uz": "Bosh dizayner",
+    "position_ru": "Главный дизайнер",
+    "position_en": "Chief Designer",
     "img": "/staff.png"
   }
 ]

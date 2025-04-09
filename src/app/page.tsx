@@ -35,7 +35,7 @@ const WorldMap = dynamic(() => import("@/components/WorldMap"), {
 });
 
 const Home = () => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
   return (
     <main>
       <section className="relative bg-cover bg-center bg-[url('/images/home-bg.jpg')] w-full h-[100vh]">
@@ -109,8 +109,8 @@ const Home = () => {
             {projectData.map((item) => (
               <Card
                 key={item.id}
-                name={item.name_uz}
-                location={item.location_uz}
+                name={item[`name_${language}`]}
+                location={item[`location_${language}`]}
                 img={item.imgPath}
                 id={item.id}
                 type={item.type}
@@ -123,7 +123,7 @@ const Home = () => {
             className="pt-[90px] flex justify-center items-center group text-[18px] md:text-[32px] font-medium text-black pb-1 relative"
           >
             <span className="relative">
-              Barchasini ko’rish
+              {t.btnToAll}
               <span className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-transparent group-hover:bg-black transition-all duration-300"></span>
             </span>
           </Link>
@@ -156,7 +156,7 @@ const Home = () => {
             <Image
               src={aboutBuilding}
               alt="img"
-              className="w-[909px] h-[635px]"
+              className="w-[909px] h-[635px] object-cover rounded-lg"
             />
           </div>
         </div>
@@ -180,7 +180,7 @@ const Home = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
                     <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
                       <p className="text-textWhite font-bold text-[14px] md:text-[24px]  transition-all duration-500 ease-out translate-y-0">
-                        Ko’p qavatli turarjoy
+                        {t.servicemulti}
                       </p>
                     </div>
                   </div>
@@ -197,7 +197,7 @@ const Home = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
                     <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
                       <p className="text-textWhite font-bold text-[14px] md:text-[24px]  transition-all duration-500 ease-out translate-y-0">
-                        Kam qavatli turarjoy
+                        {t.serviceLowrise}
                       </p>
                     </div>
                   </div>
@@ -214,7 +214,7 @@ const Home = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
                     <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
                       <p className="text-textWhite font-bold text-[14px] md:text-[24px]  transition-all duration-500 ease-out translate-y-0">
-                        Noturarjoy bino
+                        {t.serviceNonresidential}
                       </p>
                     </div>
                   </div>
@@ -231,7 +231,7 @@ const Home = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
                     <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
                       <p className="text-textWhite font-bold text-[14px] md:text-[24px]  transition-all duration-500 ease-out translate-y-0">
-                        Mualliflik nazorati
+                        {t.serviceOwnership}
                       </p>
                     </div>
                   </div>
@@ -256,9 +256,9 @@ const Home = () => {
                 Biz binolarni nafaqat estetik, balki amaliy jihatdan ham qulay,
                 samarali va chidamli loyihalashtiramiz.
               </p>
-              <p className="pt-5 text-[14px] mdtext-[26px] text-textBlack max-w-[665px]">
+              {/* <p className="pt-5 text-[14px] mdtext-[26px] text-textBlack max-w-[665px]">
                 {t.show3}
-              </p>
+              </p> */}
             </div>
             <div className="hover:shadow-md p-4 duration-300 rounded-xl">
               <div className="border-b-4 w-[42px] md:w-[126px] border-gainsboro">

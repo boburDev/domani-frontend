@@ -1,14 +1,17 @@
-// "use client";
+"use client";
 import { useEffect, useState } from "react";
-
-const stats = [
-  { id: 1, value: 14, label: "Tajriba" },
-  { id: 2, value: 350, label: "Loyihalar" },
-  { id: 3, value: 13, label: "Gektar - eng katta yer maydoni" },
-  { id: 4, value: 20, label: "Etaj - eng baland loyiha" },
-];
+import { useLanguage } from "./LanguageProvider";
 
 const Counter = () => {
+  const { t } = useLanguage();
+
+  const stats = [
+    { id: 1, value: 14, label: `${t.countert1}` },
+    { id: 2, value: 350, label: `${t.countert2}` },
+    { id: 3, value: 13, label: `${t.countert3}` },
+    { id: 4, value: 20, label: `${t.countert4}` },
+  ];
+
   const [counts, setCounts] = useState<number[]>(
     new Array(stats.length).fill(0)
   );
