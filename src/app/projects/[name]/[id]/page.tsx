@@ -3,11 +3,11 @@ import projectData from "@/data/projects.json";
 import Contact from "@/components/Contact";
 import Image from "next/image";
 
-export default async function ProjectDetails({
-  params,
-}: {
-  params: { id: string };
-}) {
+interface ProjectParams {
+  id: string;
+}
+
+export default async function ProjectDetails({ params }: { params: ProjectParams }) {
   const project = projectData.find((p) => p.id === Number(params.id));
 
   if (!project) notFound();
