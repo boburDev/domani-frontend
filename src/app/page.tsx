@@ -64,7 +64,7 @@ const Home = () => {
             {t.partners}
           </p>
           <div className="flex justify-between items-center w-full pt-[30px] lg:pt-[91px]">
-            <Link href="https://iskanderbuildings.uz/">
+            <Link className="cursor-pointer" href="https://iskanderbuildings.uz/">
               <Image
                 src={iskanderPartner}
                 alt="img"
@@ -72,13 +72,15 @@ const Home = () => {
               />
             </Link>
 
-            <Image
-              src={osiyoPartner}
-              alt="img"
-              className="w-[67px] h-[35px] lg:w-[251px] lg:h-[129px] opacity-20 bg-lightGrey hover:opacity-100 hover:scale-105 transition-transform duration-300"
-            />
+            <Link className="cursor-pointer" href="#">
+              <Image
+                src={osiyoPartner}
+                alt="img"
+                className="w-[67px] h-[35px] lg:w-[251px] lg:h-[129px] opacity-20 bg-lightGrey hover:opacity-100 hover:scale-105 transition-transform duration-300"
+              />
+            </Link>
 
-            <Link href="https://mbc.uz/">
+            <Link className="cursor-pointer" href="https://mbc.uz/">
               <Image
                 src={muradB_partner}
                 alt="img"
@@ -86,11 +88,13 @@ const Home = () => {
               />
             </Link>
 
-            <Image
-              src={insidePartner}
-              alt="img"
-              className="w-[74px] h-[44px] lg:w-[205px] lg:h-[120px] opacity-20 bg-lightGrey hover:opacity-100 hover:scale-105 transition-transform duration-300"
-            />
+            <Link className="cursor-pointer" href="#">
+              <Image
+                src={insidePartner}
+                alt="img"
+                className="w-[74px] h-[44px] lg:w-[205px] lg:h-[120px] opacity-20 bg-lightGrey hover:opacity-100 hover:scale-105 transition-transform duration-300"
+              />
+            </Link>
           </div>
         </div>
         {/* CARD DATA */}
