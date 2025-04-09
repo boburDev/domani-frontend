@@ -7,7 +7,11 @@ interface ProjectParams {
   id: string;
 }
 
-export default async function ProjectDetails({ params }: { params: ProjectParams }) {
+export default async function ProjectDetails({
+  params,
+}: {
+  params: ProjectParams;
+}) {
   const project = projectData.find((p) => p.id === Number(params.id));
 
   if (!project) notFound();
