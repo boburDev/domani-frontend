@@ -9,25 +9,28 @@ import { Menu, X } from "lucide-react";
 import { useLanguage } from "./LanguageProvider";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { language, changeLanguage, t } = useLanguage();
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const pathname = usePathname();
-  const [isDark, setIsDark] = useState(false);
-  const [logoSrc, setLogoSrc] = useState("/Logo.svg");
-  const [textColor, setTextColor] = useState("text-textWhite");
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // For controlling mobile menu
+  const { language, changeLanguage, t } = useLanguage(); // Language context
+  const [isOpen, setIsOpen] = useState(false); // For controlling dropdown menu
+  const dropdownRef = useRef<HTMLDivElement>(null); // To detect clicks outside dropdown
+  const pathname = usePathname(); // To detect the current path
+  const [isDark, setIsDark] = useState(false); // For dark/light theme
+  const [logoSrc, setLogoSrc] = useState("/Logo.svg"); // For dynamic logo based on theme
+  const [textColor, setTextColor] = useState("text-textWhite"); // Dynamic text color
 
+  // Handle dark mode and logo color based on the current pathname
   useEffect(() => {
     setIsDark(pathname === "/" || pathname === "/social");
-    setTextColor(isDark ? "text-textBlack" : "text-textWhite");
-    setLogoSrc(isDark ? "/LogoBlack.png" : "/Logo.svg");
-  }, [pathname]);
+    setTextColor(isDark ? "text-textWhite" : "text-textBlack");
+    setLogoSrc(!isDark ? "/LogoBlack.png" : "/Logo.svg");
+  }, [pathname, isDark]);
 
+  // Change language handler
   const toggleLanguage = (lang: string) => {
     changeLanguage(lang as "uz" | "en" | "ru");
   };
 
+  // Close dropdown when clicked outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -79,7 +82,6 @@ const Header = () => {
                 </Link>
 
                 {/* Dropdown menu */}
-
                 <div
                   ref={dropdownRef}
                   className={`relative ${textColor} pb-[2px] cursor-pointer font-medium`}
@@ -99,10 +101,7 @@ const Header = () => {
                           href: "/projects/multi-storey",
                           label: `${t.multiStorey} `,
                         },
-                        {
-                          href: "/projects/low-rise",
-                          label: `${t.lowRise} `,
-                        },
+                        { href: "/projects/low-rise", label: `${t.lowRise} ` },
                         {
                           href: "/projects/non-residential",
                           label: `${t.nonResidential} `,
@@ -201,7 +200,7 @@ const Header = () => {
                   className="flex lg:gap-2 gap-1 items-center"
                 >
                   <Image
-                    src={!isDark ? phoneHeaderBlack : phoneHeader} // 'phoneHeaderBlack' yoki 'phoneHeader'ni to'g'ri import qiling
+                    src={!isDark ? phoneHeaderBlack : phoneHeader}
                     alt="img"
                     className="w-[22px] h-[22px] xl:w-[26px] xl:h-[26px]"
                   />

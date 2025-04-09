@@ -25,7 +25,7 @@ export default async function ProjectDetails({
   return (
     <div className="container mx-auto px-5">
       <p className="pt-[120px] pb-5 sm:pt-[180px] lg:pt-[306px] px-5 text-black font-semibold text-[18px] sm:text-[28px] lg:text-[48px]">
-        {project?.name}
+        {/* {project?.name} */}
       </p>
 
       {project?.description && (

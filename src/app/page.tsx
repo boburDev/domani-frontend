@@ -107,14 +107,21 @@ const Home = () => {
           </p>
           <div className="flex flex-wrap justify-center lg:grid grid-cols-2 xxl:grid-cols-3 gap-x-16 gap-y-8 ">
             {projectData.map((item) => (
-              <Card
-                key={item.id}
-                name={item[`name_${language}`]}
-                location={item[`location_${language}`]}
-                img={item.imgPath}
-                id={item.id}
-                type={item.type}
-              />
+              <div key={item.id}>
+                {/* Card */}
+                <Link
+                  href={`/projects/${item.id}`} // Loyihaning detallariga yo'naltiruvchi Link
+                  className="group"
+                >
+                  <Card
+                    name={item[`name_${language}`]}
+                    location={item[`location_${language}`]}
+                    img={item.imgPath}
+                    id={item.id}
+                    type={item.type}
+                  />
+                </Link>
+              </div>
             ))}
           </div>
           {/* Link to projects */}
@@ -256,9 +263,6 @@ const Home = () => {
                 Biz binolarni nafaqat estetik, balki amaliy jihatdan ham qulay,
                 samarali va chidamli loyihalashtiramiz.
               </p>
-              {/* <p className="pt-5 text-[14px] mdtext-[26px] text-textBlack max-w-[665px]">
-                {t.show3}
-              </p> */}
             </div>
             <div className="hover:shadow-md p-4 duration-300 rounded-xl">
               <div className="border-b-4 w-[42px] md:w-[126px] border-gainsboro">

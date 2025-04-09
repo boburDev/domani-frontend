@@ -136,7 +136,11 @@ const Projects = () => {
         {/* Mobile layout */}
         <div className="pt-12 flex flex-wrap justify-center gap-8 lg:hidden">
           {projectData.map((item) => (
-            <Link href={`/projects/${item.id}`} key={item.id} className="group">
+            <Link
+              href={`/projects/${item.type}/${item.id}`}
+              key={item.id}
+              className="group"
+            >
               <Card
                 name={item[`name_${language}`]}
                 location={item[`location_${language}`]}
