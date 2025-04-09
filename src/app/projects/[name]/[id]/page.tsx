@@ -14,7 +14,8 @@ export default async function ProjectDetails({
 }: {
   params: ProjectParams;
 }) {
-  const project = projectData.find((p) => p.id === Number(params.id));
+  const { id } = await params;
+  const project = projectData.find((p) => p.id === Number(id));
 
   if (!project) notFound();
 
