@@ -1,14 +1,17 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { mavridBuilding } from "@/assets";
+import { useLanguage } from "./LanguageProvider";
 
 const Contact = () => {
+  const { t } = useLanguage();
   return (
     <div className="container mx-auto">
       <div className="flex pt-[100px] lg:pt-[230px] pb-[100px] lg:pb-[230px]">
         <div className="w-full lg:w-[733px] pb-[36px] lg:pr-6" id="about">
           <p className="text-black font-semibold text-[32px] lg:text-[48px]">
-            Kontakt qoldiring{" "}
+            {t.contact_title}
           </p>
           <div>
             <div className="w-full">
@@ -18,12 +21,12 @@ const Contact = () => {
                     className="block text-black text-[18px] mb-2"
                     htmlFor="username"
                   >
-                    Ism-familiya
+                    {t.name_label}
                   </label>
                   <input
                     className="shadow appearance-none focus:outline-none focus:shadow-outline border border-lightGrey rounded-2xl w-full h-[60px] text-[#9696A1] text-[18px] pl-6"
                     type="text"
-                    placeholder="Rustamov Ali"
+                    placeholder={t.name_placeholder}
                     required
                     autoComplete="name"
                   />
@@ -34,15 +37,15 @@ const Contact = () => {
                     className="block text-black text-[18px] mb-2"
                     htmlFor="email"
                   >
-                    Email
+                    {t.email_label}
                   </label>
                   <input
                     className="shadow appearance-none focus:outline-none focus:shadow-outline border border-lightGrey rounded-2xl w-full h-[60px] text-[#9696A1] text-[18px] pl-6"
                     type="email"
-                    placeholder="rustamov@gmail.com"
+                    placeholder={t.email_placeholder}
                     required
                     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-                    title="Iltimos, to'g'ri email manzilini kiriting"
+                    title={t.email_pattern_title}
                     autoComplete="email"
                   />
                 </div>
@@ -52,15 +55,15 @@ const Contact = () => {
                     className="block text-black text-[18px] mb-2"
                     htmlFor="tel"
                   >
-                    Telefon raqam
+                    {t.phone_label}
                   </label>
                   <input
                     className="shadow appearance-none focus:outline-none focus:shadow-outline border border-lightGrey rounded-2xl w-full h-[60px] text-[#9696A1] text-[18px] pl-6"
                     type="tel"
-                    placeholder="+998 (99) 885 30 10"
+                    placeholder={t.phone_placeholder}
                     required
                     pattern="^\+998\s?\(?\d{2}\)?\s?\d{3}\s?\d{2}\s?\d{2}$"
-                    title="Iltimos, to'g'ri formatda raqam kiriting (+998 (99) 123 45 67 formatida)"
+                    title={t.phone_pattern_title}
                     autoComplete="tel"
                   />
                 </div>
@@ -69,7 +72,7 @@ const Contact = () => {
                     className="required bg-black text-textWhite mt-[57px] w-full h-[60px] font-bold py-2 px-4 rounded-2xl focus:outline-none focus:shadow-outline"
                     type="submit"
                   >
-                    Yuborish
+                    {t.submit_button}
                   </button>
                 </div>
               </form>
