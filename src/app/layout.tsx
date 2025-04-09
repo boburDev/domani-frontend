@@ -15,17 +15,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html 
-    suppressHydrationWarning={true}
-    lang="en">
+    <html suppressHydrationWarning={true} lang="en">
       <head>
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </head>
       <body className="font-poppins">
         <LanguageProvider>
-          <Header />
-          {children}
-          <Footer />
+        <Header />
+        {children}
+        <Footer />
         </LanguageProvider>
       </body>
     </html>

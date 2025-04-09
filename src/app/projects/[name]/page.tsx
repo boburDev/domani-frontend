@@ -45,7 +45,8 @@ const Projects = () => {
                 <div className="relative w-[335px] h-[238px] lg:w-[546px] lg:h-[441px] rounded-xl overflow-hidden shadow-md">
                   <div className="w-full h-full">
                     <Image
-                      width="100"
+                      width={500}
+                      height={600}
                       src={`/images/${project.imgPath}`}
                       alt="Card"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -80,7 +81,8 @@ const Projects = () => {
                 >
                   <div className="w-full h-full">
                     <Image
-                      w-full
+                      width={500}
+                      height={600}
                       src={`/images/${project.imgPath}`}
                       alt="Card"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -115,7 +117,8 @@ const Projects = () => {
                 >
                   <div className="w-full h-full">
                     <Image
-                      w-full
+                      width={500}
+                      height={600}
                       src={`/images/${project.imgPath}`}
                       alt="Card"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
