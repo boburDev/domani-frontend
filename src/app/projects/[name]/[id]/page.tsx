@@ -5,10 +5,14 @@ import projectData from "@/data/projects.json";
 import Contact from "@/components/Contact";
 import { useLanguage } from "@/components/LanguageProvider";
 
+interface ProjectParams {
+  id: string;
+}
+
 export default async function ProjectDetails({
   params,
 }: {
-  params: { id: string };
+  params: ProjectParams;
 }) {
   const project = projectData.find((p) => p.id === Number(params.id));
 
