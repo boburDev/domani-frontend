@@ -9,7 +9,7 @@ import { useParams } from "next/navigation";
 import { useLanguage } from "@/components/LanguageProvider";
 
 const Projects = () => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
   const params = useParams();
 
   const projectData = ["non-residential", "low-rise", "multi-storey"].includes(
@@ -52,10 +52,10 @@ const Projects = () => {
                   <div className="absolute inset-0 group-hover:bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
                   <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
                     <p className="text-textWhite font-bold text-[24px] opacity-0 translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0">
-                      {project.name_uz}
+                      {project[`name_${language}`]}
                     </p>
                     <p className="text-[20px] text-iron opacity-0 translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0 mt-1">
-                      {project.location_uz}
+                      {project[`location_${language}`]}
                     </p>
                   </div>
                 </div>
@@ -86,10 +86,10 @@ const Projects = () => {
                   <div className="absolute inset-0 group-hover:bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
                   <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
                     <p className="text-textWhite font-bold text-[24px] opacity-0 translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0">
-                      {project.name_uz}
+                      {project[`name_${language}`]}
                     </p>
                     <p className="text-[20px] text-iron opacity-0 translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0 mt-1">
-                      {project.location_uz}
+                      {project[`location_${language}`]}
                     </p>
                   </div>
                 </div>
@@ -120,10 +120,10 @@ const Projects = () => {
                   <div className="absolute inset-0 group-hover:bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
                   <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
                     <p className="text-textWhite font-bold text-[24px] opacity-0 translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0">
-                      {project.name_uz}
+                      {project[`name_${language}`]}
                     </p>
                     <p className="text-[20px] text-iron opacity-0 translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0 mt-1">
-                      {project.location_uz}
+                      {project[`location_${language}`]}
                     </p>
                   </div>
                 </div>
@@ -137,8 +137,8 @@ const Projects = () => {
           {projectData.map((item) => (
             <Link href={`/projects/${item.id}`} key={item.id} className="group">
               <Card
-                name={item.name_uz}
-                location={item.location_uz}
+                name={item[`name_${language}`]}
+                location={item[`location_${language}`]}
                 img={item.imgPath}
                 id={item.id}
                 type={item.type}
