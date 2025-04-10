@@ -32,7 +32,7 @@ export default async function ProjectDetails({ params }: ProjectParams) {
     // Ma'lumotlar kelishi uchun simulyatsiya
     setTimeout(() => {
       setLoading(false);
-    }, 2000); // 3 soniya kutish
+    }, 3000); // 3 soniya kutish
   }, []);
 
   return (

@@ -7,6 +7,7 @@ import Image from "next/image";
 import { phoneHeader, phoneHeaderBlack } from "@/assets"; // images to be conditionally loaded
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "./LanguageProvider";
+import Spinner from "./Spinner";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // For controlling mobile menu
@@ -17,6 +18,14 @@ const Header = () => {
   const [isDark, setIsDark] = useState(false); // For dark/light theme
   const [logoSrc, setLogoSrc] = useState("/Logo.svg"); // For dynamic logo based on theme
   const [textColor, setTextColor] = useState("text-textWhite"); // Dynamic text color
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    // Ma'lumotlar kelishi uchun simulyatsiya
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000); // 3 soniya kutish
+  }, []);
 
   // Handle dark mode and logo color based on the current pathname
   useEffect(() => {
@@ -46,87 +55,90 @@ const Header = () => {
   }, []);
 
   return (
-    <>
-      <div
-        className={`absolute z-50 top-0 left-0 right-0 transition-all duration-300 font-poppins`}
-      >
+    <div>
+      {loading ? (
+        <Spinner />
+      ) : (
         <div
-          className={`pt-[25px] pb-5 ${
-            isDark ? "bg-transparent" : "bg-transparent"
-          } border-textWhite lg:pt-[82px] xxl:pl-[120px] xxl:pr-[109px]`}
+          className={`absolute z-50 top-0 left-0 right-0 transition-all duration-300 font-poppins`}
         >
-          <div className="container mx-auto px-5 md:px-0">
-            <div className="w-full flex lg:gap-3 gap-3 2xl:gap-[110px] justify-between items-center">
-              <Link
-                href="/"
-                className="xl:w-[230px] xl:h-[61px] w-[90px] h-[40px] md:w-[110px] md:h-[51px]"
-              >
-                <Image
-                  width={100}
-                  height={100}
-                  src={logoSrc}
-                  alt="logo"
-                  className="w-full h-full"
-                />
-              </Link>
-
-              {/* Desktop nav */}
-              <div className="hidden flex-1 lg:flex lg:gap-8 gap-3 lg:text-[20px] text-base font-medium lg:justify-between">
+          <div
+            className={`pt-[25px] pb-5 ${
+              isDark ? "bg-transparent" : "bg-transparent"
+            } border-textWhite lg:pt-[82px] xxl:pl-[120px] xxl:pr-[109px]`}
+          >
+            <div className="container mx-auto px-5 md:px-0">
+              <div className="w-full flex lg:gap-3 gap-4 2xl:gap-[110px] justify-between items-center">
                 <Link
                   href="/"
-                  className={`${textColor} relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] ${
-                    isDark
-                      ? "after:bg-textWhite"
-                      : "after:bg-textBlack font-poppins"
-                  } after:transition-all after:duration-200 hover:after:w-full`}
+                  className="xl:w-[230px] xl:h-[61px] w-[90px] h-[40px] md:w-[110px] md:h-[51px]"
                 >
-                  {t.home}
+                  <Image
+                    width={100}
+                    height={100}
+                    src={logoSrc}
+                    alt="logo"
+                    className="w-full h-full"
+                  />
                 </Link>
 
-                {/* Dropdown menu */}
-                <div
-                  ref={dropdownRef}
-                  className={`relative ${textColor} pb-[2px] cursor-pointer font-medium`}
-                >
-                  <div
-                    onClick={() => setIsOpen((prev) => !prev)}
-                    className="font-medium"
+                {/* Desktop nav */}
+                <div className="hidden  lg:flex gap-4 xl:gap-8 lg:text-[20px] text-base font-medium lg:justify-between">
+                  <Link
+                    href="/"
+                    className={`${textColor} relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] ${
+                      isDark
+                        ? "after:bg-textWhite"
+                        : "after:bg-textBlack font-poppins"
+                    } after:transition-all after:duration-200 hover:after:w-full`}
                   >
-                    {t.countert2}
+                    {t.home}
+                  </Link>
+
+                  {/* Dropdown menu */}
+                  <div
+                    ref={dropdownRef}
+                    className={`relative ${textColor} pb-[2px] cursor-pointer font-medium`}
+                  >
+                    <div
+                      onClick={() => setIsOpen((prev) => !prev)}
+                      className="font-medium"
+                    >
+                      {t.countert2}
+                    </div>
+
+                    {isOpen && (
+                      <div className="w-[158px] h-[180px] p-5 text-[14px] text-textBlack absolute bg-[#f0f0f0] font-semibold rounded-xl flex flex-col gap-[15px] mt-1 z-50">
+                        {[
+                          { href: "/projects/all", label: `${t.allProjects} ` },
+                          {
+                            href: "/projects/multi-storey",
+                            label: `${t.multiStorey} `,
+                          },
+                          {
+                            href: "/projects/low-rise",
+                            label: `${t.lowRise} `,
+                          },
+                          {
+                            href: "/projects/non-residential",
+                            label: `${t.nonResidential} `,
+                          },
+                        ].map((link) => (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            className="relative w-fit group"
+                          >
+                            <span className="border-b-2 border-transparent group-hover:border-textBlack transition-all duration-300 font-semibold text-[14px]">
+                              {link.label}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
-                  {isOpen && (
-                    <div className="w-[158px] h-[180px] p-5 text-[14px] text-textBlack absolute bg-[#f0f0f0] font-semibold rounded-xl flex flex-col gap-[15px] mt-1 z-50">
-                      {[
-                        { href: "/projects/all", label: `${t.allProjects} ` },
-                        {
-                          href: "/projects/multi-storey",
-                          label: `${t.multiStorey} `,
-                        },
-                        {
-                          href: "/projects/low-rise",
-                          label: `${t.lowRise} `,
-                        },
-                        {
-                          href: "/projects/non-residential",
-                          label: `${t.nonResidential} `,
-                        },
-                      ].map((link) => (
-                        <Link
-                          key={link.href}
-                          href={link.href}
-                          className="relative w-fit group"
-                        >
-                          <span className="border-b-2 border-transparent group-hover:border-textBlack transition-all duration-300 font-semibold text-[14px]">
-                            {link.label}
-                          </span>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                {/* <Link
+                  {/* <Link
                   href="/"
                   className={`${textColor} relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] ${
                     isDark ? "after:bg-textWhite" : "after:bg-textBlack"
@@ -135,180 +147,181 @@ const Header = () => {
                   {t.articles}
                 </Link> */}
 
-                <Link
-                  href="/about"
-                  className={`${textColor} relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] ${
-                    isDark ? "after:bg-textWhite" : "after:bg-textBlack"
-                  } after:transition-all after:duration-200 hover:after:w-full`}
-                >
-                  {t.about}
-                </Link>
+                  <Link
+                    href="/about"
+                    className={`${textColor} relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] ${
+                      isDark ? "after:bg-textWhite" : "after:bg-textBlack"
+                    } after:transition-all after:duration-200 hover:after:w-full`}
+                  >
+                    {t.about}
+                  </Link>
 
-                <Link
-                  href="/social"
-                  className={`${textColor} relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] ${
-                    isDark ? "after:bg-textWhite" : "after:bg-textBlack"
-                  } after:transition-all after:duration-200 hover:after:w-full`}
-                >
-                  {t.social}
-                </Link>
-              </div>
+                  <Link
+                    href="/social"
+                    className={`${textColor} relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] ${
+                      isDark ? "after:bg-textWhite" : "after:bg-textBlack"
+                    } after:transition-all after:duration-200 hover:after:w-full`}
+                  >
+                    {t.social}
+                  </Link>
+                </div>
 
-              {/* Language switch + phone */}
-              <div className="hidden lg:flex items-center xl:gap-[15px] gap-1">
-                <div className="flex xl:gap-3.5 gap-2 justify-between items-center ">
-                  <button
-                    onClick={() => toggleLanguage("uz")}
-                    className={
-                      language === "uz"
-                        ? `text-${
-                            isDark ? "textWhite" : "textBlack"
-                          } font-semibold xl:text-[20px] text-base`
-                        : `text-${
-                            isDark ? "lightGrey" : "textBlack"
-                          } xl:text-[20px] text-base`
-                    }
+                {/* Language switch + phone */}
+                <div className="hidden lg:flex items-center xl:gap-[15px] gap-1">
+                  <div className="flex xl:gap-3.5 gap-2 justify-between items-center ">
+                    <button
+                      onClick={() => toggleLanguage("uz")}
+                      className={
+                        language === "uz"
+                          ? `text-${
+                              isDark ? "textWhite" : "textBlack"
+                            } font-semibold xl:text-[20px] text-base`
+                          : `text-${
+                              isDark ? "lightGrey" : "textBlack"
+                            } xl:text-[20px] text-base`
+                      }
+                    >
+                      UZ
+                    </button>
+                    <button
+                      onClick={() => toggleLanguage("en")}
+                      className={
+                        language === "en"
+                          ? `text-${
+                              isDark ? "textWhite" : "textBlack"
+                            } font-semibold xl:text-[20px] text-base`
+                          : `text-${
+                              isDark ? "lightGrey" : "textBlack"
+                            } xl:text-[20px] text-base`
+                      }
+                    >
+                      EN
+                    </button>
+                    <button
+                      onClick={() => toggleLanguage("ru")}
+                      className={
+                        language === "ru"
+                          ? `text-${
+                              isDark ? "textWhite" : "textBlack"
+                            } font-semibold xl:text-[20px] text-base`
+                          : `text-${
+                              isDark ? "lightGrey" : "textBlack"
+                            } xl:text-[20px] text-base`
+                      }
+                    >
+                      РУ
+                    </button>
+                  </div>
+                  <Link
+                    href="tel:+998999443030"
+                    className="flex lg:gap-2 gap-1 items-center"
                   >
-                    UZ
-                  </button>
-                  <button
-                    onClick={() => toggleLanguage("en")}
-                    className={
-                      language === "en"
-                        ? `text-${
-                            isDark ? "textWhite" : "textBlack"
-                          } font-semibold xl:text-[20px] text-base`
-                        : `text-${
-                            isDark ? "lightGrey" : "textBlack"
-                          } xl:text-[20px] text-base`
-                    }
-                  >
-                    EN
-                  </button>
-                  <button
-                    onClick={() => toggleLanguage("ru")}
-                    className={
-                      language === "ru"
-                        ? `text-${
-                            isDark ? "textWhite" : "textBlack"
-                          } font-semibold xl:text-[20px] text-base`
-                        : `text-${
-                            isDark ? "lightGrey" : "textBlack"
-                          } xl:text-[20px] text-base`
-                    }
-                  >
-                    РУ
+                    <Image
+                      src={!isDark ? phoneHeaderBlack : phoneHeader}
+                      alt="img"
+                      className="w-[22px] h-[22px] xl:w-[26px] xl:h-[26px]"
+                    />
+                    <p
+                      className={`${
+                        isDark ? "text-white" : "text-textBlack"
+                      } xl:text-xl text-base font-bold`}
+                    >
+                      {t.phone}
+                    </p>
+                  </Link>
+                </div>
+
+                {/* Hamburger button */}
+                <div className="lg:hidden flex items-center">
+                  <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                    {isMenuOpen ? (
+                      <X size={32} color={isDark ? "white" : "black"} />
+                    ) : (
+                      <Menu size={32} color={isDark ? "white" : "black"} />
+                    )}
                   </button>
                 </div>
-                <Link
-                  href="tel:+998999443030"
-                  className="flex lg:gap-2 gap-1 items-center"
-                >
-                  <Image
-                    src={!isDark ? phoneHeaderBlack : phoneHeader}
-                    alt="img"
-                    className="w-[22px] h-[22px] xl:w-[26px] xl:h-[26px]"
-                  />
-                  <p
-                    className={`${
-                      isDark ? "text-white" : "text-textBlack"
-                    } xl:text-xl text-base font-bold`}
-                  >
-                    {t.phone}
-                  </p>
-                </Link>
               </div>
+            </div>
+          </div>
 
-              {/* Hamburger button */}
-              <div className="lg:hidden flex items-center">
-                <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                  {isMenuOpen ? (
-                    <X size={32} color={isDark ? "white" : "black"} />
-                  ) : (
-                    <Menu size={32} color={isDark ? "white" : "black"} />
-                  )}
+          {/* Mobile menu */}
+          {isMenuOpen && (
+            <div className="lg:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 z-40 flex flex-col pt-8 items-center text-textWhite text-xl font-semibold gap-y-4">
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="absolute top-6 right-6 z-50"
+              >
+                <X size={32} color="white" />
+              </button>
+
+              <Link
+                href="/"
+                className="pt-12"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t.home}
+              </Link>
+              <Link href="/projects/all" onClick={() => setIsMenuOpen(false)}>
+                {t.allProjects}
+              </Link>
+              <Link
+                href="/projects/multi-storey"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t.multiStorey}
+              </Link>
+              <Link
+                href="/projects/low-rise"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t.lowRise}
+              </Link>
+              <Link
+                href="/projects/non-residential"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t.nonResidential}
+              </Link>
+              <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                {t.articles}
+              </Link>
+              <Link href="/about" onClick={() => setIsMenuOpen(false)}>
+                {t.about}
+              </Link>
+              <Link href="/social" onClick={() => setIsMenuOpen(false)}>
+                {t.social}
+              </Link>
+
+              <div className="flex gap-4 pt-6">
+                <button
+                  onClick={() => toggleLanguage("uz")}
+                  className="text-white"
+                >
+                  UZ
+                </button>
+                <button
+                  onClick={() => toggleLanguage("en")}
+                  className="text-lightGrey"
+                >
+                  EN
+                </button>
+                <button
+                  onClick={() => toggleLanguage("ru")}
+                  className="text-lightGrey"
+                >
+                  РУ
                 </button>
               </div>
+              <div className="flex gap-2 items-center pt-4">
+                <Image src={phoneHeader} alt="img" />
+                <p className="text-white font-bold text-lg">{t.phone}</p>
+              </div>
             </div>
-          </div>
+          )}
         </div>
-
-        {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="lg:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 z-40 flex flex-col pt-8 items-center text-textWhite text-xl font-semibold gap-y-4">
-            <button
-              onClick={() => setIsMenuOpen(false)}
-              className="absolute top-6 right-6 z-50"
-            >
-              <X size={32} color="white" />
-            </button>
-
-            <Link
-              href="/"
-              className="pt-12"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t.home}
-            </Link>
-            <Link href="/projects/all" onClick={() => setIsMenuOpen(false)}>
-              {t.allProjects}
-            </Link>
-            <Link
-              href="/projects/multi-storey"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t.multiStorey}
-            </Link>
-            <Link
-              href="/projects/low-rise"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t.lowRise}
-            </Link>
-            <Link
-              href="/projects/non-residential"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t.nonResidential}
-            </Link>
-            <Link href="/" onClick={() => setIsMenuOpen(false)}>
-              {t.articles}
-            </Link>
-            <Link href="/about" onClick={() => setIsMenuOpen(false)}>
-              {t.about}
-            </Link>
-            <Link href="/social" onClick={() => setIsMenuOpen(false)}>
-              {t.social}
-            </Link>
-
-            <div className="flex gap-4 pt-6">
-              <button
-                onClick={() => toggleLanguage("uz")}
-                className="text-white"
-              >
-                UZ
-              </button>
-              <button
-                onClick={() => toggleLanguage("en")}
-                className="text-lightGrey"
-              >
-                EN
-              </button>
-              <button
-                onClick={() => toggleLanguage("ru")}
-                className="text-lightGrey"
-              >
-                РУ
-              </button>
-            </div>
-            <div className="flex gap-2 items-center pt-4">
-              <Image src={phoneHeader} alt="img" />
-              <p className="text-white font-bold text-lg">{t.phone}</p>
-            </div>
-          </div>
-        )}
-      </div>
-    </>
+      )}
+    </div>
   );
 };
 

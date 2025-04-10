@@ -20,7 +20,7 @@ const Projects = () => {
     // Ma'lumotlar kelishi uchun simulyatsiya
     setTimeout(() => {
       setLoading(false);
-    }, 2000); // 3 soniya kutish
+    }, 3000); // 3 soniya kutish
   }, []);
 
   const projectData = ["non-residential", "low-rise", "multi-storey"].includes(
@@ -153,7 +153,7 @@ const Projects = () => {
               </div>
 
               {/* Row 3 */}
-              <div className="flex justify-between items-end gap-[30px] -mt-[170px]">
+              <div className="flex justify-between items-end gap-[30px] ">
                 {projectData.slice(5, 8).map((project, index) => (
                   <Link
                     href={`/projects/${project.type}/${project.id}`}
@@ -163,7 +163,7 @@ const Projects = () => {
                     <div
                       className={`relative ${
                         index === 0
-                          ? "max-w-[546px] h-[611px]"
+                          ? "max-w-[546px] h-[441px]"
                           : "max-w-[546px] h-[441px]"
                       } rounded-xl overflow-hidden shadow-md`}
                     >

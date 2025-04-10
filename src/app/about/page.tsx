@@ -1,5 +1,5 @@
 "use client";
-import { abouThird, aboutSecond, archBereau } from "@/assets";
+import { aboutBuilding, abouThird, aboutSecond, archBereau } from "@/assets";
 import Contact from "@/components/Contact";
 import { useLanguage } from "@/components/LanguageProvider";
 import Team from "@/components/Staff";
@@ -66,9 +66,9 @@ const About = () => {
               </div>
               <div className="pt-10">
                 <Image
-                  src={abouThird}
+                  src={aboutBuilding}
                   alt="img"
-                  className="w-[793px] h-[full] lg:h-[509px]"
+                  className="w-[793px] h-[full] lg:h-[509px] rounded-xl object-cover"
                 />
               </div>
             </div>

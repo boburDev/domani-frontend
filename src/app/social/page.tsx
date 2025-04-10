@@ -14,7 +14,7 @@ const Social = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000); // 3 soniya kutish
+    }, 3000); // 3 soniya kutish
   }, []);
 
   return (

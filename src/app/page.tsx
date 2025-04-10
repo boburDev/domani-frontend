@@ -83,7 +83,7 @@ const Home = () => {
                   <Image
                     src={iskanderPartner}
                     alt="img"
-                    className="w-[112px] lg:w-[393px]  opacity-20 bg-lightGrey hover:opacity-100 md:hover:scale-105 transition-transform duration-300"
+                    className="w-[112px] lg:w-[393px]  md:opacity-20 bg-lightGrey md:hover:opacity-100 md:hover:scale-105 transition-transform duration-300"
                   />
                 </Link>
 
@@ -91,7 +91,7 @@ const Home = () => {
                   <Image
                     src={osiyoPartner}
                     alt="img"
-                    className="w-[67px] h-[35px] lg:w-[251px] lg:h-[129px] opacity-20 bg-lightGrey hover:opacity-100 md:hover:scale-105 transition-transform duration-300"
+                    className="w-[67px] h-[35px] lg:w-[251px] lg:h-[129px] md:opacity-20 bg-lightGrey md:hover:opacity-100 md:hover:scale-105 transition-transform duration-300"
                   />
                 </Link>
 
@@ -99,7 +99,7 @@ const Home = () => {
                   <Image
                     src={muradB_partner}
                     alt="img"
-                    className="duration-300 opacity-20 bg-lightGrey hover:opacity-100 md:hover:scale-105 transition-transform w-[54px] h-[54px] lg:w-[165px] lg:h-[165px]"
+                    className="duration-300 md:opacity-20 bg-lightGrey md:hover:opacity-100 md:hover:scale-105 transition-transform w-[54px] h-[54px] lg:w-[165px] lg:h-[165px]"
                   />
                 </Link>
 
@@ -107,7 +107,7 @@ const Home = () => {
                   <Image
                     src={insidePartner}
                     alt="img"
-                    className="w-[74px] h-[44px] lg:w-[205px] lg:h-[120px] opacity-20 bg-lightGrey hover:opacity-100 md:hover:scale-105 transition-transform duration-300"
+                    className="w-[74px] h-[44px] lg:w-[205px] lg:h-[120px] md:opacity-20 bg-lightGrey md:hover:opacity-100 md:hover:scale-105 transition-transform duration-300"
                   />
                 </Link>
               </div>
@@ -281,7 +281,7 @@ const Home = () => {
                   <p className="text-[16px] md:text-[26px] font-semibold text-black pt-5 ">
                     {t.principle1_title}
                   </p>
-                  <p className="pt-5 text-[14px] md:text-[26px] text-textBlack max-w-[665px]">
+                  <p className="pt-5 text-[14px] md:text-[26px] text-textBlack max-w-[545px] 2xl:max-w-[665px]">
                     {t.principle1_about}
                   </p>
                 </div>
@@ -292,7 +292,7 @@ const Home = () => {
                   <p className="text-[16px] md:text-[26px] font-semibold text-black pt-5 ">
                     {t.principle2_title}
                   </p>
-                  <p className="pt-5 text-[14px] md:text-[26px] text-textBlack max-w-[665px]">
+                  <p className="pt-5 text-[14px] md:text-[26px] text-textBlack  max-w-[545px] 2xl:max-w-[665px]">
                     {t.show4}
                   </p>
                 </div>
@@ -303,7 +303,7 @@ const Home = () => {
                   <p className="text-[16px] md:text-[26px] font-semibold text-black pt-5 ">
                     {t.principle3_title}
                   </p>
-                  <p className="pt-5 text-[14px] md:text-[26px] text-textBlack max-w-[665px]">
+                  <p className="pt-5 text-[14px] md:text-[26px] text-textBlack max-w-[545px] 2xl:max-w-[665px]">
                     {t.show5}
                   </p>
                 </div>
@@ -314,7 +314,7 @@ const Home = () => {
                   <p className="text-[16px] md:text-[26px] font-semibold text-black pt-5 ">
                     {t.principle4_title}
                   </p>
-                  <p className="pt-5 text-[14px] md:text-[26px] text-textBlack max-w-[665px]">
+                  <p className="pt-5 text-[14px] md:text-[26px] text-textBlack max-w-[545px] 2xl:max-w-[665px]">
                     {t.show6}
                   </p>
                 </div>
@@ -325,7 +325,7 @@ const Home = () => {
                   <p className="text-[16px] md:text-[26px] font-semibold text-black pt-5 ">
                     {t.principle5_title}
                   </p>
-                  <p className="pt-5 text-[14px] md:text-[26px] text-textBlack max-w-[665px]">
+                  <p className="pt-5 text-[14px] md:text-[26px] text-textBlack max-w-[545px] 2xl:max-w-[665px]">
                     {t.show7}
                   </p>
                 </div>
