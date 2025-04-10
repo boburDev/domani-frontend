@@ -6,7 +6,6 @@ import React from "react";
 import Link from "next/link";
 import { useLanguage } from "@/components/LanguageProvider";
 
-
 const Social = () => {
   const { t } = useLanguage();
   return (
@@ -21,6 +20,7 @@ const Social = () => {
           </div>
           <div className="z-50 absolute pt-[70px] xl:pt-[100px] flex gap-4 sm:gap-6 md:gap-12 left-1/2 -translate-x-1/2  lg:left-1/3 xxl:left-2/4">
             <Link
+              target="_blank"
               href="https://www.instagram.com/"
               className="w-[120px] h-[120px] lg:w-[220px] lg:h-[200px] flex flex-col items-center justify-center gap-4 rounded-xl text-textWhite backdrop-blur-lg bg-textWhite/30 transition-transform transform hover:scale-110 hover:-translate-y- duration-500"
             >
@@ -34,6 +34,7 @@ const Social = () => {
               </p>
             </Link>
             <Link
+              target="_blank"
               href="https://t.me/"
               className="w-[120px] h-[120px] lg:w-[220px] lg:h-[200px] flex flex-col items-center justify-center gap-4 rounded-xl text-textWhite backdrop-blur-lg bg-textWhite/30 transition-transform transform hover:scale-110 hover:-translate-y-2 duration-500"
             >
@@ -47,6 +48,7 @@ const Social = () => {
               </p>
             </Link>
             <Link
+              target="_blank"
               href="https://www.youtube.com/"
               className="w-[120px] h-[120px] lg:w-[220px] lg:h-[200px] flex flex-col items-center justify-center gap-4 rounded-xl text-textWhite backdrop-blur-lg bg-textWhite/30 transition-transform transform hover:scale-110 hover:-translate-y-2 duration-500"
             >

@@ -97,10 +97,14 @@ const Footer = () => {
                 </Link>
               </div>
               <div className="flex items-center gap-5 text-lightGrey">
-                <Link href="https://www.google.com/maps?q=Mirzo+Ulug'bek+tumani,+Mirzo+Ulugbek+shoh+ko'chasi,+Stair+Academy+binosi+2-qavat">
+                <Link
+                  target="_blank"
+                  href="https://www.google.com/maps?q=Mirzo+Ulug'bek+tumani,+Mirzo+Ulugbek+shoh+ko'chasi,+Stair+Academy+binosi+2-qavat"
+                >
                   <Image src={locationIcon} alt="image" className="w-8 h-8" />
                 </Link>
                 <Link
+                  target="_blank"
                   href="https://www.google.com/maps?q=Mirzo+Ulug'bek+tumani,+Mirzo+Ulugbek+shoh+ko'chasi,+Stair+Academy+binosi+2-qavat"
                   className="text-5 max-w-[202px] md:max-w-[370px] "
                 >
@@ -139,7 +143,8 @@ const Footer = () => {
             {t.fpowered_by}
             <Link
               href="https://nuvex.uz/"
-              className="relative pb-1 after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[2px] after:bg-transparent hover:after:bg-textWhite"
+              target="_blank"
+              className="relative pb-1 after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[2px] after:bg-transparent hover:after:bg-textWhite underline underline-offset-4"
             >
               {t.fcompany_name}
             </Link>

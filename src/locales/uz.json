@@ -94,5 +94,6 @@
   "servicemultiAll": " Ko’p qavatli ",
   "serviceLowriseAll": " Kam qavatli ",
   "serviceNonresidentialAll": " Noturarjoy",
-  "allName": " Barcha"
+  "allName": " Barcha",
+  "errorContact": "Bo'sh bo'lishi mumkin emas"
 }

@@ -92,5 +92,6 @@
   "servicemultiAll": " Multi-storey ",
   "serviceLowriseAll": " Low-Rise ",
   "serviceNonresidentialAll": " Non-Residential",
-  "allName": " All"
+  "allName": " All",
+  "errorContact": "Field cannot be empty"
 }

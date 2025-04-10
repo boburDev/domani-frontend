@@ -52,11 +52,11 @@ const Header = () => {
       >
         <div
           className={`pt-[25px] pb-5 ${
-            isDark ? "bg-transparent" : "bg-white"
+            isDark ? "bg-transparent" : "bg-transparent"
           } border-textWhite lg:pt-[82px] xxl:pl-[120px] xxl:pr-[109px]`}
         >
           <div className="container mx-auto px-5">
-            <div className="w-full flex lg:gap-3 gap-3 2xl:gap-12 justify-between items-center">
+            <div className="w-full flex lg:gap-3 gap-3 2xl:gap-[110px] justify-between items-center">
               <Link
                 href="/"
                 className="xl:w-[230px] xl:h-[61px] w-[90px] h-[40px] md:w-[110px] md:h-[51px]"
@@ -71,7 +71,7 @@ const Header = () => {
               </Link>
 
               {/* Desktop nav */}
-              <div className="hidden flex-1 lg:flex lg:gap-6 gap-3 lg:text-[20px] text-base font-medium lg:justify-between">
+              <div className="hidden flex-1 lg:flex lg:gap-8 gap-3 lg:text-[20px] text-base font-medium lg:justify-between">
                 <Link
                   href="/"
                   className={`${textColor} relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] ${
@@ -150,7 +150,7 @@ const Header = () => {
               </div>
 
               {/* Language switch + phone */}
-              <div className="hidden lg:flex items-center xl:gap-6 gap-3">
+              <div className="hidden lg:flex items-center xl:gap-[15px] gap-1">
                 <div className="flex xl:gap-3.5 gap-2 justify-between items-center ">
                   <button
                     onClick={() => toggleLanguage("uz")}
