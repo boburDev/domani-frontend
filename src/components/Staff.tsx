@@ -16,12 +16,12 @@ const Team = () => {
           display: "flex",
           // justifyContent: "start",
         }}
-        className="flex flex-wrap justify-center xl:justify-start gap-8 pt-[30px] md:pt-[73px] lg:gap-[62px]"
+        className="flex flex-wrap justify-center xl:justify-start gap-2 pt-[30px] md:pt-[73px] lg:gap-[45px]"
       >
         {staff.map((person, index) => (
           <div
             key={index}
-            className="w-[290px] h-[427px] lg:w-[378px] lg:h-[542px] relative rounded-xl overflow-hidden group shadow-md"
+            className="w-[290px] h-[427px] lg:w-[358px] lg:h-[542px] relative rounded-xl overflow-hidden group shadow-md"
           >
             {/* Image */}
             <Image
