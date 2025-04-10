@@ -7,11 +7,17 @@ const Team = () => {
   const { language } = useLanguage();
 
   return (
-    <div className="pt-[40px] md:pt-[100px] lg:pt-[230px]">
+    <div className="pt-[40px] md:pt-[100px] lg:pt-[230px] ">
       <p className="text-black font-semibold text-[18px] md:text-[32px] lg:text-[48px] px-[9px]">
         Bizning jamoa
       </p>
-      <div className="flex flex-wrap justify-center md:grid md:grid-cols-2 xxl:grid-cols-3 2xl:grid-cols-4 gap-8 pt-[30px] md:pt-[73px] lg:gap-[62px]">
+      <div
+        style={{
+          display: "flex",
+          // justifyContent: "start",
+        }}
+        className="flex flex-wrap justify-center xl:justify-start gap-8 pt-[30px] md:pt-[73px] lg:gap-[62px]"
+      >
         {staff.map((person, index) => (
           <div
             key={index}

@@ -44,18 +44,20 @@ const Counter = () => {
   }, []);
 
   return (
-    <div className="w-full flex flex-wrap md:flex-nowrap justify-between gap-y-10">
+    <div className="w-full flex flex-wrap lg:flex-nowrap justify-between gap-y-10">
       {stats.map((stat, index) => (
         <div
           key={stat.id}
-          className="w-1/2 md:w-auto border-l-[3px] border-gainsboro pl-6 md:pl-12 flex flex-col items-start"
+          className="w-1/2 lg:w-auto border-l-[2px] md:border-l-[3px] border-gainsboro pl-6 lg:pl-12 flex flex-col items-start"
         >
           <div className="w-[130px]">
             <p className="text-black font-semibold text-[24px] md:text-[48px] lg:text-[64px] leading-none">
-              {counts[index]}+
+              {counts[index]}
+              {index < 2 && "+"}{" "}
+              {/* Faqat birinchi ikkita statistikada "+" qo'yiladi */}
             </p>
           </div>
-          <p className="text-black font-medium text-[14px] md:text-[22px] pt-6">
+          <p className="text-black font-medium text-[14px] lg:text-[22px] pt-6">
             {stat.label}
           </p>
         </div>

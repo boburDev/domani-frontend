@@ -10,11 +10,9 @@ type CardProps = {
   images?: string[];
 };
 
-const Card = ({  name, location, img }: CardProps) => {
-  console.log(img);
-  
+const Card = ({ name, location, img }: CardProps) => {
   return (
-    <div className="relative h-[238px] lg:h-[441px] rounded-xl overflow-hidden group shadow-md">
+    <div className="relative w-[335px] lg:w-[546px] h-[238px] lg:h-[441px] rounded-xl overflow-hidden group shadow-md">
       <div className="w-full h-full group cursor-pointer">
         <Image
           src={`/images${img}`}

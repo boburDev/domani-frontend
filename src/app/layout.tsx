@@ -21,9 +21,9 @@ export default function RootLayout({
       </head>
       <body className="font-poppins">
         <LanguageProvider>
-        <Header />
-        {children}
-        <Footer />
+          <Header />
+          {children}
+          <Footer />
         </LanguageProvider>
       </body>
     </html>

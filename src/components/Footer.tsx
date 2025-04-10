@@ -45,43 +45,49 @@ const Footer = () => {
             <div className="flex flex-col gap-5">
               <Link
                 href="/"
-                className="text-lightGrey shadow-lg hover:underline hover:decoration-2 hover:underline-offset-8 duration-200"
+                className="text-lightGrey shadow-lg  text-[14px] md:text-[20px] hover:underline hover:decoration-2 hover:underline-offset-8 duration-200"
               >
                 {t.fhome}
               </Link>
 
               <Link
                 href="/projects"
-                className="text-lightGrey shadow-lg hover:underline hover:decoration-2  hover:underline-offset-8 duration-200"
+                className="text-lightGrey shadow-lg   text-[14px] md:text-[20px] hover:underline hover:decoration-2  hover:underline-offset-8 duration-200"
               >
                 {t.fprojects}
               </Link>
               <Link
                 href="/"
-                className="text-lightGrey shadow-lg hover:underline hover:decoration-2  hover:underline-offset-8 duration-200"
+                className="text-lightGrey shadow-lg   text-[14px] md:text-[20px] hover:underline hover:decoration-2  hover:underline-offset-8 duration-200"
               >
                 {t.farticles}
               </Link>
               <Link
                 href="/about"
-                className="text-lightGrey shadow-lg hover:underline hover:decoration-2 hover:underline-offset-8 duration-200"
+                className="text-lightGrey shadow-lg  text-[14px] md:text-[20px] hover:underline hover:decoration-2 hover:underline-offset-8 duration-200"
               >
                 {t.fabout}
               </Link>
               <Link
                 href="/social"
-                className="text-lightGrey shadow-lg hover:underline hover:decoration-2  hover:underline-offset-8 duration-200"
+                className="text-lightGrey shadow-lg   text-[14px] md:text-[20px] hover:underline hover:decoration-2  hover:underline-offset-8 duration-200"
               >
                 {t.fsocial_network}
               </Link>
             </div>
             <div className="flex flex-col gap-5">
               <div className="flex items-center gap-5 text-lightGrey">
-                <Link href="tel:+998999443030">
+                <Link
+                  className="  text-[14px] md:text-[20px]"
+                  href="tel:+998999443030"
+                >
                   <Image src={phoneIcon} alt="image" className="w-8 h-8" />
                 </Link>
 
-                <Link href="tel:+998999443030" className="text-5">
+                <Link
+                  href="tel:+998999443030"
+                  className="text-[14px] md:text-[20px]"
+                >
                   {t.fphone}
                 </Link>
               </div>
@@ -91,13 +97,14 @@ const Footer = () => {
                 </Link>
                 <Link
                   href="mailto:domaniarchitect@gmail.com"
-                  className="text-5"
+                  className="  text-[14px] md:text-[20px]"
                 >
                   {t.femail}
                 </Link>
               </div>
               <div className="flex items-center gap-5 text-lightGrey">
                 <Link
+                  className="  text-[14px] md:text-[20px]"
                   target="_blank"
                   href="https://www.google.com/maps?q=Mirzo+Ulug'bek+tumani,+Mirzo+Ulugbek+shoh+ko'chasi,+Stair+Academy+binosi+2-qavat"
                 >
@@ -106,7 +113,7 @@ const Footer = () => {
                 <Link
                   target="_blank"
                   href="https://www.google.com/maps?q=Mirzo+Ulug'bek+tumani,+Mirzo+Ulugbek+shoh+ko'chasi,+Stair+Academy+binosi+2-qavat"
-                  className="text-5 max-w-[202px] md:max-w-[370px] "
+                  className="text-5 max-w-[202px] md:max-w-[370px]  text-[14px] md:text-[20px]"
                 >
                   {t.faddress}
                 </Link>

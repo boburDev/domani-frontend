@@ -48,14 +48,14 @@ const Header = () => {
   return (
     <>
       <div
-        className={`absolute z-50 top-0 left-0 right-0 transition-all duration-300`}
+        className={`absolute z-50 top-0 left-0 right-0 transition-all duration-300 font-poppins`}
       >
         <div
           className={`pt-[25px] pb-5 ${
             isDark ? "bg-transparent" : "bg-transparent"
           } border-textWhite lg:pt-[82px] xxl:pl-[120px] xxl:pr-[109px]`}
         >
-          <div className="container mx-auto px-5">
+          <div className="container mx-auto px-5 md:px-0">
             <div className="w-full flex lg:gap-3 gap-3 2xl:gap-[110px] justify-between items-center">
               <Link
                 href="/"
@@ -75,7 +75,9 @@ const Header = () => {
                 <Link
                   href="/"
                   className={`${textColor} relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] ${
-                    isDark ? "after:bg-textWhite" : "after:bg-textBlack"
+                    isDark
+                      ? "after:bg-textWhite"
+                      : "after:bg-textBlack font-poppins"
                   } after:transition-all after:duration-200 hover:after:w-full`}
                 >
                   {t.home}
@@ -101,7 +103,10 @@ const Header = () => {
                           href: "/projects/multi-storey",
                           label: `${t.multiStorey} `,
                         },
-                        { href: "/projects/low-rise", label: `${t.lowRise} ` },
+                        {
+                          href: "/projects/low-rise",
+                          label: `${t.lowRise} `,
+                        },
                         {
                           href: "/projects/non-residential",
                           label: `${t.nonResidential} `,
@@ -121,14 +126,14 @@ const Header = () => {
                   )}
                 </div>
 
-                <Link
+                {/* <Link
                   href="/"
                   className={`${textColor} relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] ${
                     isDark ? "after:bg-textWhite" : "after:bg-textBlack"
                   } after:transition-all after:duration-200 hover:after:w-full`}
                 >
                   {t.articles}
-                </Link>
+                </Link> */}
 
                 <Link
                   href="/about"
@@ -297,7 +302,7 @@ const Header = () => {
               </button>
             </div>
             <div className="flex gap-2 items-center pt-4">
-              <Image src={isDark ? phoneHeaderBlack : phoneHeader} alt="img" />
+              <Image src={phoneHeader} alt="img" />
               <p className="text-white font-bold text-lg">{t.phone}</p>
             </div>
           </div>

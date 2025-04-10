@@ -1,8 +1,11 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L, { LatLngExpression } from "leaflet";
 
+// Marker ikonkasi
 const markerIcon = new L.Icon({
   iconUrl:
     "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png",
@@ -27,7 +30,7 @@ const locations = [
   { lat: 38.861, lng: 71.2761, label: "Tajikistan" },
 ];
 
-const center: LatLngExpression = [20, 0];
+const center: LatLngExpression = [41.2995, 69.2401]; // O‘zbekiston markazi (Toshkent)
 
 const WorldMap = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
@@ -36,33 +39,37 @@ const WorldMap = () => {
     setMapLoaded(true);
   }, []);
 
-  // Wheel hodisasi faqat Ctrl + Scroll bosilganda zoom qilish uchun
- 
-
   if (!mapLoaded) return null;
 
   return (
-    <MapContainer
-      center={center}
-      style={{ height: "80%", width: "80%" }}
-      className="relative z-0"
-      minZoom={2} // Minimal zoom darajasi
-      maxZoom={10} // Maksimal zoom darajasi
-      dragging={false} // Xarita ustida drag qilishni bloklash
-      scrollWheelZoom={false} // Scroll orqali zoom qilishni bloklash
-      zoomControl={true}
-    >
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      />
-
-      {locations.map((loc, index) => (
-        <Marker key={index} position={[loc.lat, loc.lng]} icon={markerIcon}>
-          <Popup>{loc.label}</Popup>
-        </Marker>
-      ))}
-    </MapContainer>
+    <div className="w-full max-h-[728px] flex justify-center items-center">
+      <MapContainer
+        center={center}
+        zoom={2}
+        className="relative z-0 h-full w-full md:w-[90%] md:h-[80%]" // 👈 Bu yerga e'tibor
+        style={{ height: "100%" }}
+        minZoom={2}
+        maxZoom={10}
+        dragging={false}
+        scrollWheelZoom={false}
+        zoomControl={true}
+        maxBounds={L.latLngBounds([
+          [-60, -180],
+          [85, 180],
+        ])} // Osiyo va atrofidagi qit'alar markazini saqlash
+        maxBoundsViscosity={1.0} // Xarita chegaralaridan chiqmasligi uchun
+      >
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        />
+        {locations.map((loc, index) => (
+          <Marker key={index} position={[loc.lat, loc.lng]} icon={markerIcon}>
+            <Popup>{loc.label}</Popup>
+          </Marker>
+        ))}
+      </MapContainer>
+    </div>
   );
 };
 
