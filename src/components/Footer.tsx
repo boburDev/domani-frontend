@@ -139,21 +139,21 @@ const Footer = () => {
 
                   <div className="flex gap-4">
                     <Link
-                      href="https://t.me/"
+                      href="https://t.me/Domani_architects"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <Image src={telegram} alt="Telegram" />
                     </Link>
                     <Link
-                      href="https://www.youtube.com/"
+                      href="https://www.youtube.com/@domaniarchitects8449"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <Image src={youtube} alt="YouTube" />
                     </Link>
                     <Link
-                      href="https://www.instagram.com/"
+                      href="https://www.instagram.com/domani_architects/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

@@ -42,8 +42,7 @@ const Projects = () => {
         <div>
           <div className="container mx-auto pt-[100px] md:pt-[150px] lg:pt-[262px]">
             <p className="text-black px-5 font-semibold text-18 sm:text-[28px] lg:text-[48px]">
-              {projectsNames[params.name as keyof typeof projectsNames] ||
-                "Noma’lum"}{" "}
+              {projectsNames[params.name as keyof typeof projectsNames] || ""}{" "}
               {t.theName}
             </p>
 

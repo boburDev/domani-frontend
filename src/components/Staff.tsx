@@ -4,19 +4,18 @@ import staff from "../data/staff.json";
 import { useLanguage } from "./LanguageProvider";
 
 const Team = () => {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <div className="pt-[40px] md:pt-[100px] lg:pt-[230px] ">
       <p className="text-black font-semibold text-[18px] md:text-[32px] lg:text-[48px] px-[9px]">
-        Bizning jamoa
+        {t.ourTeam}
       </p>
       <div
         style={{
           display: "flex",
-          // justifyContent: "start",
         }}
-        className="flex flex-wrap justify-center xl:justify-start gap-8 pt-[30px] md:pt-[73px] lg:gap-[62px]"
+        className="flex flex-wrap justify-center gap-8 pt-[30px] md:pt-[73px] lg:gap-[62px]"
       >
         {staff.map((person, index) => (
           <div

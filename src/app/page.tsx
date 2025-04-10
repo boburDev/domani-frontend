@@ -63,7 +63,7 @@ const Home = () => {
             </div>
           </section>
           <section className="container mx-auto px-5">
-            <div className="flex  pt-[42px] md:pt-[150px] lg:pt-[283px]">
+            <div className="flex  pt-[42px] md:pt-[150px] lg:pt-[203px]">
               <Counter />
             </div>
             <div className="pt-[42px] md:pt-[150px] lg:pt-[246px]">
@@ -71,7 +71,7 @@ const Home = () => {
                 <WorldMap />
               </div>
             </div>
-            <div className="pt-[50px] md:pt-[150px] lg:pt-[256px]">
+            <div className="pt-[50px] md:pt-[130px] lg:pt-[186px]">
               <p className="text-black font-semibold text-[18px] md:text-[28px] lg:text-[48px]">
                 {t.partners}
               </p>
@@ -113,11 +113,11 @@ const Home = () => {
               </div>
             </div>
             {/* CARD DATA */}
-            <div className="pt-[50px] md:pt-[80px] lg:pt-[181px]">
+            <div className="pt-[50px] md:pt-[80px] lg:pt-[181px] ">
               <p className="text-black font-semibold text-[18px] md:text-[28px] lg:text-[48px] pb-[30px] lg:pb-[80px]">
                 {t.projects}
               </p>
-              <div className="flex flex-wrap justify-center xxl:grid  xxl:grid-cols-3 gap-x-8 xxl:gap-x-20 gap-y-8">
+              <div className=" flex flex-wrap justify-center xxl:grid  xxl:grid-cols-3 gap-x-8 xxl:gap-x-20 gap-y-8">
                 {projectData.map((item) => (
                   <div key={item.id}>
                     {/* Card */}
