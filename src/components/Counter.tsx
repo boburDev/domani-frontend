@@ -48,7 +48,7 @@ const Counter = () => {
       {stats.map((stat, index) => (
         <div
           key={stat.id}
-          className="w-1/2 md:w-auto border-l-4 border-gainsboro pl-6 md:pl-12 flex flex-col items-start"
+          className="w-1/2 md:w-auto border-l-[3px] border-gainsboro pl-6 md:pl-12 flex flex-col items-start"
         >
           <div className="w-[130px]">
             <p className="text-black font-semibold text-[24px] md:text-[48px] lg:text-[64px] leading-none">

@@ -47,7 +47,7 @@ const Projects = () => {
                     <Image
                       width={500}
                       height={600}
-                      src={`/images/${project.imgPath}`}
+                      src={`/images${project.imgPath}`}
                       alt="Card"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
@@ -83,7 +83,7 @@ const Projects = () => {
                     <Image
                       width={500}
                       height={600}
-                      src={`/images/${project.imgPath}`}
+                      src={`/images${project.imgPath}`}
                       alt="Card"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
@@ -119,7 +119,7 @@ const Projects = () => {
                     <Image
                       width={500}
                       height={600}
-                      src={`/images/${project.imgPath}`}
+                      src={`/images${project.imgPath}`}
                       alt="Card"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />

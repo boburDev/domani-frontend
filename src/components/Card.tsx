@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 // Card.tsx
 type CardProps = {
   id?: number;
@@ -8,13 +10,17 @@ type CardProps = {
   images?: string[];
 };
 
-const Card = ({ id, name, location, img }: CardProps) => {
+const Card = ({  name, location, img }: CardProps) => {
+  console.log(img);
+  
   return (
-    <div className="relative w-[335px] h-[238px] lg:w-[546px] lg:h-[441px] rounded-xl overflow-hidden group shadow-md">
+    <div className="relative h-[238px] lg:h-[441px] rounded-xl overflow-hidden group shadow-md">
       <div className="w-full h-full group cursor-pointer">
-        <img
-          src={`/images/${img}`}
+        <Image
+          src={`/images${img}`}
           alt={name}
+          width={546}
+          height={400}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 group-hover:bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />

@@ -91,5 +91,6 @@
   "servicemultiAll": "Многоэтажный",
   "serviceLowriseAll": "Низкая посадка",
   "serviceNonresidentialAll": "Нежилой",
-  "allName": " Все"
+  "allName": " Все",
+  "errorContact": "Поле не может быть пустым"
 }

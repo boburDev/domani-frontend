@@ -27,6 +27,7 @@ import {
 } from "@/assets";
 import Card from "@/components/Card";
 import { useLanguage } from "@/components/LanguageProvider";
+import ArrowRightIcon from "@/assets/icons/ArrowRightIcon";
 
 // Dynamically import
 const WorldMap = dynamic(() => import("@/components/WorldMap"), {
@@ -44,8 +45,8 @@ const Home = () => {
           <div className="text-[25px] md:text-[48px] lg:text-[84px] font-bold text-center text-textWhite pt-[247px] md:pt-[250px] lg:pt-[401px] font-playfair px-5">
             <span className="hidden sm:flex justify-center">{t.slogan1}</span>
             <div className="flex justify-center flex-wrap sm:hidden">
-              <span className="inline-block">{t.slogan2}</span>
-              <span className="inline-block">{t.slogan3}</span>
+              <p className="inline-block font-bold text-[25px]">{t.slogan2}</p>
+              <p className="inline-block font-bold text-[25px]">{t.slogan3}</p>
             </div>
           </div>
         </div>
@@ -102,10 +103,10 @@ const Home = () => {
         </div>
         {/* CARD DATA */}
         <div className="pt-[50px] md:pt-[80px] lg:pt-[181px]" id="projects">
-          <p className="text-black font-semibold text-[18px] md:text-[28px] lg:text-[48px] pb-[40px] lg:pb-[80px]">
+          <p className="text-black font-semibold text-[18px] md:text-[28px] lg:text-[48px] pb-[30px] lg:pb-[80px]">
             {t.projects}
           </p>
-          <div className="flex flex-wrap justify-center lg:grid grid-cols-2 xxl:grid-cols-3 gap-x-16 gap-y-8 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[31px] ">
             {projectData.map((item) => (
               <div key={item.id}>
                 {/* Card */}
@@ -125,37 +126,39 @@ const Home = () => {
             ))}
           </div>
           {/* Link to projects */}
-          <Link
-            href="/projects/all"
-            className="pt-[90px] flex justify-center items-center group text-[18px] md:text-[32px] font-medium text-black pb-1 relative"
-          >
-            <span className="relative">
-              {t.btnToAll}
-              <span className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-transparent group-hover:bg-black transition-all duration-300"></span>
-            </span>
-          </Link>
+          <div className="flex justify-center pt-10 md:pt-[90px]">
+            <Link
+              href="/projects/all"
+              className="flex items-center text-[18px] md:text-[32px] font-medium text-black underline underline-offset-[25%]"
+            >
+              <span>{t.btnToAll}</span>
+              <ArrowRightIcon className="ml-3" />
+            </Link>
+          </div>
         </div>
       </section>
       <section className="container mx-auto px-5">
         <div className="flex pt-[70px] md:pt-[230px]">
-          <div className="xl:w-[733px] pb-[36px] pr-6" id="about">
-            <p className="text-black font-semibold text-[18px]  md:text-[48px]">
+          <div className="xl:w-[733px] pb-[36px] md:pr-6" id="about">
+            <p className="text-black font-semibold text-[18px] md:text-[48px]">
               {t.about}
             </p>
-            <p className="pt-[30px] md:pt-[80px] text-[14px] md:text-[26px] text-textBlack">
+            <p className="pt-[15px] md:pt-[80px] text-[14px] md:text-[26px] text-textBlack">
               {t.show1}
             </p>
-            <div className="pt-[20px] max-w-[909px] h-[235px] md:h-[635px] flex xl:hidden">
+            <div className="mt-[30px] md:max-w-[909px] h-[235px] md:h-[635px] flex xl:hidden rounded-[12px] overflow-hidden">
               <Image
+                width={400}
+                height={200}
                 src={aboutBuilding}
                 alt="img"
-                className="w-[100%] h-full"
+                className="w-full h-full object-cover"
               />
             </div>
-            <p className="pt-[50px] md:pt-[101px] text-black text-[18px]  md:text-[32px] font-semibold">
+            <p className="pt-[30px] md:pt-[101px] text-black text-[18px]  md:text-[32px] font-semibold">
               {t.mission_title}
             </p>
-            <p className="pt-[20px] text-[14px] md:text-[26px] text-textBlack ">
+            <p className="pt-[15px] md:pt-5 text-[14px] md:text-[26px] text-textBlack ">
               {t.show2}
             </p>
           </div>
@@ -172,74 +175,82 @@ const Home = () => {
 
         <div className="pt-[80px] md:pt-[230px]">
           <div className="font-semibold text-[48px] text-black">
-            <p className="text-black font-semibold text-[18px] md:text-[48px]">
+            <p className="text-black font-semibold text-[18px] md:text-[48px] mb-[30px] md:mb-20">
               {t.services}
             </p>
-            <div className="flex flex-wrap lg:flex-nowrap justify-center lg:flex lg:justify-between gap-8 pt-8">
-              <div className="relative w-[217px] h-[176px] lg:w-[412px] lg:h-[333px] rounded-xl overflow-hidden group shadow-md">
-                <Link href="/projects/multi-storey">
-                  <div className="w-full h-full cursor-pointer">
-                    <Image
-                      src={firstService}
-                      alt={"asd"}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
-                    <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
-                      <p className="text-textWhite font-bold text-[14px] md:text-[24px]  transition-all duration-500 ease-out translate-y-0">
-                        {t.servicemulti}
-                      </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[15px] lg:gap-[17px]  lg:h-[450px] overflow-hidden">
+              <div className="flex items-start ">
+                <div className="relative w-2/3 h-[176px] lg:w-[412px] lg:h-[333px] rounded-xl overflow-hidden group shadow-md">
+                  <Link href="/projects/multi-storey">
+                    <div className="w-full h-full cursor-pointer">
+                      <Image
+                        src={firstService}
+                        alt={"asd"}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
+                      <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
+                        <p className="text-textWhite font-bold text-[14px] md:text-[24px]  transition-all duration-500 ease-out translate-y-0">
+                          {t.servicemulti}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               </div>
-              <div className="relative w-[217px] h-[176px] lg:w-[412px] lg:h-[333px] rounded-xl overflow-hidden group shadow-md">
-                <Link href="/projects/low-rise">
-                  <div className="w-full h-full cursor-pointer">
-                    <Image
-                      src={secondService}
-                      alt={"asd"}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
-                    <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
-                      <p className="text-textWhite font-bold text-[14px] md:text-[24px]  transition-all duration-500 ease-out translate-y-0">
-                        {t.serviceLowrise}
-                      </p>
+              <div className="flex items-end lg:justify-start justify-end">
+                <div className="relative w-2/3 h-[176px] lg:w-[412px] lg:h-[333px] rounded-xl overflow-hidden group shadow-md">
+                  <Link href="/projects/low-rise">
+                    <div className="w-full h-full cursor-pointer">
+                      <Image
+                        src={secondService}
+                        alt={"asd"}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
+                      <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
+                        <p className="text-textWhite font-bold text-[14px] md:text-[24px]  transition-all duration-500 ease-out translate-y-0">
+                          {t.serviceLowrise}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               </div>
-              <div className="relative  w-[217px] h-[176px] lg:w-[412px] lg:h-[333px] rounded-xl overflow-hidden group shadow-md">
-                <Link href="/projects/none-residential">
-                  <div className="w-full h-full cursor-pointer">
-                    <Image
-                      src={thirdService}
-                      alt={"asd"}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
-                    <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
-                      <p className="text-textWhite font-bold text-[14px] md:text-[24px]  transition-all duration-500 ease-out translate-y-0">
-                        {t.serviceNonresidential}
-                      </p>
+              <div className="flex items-start">
+                <div className="relative  w-2/3 h-[176px] lg:w-[412px] lg:h-[333px] rounded-xl overflow-hidden group shadow-md">
+                  <Link href="/projects/none-residential">
+                    <div className="w-full h-full cursor-pointer">
+                      <Image
+                        src={thirdService}
+                        alt={"asd"}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
+                      <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
+                        <p className="text-textWhite font-bold text-[14px] md:text-[24px]  transition-all duration-500 ease-out translate-y-0">
+                          {t.serviceNonresidential}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               </div>
-              <div className="relative  w-[217px] h-[176px] lg:w-[412px] lg:h-[333px] rounded-xl overflow-hidden group shadow-md">
-                <div>
-                  <div className="w-full h-full cursor-pointer">
-                    <Image
-                      src={fourthService}
-                      alt={"asd"}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
-                    <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
-                      <p className="text-textWhite font-bold text-[14px] md:text-[24px]  transition-all duration-500 ease-out translate-y-0">
-                        {t.serviceOwnership}
-                      </p>
+              <div className="flex items-end lg:justify-start justify-end">
+                <div className="relative w-2/3 h-[176px] lg:w-[412px] lg:h-[333px] rounded-xl overflow-hidden group shadow-md">
+                  <div>
+                    <div className="w-full h-full cursor-pointer">
+                      <Image
+                        src={fourthService}
+                        alt={"asd"}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
+                      <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
+                        <p className="text-textWhite font-bold text-[14px] md:text-[24px]  transition-all duration-500 ease-out translate-y-0">
+                          {t.serviceOwnership}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -247,7 +258,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="pt-[186px]">
+        <div className="pt-[70px] md:pt-[186px]">
           <p className="text-black font-semibold text-[18px] md:text-[48px]">
             {t.principles}
           </p>
@@ -310,7 +321,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-
         <Team />
       </section>
       <section className="container mx-auto px-5">
