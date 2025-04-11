@@ -22,25 +22,21 @@ const Header = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    // Ma'lumotlar kelishi uchun simulyatsiya
     setTimeout(() => {
       setLoading(false);
-    }, 3000); // 3 soniya kutish
+    }, 1500); 
   }, []);
 
-  // Handle dark mode and logo color based on the current pathname
   useEffect(() => {
     setIsDark(pathname === "/" || pathname === "/social");
     setTextColor(isDark ? "text-textWhite" : "text-textBlack");
     setLogoSrc(!isDark ? "/LogoBlack.png" : "/Logo.svg");
   }, [pathname, isDark]);
 
-  // Change language handler
   const toggleLanguage = (lang: string) => {
     changeLanguage(lang as "uz" | "en" | "ru");
   };
 
-  // Close dropdown when clicked outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -68,7 +64,7 @@ const Header = () => {
               isDark ? "bg-transparent" : "bg-transparent"
             } border-textWhite lg:pt-[82px] xxl:pl-[120px] xxl:pr-[109px]`}
           >
-            <Container >
+            <Container>
               <div className="w-full flex lg:gap-3 gap-4 2xl:gap-[110px] justify-between items-center">
                 <Link
                   href="/"
@@ -129,6 +125,7 @@ const Header = () => {
                             key={link.href}
                             href={link.href}
                             className="relative w-fit group"
+                            onClick={() => setIsOpen(false)}
                           >
                             <span className="border-b-2 border-transparent group-hover:border-textBlack transition-all duration-300 font-semibold text-[14px]">
                               {link.label}
