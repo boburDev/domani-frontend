@@ -8,6 +8,7 @@ import { phoneHeader, phoneHeaderBlack } from "@/assets"; // images to be condit
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "./LanguageProvider";
 import Spinner from "./Spinner";
+import Container from "./Container";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // For controlling mobile menu
@@ -67,7 +68,7 @@ const Header = () => {
               isDark ? "bg-transparent" : "bg-transparent"
             } border-textWhite lg:pt-[82px] xxl:pl-[120px] xxl:pr-[109px]`}
           >
-            <div className="container mx-auto px-5 md:px-0">
+            <Container >
               <div className="w-full flex lg:gap-3 gap-4 2xl:gap-[110px] justify-between items-center">
                 <Link
                   href="/"
@@ -83,7 +84,7 @@ const Header = () => {
                 </Link>
 
                 {/* Desktop nav */}
-                <div className="hidden  lg:flex gap-4 xl:gap-8 lg:text-[20px] text-base font-medium lg:justify-between">
+                <div className="hidden  lg:flex gap-4 xl:gap-[62px] lg:text-[20px] text-base font-medium lg:justify-between">
                   <Link
                     href="/"
                     className={`${textColor} relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] ${
@@ -98,7 +99,7 @@ const Header = () => {
                   {/* Dropdown menu */}
                   <div
                     ref={dropdownRef}
-                    className={`relative ${textColor} pb-[2px] cursor-pointer font-medium`}
+                    className={`relative ${textColor} pb-[2px] cursor-pointer font-medium select-none`}
                   >
                     <div
                       onClick={() => setIsOpen((prev) => !prev)}
@@ -167,8 +168,8 @@ const Header = () => {
                 </div>
 
                 {/* Language switch + phone */}
-                <div className="hidden lg:flex items-center xl:gap-[15px] gap-1">
-                  <div className="flex xl:gap-3.5 gap-2 justify-between items-center ">
+                <div className="hidden lg:flex items-center xl:gap-[23px] gap-1">
+                  <div className="flex xl:gap-3.5 gap-[15px] justify-between items-center ">
                     <button
                       onClick={() => toggleLanguage("uz")}
                       className={
@@ -242,7 +243,7 @@ const Header = () => {
                   </button>
                 </div>
               </div>
-            </div>
+            </Container>
           </div>
 
           {/* Mobile menu */}

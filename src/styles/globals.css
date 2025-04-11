@@ -6,7 +6,7 @@ html {
   scroll-behavior: smooth;
 }
 body{
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
 }
 @keyframes loading {
   0% {

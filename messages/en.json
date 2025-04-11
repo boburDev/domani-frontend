@@ -1,18 +1,23 @@
 {
-  "home": "Home",
-  "allProjects": "All Projects",
-  "multiStorey": "Multi-storey",
-  "lowRise": "Low-rise",
-  "nonResidential": "Non-residential",
-  "articles": "Articles",
-  "about": "About Us",
-  "social": "Social Networks",
-  "phone": "+998(99) 944 30 30",
+  "Header": {
+    "home": "Home",
+    "countert2": "Projects",
+    "allProjects": "All Projects",
+    "multiStorey": "Multi-storey",
+    "lowRise": "Low-rise",
+    "nonResidential": "Non-residential",
+    "articles": "Articles",
+    "about": "About Us",
+    "social": "Social Networks",
+    "phone": "+998(99) 944 30 30"
+  },
+  "Home": {
+    "slogan1": "Minimalism. This is Functionality. Perfection",
+    "slogan2": "Creativity that inspires space",
+    "slogan3": "Technologies and sustainability in harmony"
+  },
   "ourTeam": "Our Team",
 
-  "slogan1": "Minimalism. This is Functionality. Perfection",
-  "slogan2": "Creativity that inspires space",
-  "slogan3": "Technologies and sustainability in harmony",
   "partners": "Our Partners",
   "projects": "Our Projects",
   "view_all": "View All",
@@ -79,7 +84,6 @@
   "social_youtube": "YouTube",
 
   "countert1": "Experience",
-  "countert2": "Projects",
   "countert3": "Hectare - the largest land area",
   "countert4": "Floor - the tallest project",
 

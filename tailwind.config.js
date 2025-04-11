@@ -33,12 +33,14 @@ module.exports = {
         center: true,
         padding: {
           DEFAULT: "4px",
+          xs:"0px",
           sm: "4px",
           lg: "4px",
           xl: "4px",
           "2xl": "0px",
         },
         screens: {
+          xs: "355px",
           sm: "100%",
           md: "730px",
           lg: "960px",

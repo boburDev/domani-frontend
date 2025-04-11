@@ -1,18 +1,23 @@
 {
-  "home": "Bosh sahifa",
-  "allProjects": "Barcha loyihalar",
-  "multiStorey": "Ko‘p qavatli",
-  "lowRise": "Past qavatli",
-  "nonResidential": "Noturarjoy ",
-  "articles": "Maqolalar",
-  "about": "Biz haqimizda",
-  "social": "Ijtimoiy tarmoqlar",
-  "phone": "+998(99) 944 30 30",
+  "Header": {
+    "home": "Bosh sahifa",
+    "countert2": "Loyihalar",
+    "allProjects": "Barcha loyihalar",
+    "multiStorey": "Ko‘p qavatli",
+    "lowRise": "Past qavatli",
+    "nonResidential": "Noturarjoy",
+    "about": "Biz haqimizda",
+    "articles": "Maqolalar",
+    "social": "Ijtimoiy tarmoqlar",
+    "phone": "+998(99) 944 30 30"
+  },
+  "Home": {
+    "slogan1": "Minimalizm. Bu Funktsionallik. Mukammallik",
+    "slogan2": "Ilhomlantiruvchi makon uchun yaratuvchanlik",
+    "slogan3": "Texnologiya va barqarorlik uyg‘unligida"
+  },
   "ourTeam": "Bizning jamoa",
 
-  "slogan1": "Minimalizm. Bu Funktsionallik. Mukammallik",
-  "slogan2": "Ilhomlantiruvchi makon uchun yaratuvchanlik",
-  "slogan3": "Texnologiya va barqarorlik uyg‘unligida",
   "partners": "Hamkorlarimiz",
   "projects": "Loyihalarimiz",
   "view_all": "Barchasini ko‘rish",
@@ -80,7 +85,6 @@
   "social_youtube": "YouTube",
 
   "countert1": "Tajriba",
-  "countert2": "Loyihalar",
   "countert3": "Gektar - eng katta yer maydoni",
   "countert4": "Etaj - eng baland loyiha",
 
