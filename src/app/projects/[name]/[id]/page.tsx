@@ -4,20 +4,24 @@ import projectData from "@/data/projects.json";
 import Contact from "@/components/Contact";
 import Image from "next/image";
 import { useLanguage } from "@/components/LanguageProvider";
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import Spinner from "@/components/Spinner";
 
-
-
-export default  function ProjectDetails() {
-    const params = useParams();
-    const id = params?.id;
-    const pageName = params?.name;
-    
+export default function ProjectDetails() {
+  const params = useParams();
+  const id = params?.id;
+  const pageName = params?.name;
+  const [loading, setLoading] = useState(true);
   const project = projectData.find((p) => p.id === Number(id));
   const { t } = useLanguage();
 
   if (!project) notFound();
-
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
   const chunkImages = (images: string[]) => {
     const chunks: string[][] = [];
     for (let i = 0; i < images.length; i += 5) {
@@ -25,6 +29,9 @@ export default  function ProjectDetails() {
     }
     return chunks;
   };
+  if (loading) {
+    return <Spinner />;
+  }
   const projectsNames = {
     "non-residential": `${t.serviceNonresidentialAll}`,
     "low-rise": `${t.serviceLowriseAll}`,
@@ -33,14 +40,12 @@ export default  function ProjectDetails() {
   };
   const imageRows = chunkImages(project.images);
 
-
   return (
     <div>
- 
       <div className="container mx-auto px-5 ">
         <p className="pt-[120px] pb-5 sm:pt-[180px] lg:pt-[306px] px-5 text-black font-semibold text-[18px] sm:text-[28px] lg:text-[48px]">
-        {projectsNames[params.name as keyof typeof projectsNames] || ""}{" "}
-        {t.theName}
+          {projectsNames[params.name as keyof typeof projectsNames] || ""}{" "}
+          {t.theName}
         </p>
 
         {project?.description && (
