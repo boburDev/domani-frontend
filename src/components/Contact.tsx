@@ -5,10 +5,11 @@ import { mavridBuilding } from "@/assets";
 import { useLanguage } from "./LanguageProvider";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { toast } from "react-toastify";
 type SubmitRequset = {
-  userName: string;
+  name: string;
   email: string;
-  phoneNumber: string;
+  phone: string;
   page: string;
 };
 
@@ -38,31 +39,26 @@ const Contact = ({ page }: { page: string }) => {
   const {
     handleSubmit,
     register,
+    reset,
     formState: { errors },
   } = useForm<SubmitRequset>();
   const onSubmit = async (data: SubmitRequset) => {
     console.log("Form data before sending:", data);
     try {
-      // Add the page name
       data["page"] = getName(page);
       console.log("Sending form data:", data);
 
-      const response = await axios.post("https://api.soff-it.uz/submit", data, {
+      await axios.post("https://api.soff-it.uz/submit", data, {
         headers: {
           "Content-Type": "application/json",
         },
       });
-
-      console.log("Success:", response.data);
-      return response.data;
+      toast.success(t.contactSucess, { theme: "colored" });
+      reset();
     } catch (error) {
       if (axios.isAxiosError(error)) {
         console.error("Error response from server:", error.response?.data);
-        alert(
-          `Request failed: ${
-            error.response?.data.message || "Please try again."
-          }`
-        );
+        toast.error(t.contactErrorMesage, { theme: "colored" });
       } else {
         console.error("Unknown error:", error);
       }
@@ -97,9 +93,9 @@ const Contact = ({ page }: { page: string }) => {
                     placeholder={t.name_placeholder}
                     required
                     autoComplete="name"
-                    {...register("userName", { required: true })}
+                    {...register("name", { required: true })}
                   />
-                  {errors.userName && (
+                  {errors.name && (
                     <p className="text-red-500 text-xs mt-1">
                       {t.errorContact}
                     </p>
@@ -145,9 +141,9 @@ const Contact = ({ page }: { page: string }) => {
                     pattern="^\+998\s?\(?\d{2}\)?\s?\d{3}\s?\d{2}\s?\d{2}$"
                     title={t.phone_pattern_title}
                     autoComplete="tel"
-                    {...register("phoneNumber", { required: true })}
+                    {...register("phone", { required: true })}
                   />
-                  {errors.phoneNumber && (
+                  {errors.phone && (
                     <p className="text-red-500 text-xs mt-1">
                       {t.errorContact}
                     </p>
@@ -155,7 +151,7 @@ const Contact = ({ page }: { page: string }) => {
                 </div>
                 <div className="max-w-[539px] mt-[45px]">
                   <button
-                    className="required bg-black text-textWhite w-full h-[66px] font-bold text-[14px] md:text-[20px]  py-2 px-4 rounded-2xl focus:outline-none focus:shadow-outline"
+                    className="required bg-black text-textWhite w-full h-[45px] md:h-[66px] font-bold text-[14px] md:text-[20px]  py-2 px-4 rounded-2xl focus:outline-none focus:shadow-outline"
                     type="submit"
                   >
                     {t.submit_button}
