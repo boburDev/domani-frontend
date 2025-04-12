@@ -25,7 +25,7 @@ const Footer = () => {
                   loading="lazy"
                   width={200}
                   height={50}
-                  className="w-[244px] h-[60px]"
+                  className="md:w-[244px] md:h-[60px] w-[153px] h-[38px]"
                   src="/Logo.svg"
                   alt="Logo"
                 />
