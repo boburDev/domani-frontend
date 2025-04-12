@@ -48,7 +48,7 @@ const Contact = ({ page }: { page: string }) => {
       data["page"] = getName(page);
       console.log("Sending form data:", data);
 
-      await axios.post("https://api.domani.uz/submit", data, {
+      await axios.post("https://leads.domani.uz/submit", data, {
         headers: {
           "Content-Type": "application/json",
         },
