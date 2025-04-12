@@ -88,7 +88,7 @@ const Contact = ({ page }: { page: string }) => {
                     {t.name_label}
                   </label>
                   <input
-                    className="appearance-none focus:outline-none focus:shadow-outline border border-lightGrey rounded-2xl w-full h-10 md:h-[60px] text-[#9696A1] text-[12px] md:text-[18px] pl-6"
+                    className="appearance-none focus:outline-none focus:shadow-outline border border-lightGrey rounded-2xl w-full h-10 md:h-[60px] placeholder:text-[#9696A1] text-textBlack text-[12px] md:text-[18px] pl-6"
                     type="text"
                     placeholder={t.name_placeholder}
                     autoComplete="name"
@@ -113,7 +113,7 @@ const Contact = ({ page }: { page: string }) => {
                     {t.email_label}
                   </label>
                   <input
-                    className="appearance-none focus:outline-none focus:shadow-outline border border-lightGrey rounded-2xl w-full h-10 md:h-[60px] text-[#9696A1] text-[12px] md:text-[18px]  pl-6"
+                    className="appearance-none focus:outline-none focus:shadow-outline border border-lightGrey rounded-2xl w-full h-10 md:h-[60px] placeholder:text-[#9696A1] text-textBlack text-[12px] md:text-[18px]  pl-6"
                     type="email"
                     placeholder={t.email_placeholder}
                     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
@@ -137,16 +137,18 @@ const Contact = ({ page }: { page: string }) => {
                   </label>
                   <input
                     className="appearance-none focus:outline-none focus:shadow-outline border border-lightGrey rounded-2xl
-           w-full h-10 md:h-[60px] text-[#9696A1] text-[12px] md:text-[18px] pl-6"
-                    type="tel"
+      w-full h-10 md:h-[60px] text-[12px] md:text-[18px] pl-6 placeholder:text-[#9696A1] text-textBlack"
+                    type="text"
                     placeholder={t.phone_placeholder}
                     title={t.phone_pattern_title}
                     autoComplete="tel"
+                    inputMode="numeric"
+                    required
                     {...register("phone", {
                       required: t.errorContact,
                       pattern: {
-                        value: /^\+998\s?\(?\d{2}\)?\s?\d{3}\s?\d{2}\s?\d{2}$/,
-                        message: t.phone_pattern_title,
+                        value: /^[\d+\-()]+$/, // faqat raqam va + - ( ) belgilariga ruxsat
+                        message: t.phone_pattern_title, // Masalan: "Telefon raqami faqat raqam va (+ - ( )) bo'lishi kerak"
                       },
                     })}
                   />
