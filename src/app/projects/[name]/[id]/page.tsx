@@ -62,6 +62,8 @@ export default function ProjectDetails() {
                 <div className="flex justify-between items-center gap-[30px]">
                   <div className="relative w-[335px] h-[238px] lg:w-full lg:h-[441px] rounded-xl overflow-hidden group shadow-md">
                     <Image
+                            loading="lazy"
+
                       width={500}
                       height={600}
                       src={`/images${row[0]}`}
@@ -78,6 +80,8 @@ export default function ProjectDetails() {
                   {row[1] && row.length === 2 ? (
                     <div className="relative w-full h-[504px] rounded-xl overflow-hidden group shadow-md">
                       <Image
+                              loading="lazy"
+
                         width={500}
                         height={600}
                         src={`/images${row[1]}`}
@@ -90,6 +94,8 @@ export default function ProjectDetails() {
                       {row[1] && (
                         <div className="relative w-[636px] h-[504px] rounded-xl overflow-hidden group shadow-md">
                           <Image
+                                  loading="lazy"
+
                             width={500}
                             height={600}
                             src={`/images${row[1]}`}
@@ -101,6 +107,8 @@ export default function ProjectDetails() {
                       {row[2] && (
                         <div className="relative w-[1032px] h-[504px] rounded-xl overflow-hidden group shadow-md">
                           <Image
+                                  loading="lazy"
+
                             width={500}
                             height={600}
                             src={`/images${row[2]}`}
@@ -120,6 +128,8 @@ export default function ProjectDetails() {
                   {row[3] && !row[4] ? (
                     <div className="relative w-full h-[537px] rounded-xl overflow-hidden group shadow-md">
                       <Image
+                              loading="lazy"
+
                         width={500}
                         height={600}
                         src={`/images${row[3]}`}
@@ -132,6 +142,8 @@ export default function ProjectDetails() {
                       {row[3] && (
                         <div className="relative w-[963px] h-[537px] rounded-xl overflow-hidden group shadow-md">
                           <Image
+                                  loading="lazy"
+
                             width={500}
                             height={600}
                             src={`/images${row[3]}`}
@@ -143,6 +155,8 @@ export default function ProjectDetails() {
                       {row[4] && (
                         <div className="relative w-[705px] h-[537px] rounded-xl overflow-hidden group shadow-md">
                           <Image
+                                  loading="lazy"
+
                             width={500}
                             height={600}
                             src={`/images${row[4]}`}
@@ -166,6 +180,8 @@ export default function ProjectDetails() {
               className="relative w-[335px] h-[238px] rounded-xl overflow-hidden group shadow-md "
             >
               <Image
+                      loading="lazy"
+
                 width={500}
                 height={600}
                 src={`/images/${img}`}

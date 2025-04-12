@@ -58,6 +58,7 @@ const Projects = () => {
                     <div className="relative w-full lg:max-w-[546px] h-[441px] rounded-xl overflow-hidden shadow-md">
                       <div className="w-full h-full">
                         <Image
+                          loading="lazy"
                           width={500}
                           height={600}
                           src={`/images${project.imgPath}`}
@@ -90,6 +91,7 @@ const Projects = () => {
                       {/* Kichik card */}
                       <div className="relative h-[441px] rounded-xl overflow-hidden shadow-md">
                         <Image
+                          loading="lazy"
                           width={500}
                           height={600}
                           src={`/images${projectData[3].imgPath}`}
@@ -126,6 +128,7 @@ const Projects = () => {
                         {projectData[4] ? (
                           <>
                             <Image
+                              loading="lazy"
                               width={500}
                               height={600}
                               src={`/images${projectData[4].imgPath}`}
@@ -168,6 +171,7 @@ const Projects = () => {
                     >
                       <div className="w-full h-full">
                         <Image
+                          loading="lazy"
                           width={500}
                           height={600}
                           src={`/images${project.imgPath}`}

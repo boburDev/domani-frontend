@@ -35,6 +35,9 @@ const About = () => {
               </div>
               <div>
                 <Image
+                  width={850}
+                  height={850}
+                  loading="lazy"
                   src={archBereau}
                   alt="img"
                   className="max-w-[827] pt-[50px] h-full"
@@ -52,7 +55,14 @@ const About = () => {
                 </p>
               </div>
               <div className="lg:pr-[114px] pt-[30px] lg:pt-0">
-                <Image src={aboutSecond} alt="img" className="w-[793] h-full" />
+                <Image
+                  width={850}
+                  height={850}
+                  loading="lazy"
+                  src={aboutSecond}
+                  alt="img"
+                  className="w-[793] h-full"
+                />
               </div>
             </div>
             <div className="lg:flex justify-between pt:pt-10 lg:pt-[130px]">
@@ -66,6 +76,9 @@ const About = () => {
               </div>
               <div className="pt-10">
                 <Image
+                  width={850}
+                  height={850}
+                  loading="lazy"
                   src={aboutBuilding}
                   alt="img"
                   className="w-[793px] h-[full] lg:h-[509px] rounded-xl object-cover"

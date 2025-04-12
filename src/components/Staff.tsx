@@ -24,6 +24,7 @@ const Team = () => {
           >
             {/* Image */}
             <Image
+              loading="lazy"
               src={person.img}
               alt={person[`name_${language}`]}
               width={350}

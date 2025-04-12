@@ -172,7 +172,9 @@ const Contact = ({ page }: { page: string }) => {
         </div>
         <div className="pt-[20px] hidden lg:flex">
           <Image
-                  loading="lazy"
+            width={900}
+            height={630}
+            loading="lazy"
             src={mavridBuilding}
             alt="img"
             className="w-[909px] h-[635px]"

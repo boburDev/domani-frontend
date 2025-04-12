@@ -15,6 +15,7 @@ const Card = ({ name, location, img }: CardProps) => {
     <div className="relative  h-[238px] lg:h-[441px] rounded-xl overflow-hidden group shadow-md">
       <div className="w-full h-full group cursor-pointer">
         <Image
+          loading="lazy"
           width={546}
           height={400}
           src={`/images${img}`}
