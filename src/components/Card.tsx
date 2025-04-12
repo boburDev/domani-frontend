@@ -15,11 +15,12 @@ const Card = ({ name, location, img }: CardProps) => {
     <div className="relative  h-[238px] lg:h-[441px] rounded-xl overflow-hidden group shadow-md">
       <div className="w-full h-full group cursor-pointer">
         <Image
+          loading="lazy"
           width={546}
           height={400}
           src={`/images${img}`}
           alt={name}
-          className="w-full h-full object-cover transition-transform duration-500 lg:group-hover:scale-105"
+          className="w-[365px] h-full sm:w-[420px] md:w-[546px] md:h-[441px] object-cover transition-transform duration-500 lg:group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t lg:group-hover:bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
         <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">

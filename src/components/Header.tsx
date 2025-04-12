@@ -14,16 +14,11 @@ const Header = () => {
   const { language, changeLanguage, t } = useLanguage(); // Language context
   const [isOpen, setIsOpen] = useState(false); // For controlling dropdown menu
   const dropdownRef = useRef<HTMLDivElement>(null); // To detect clicks outside dropdown
-  const pathname = usePathname(); // To detect the current path
-  const [isDark, setIsDark] = useState(false); // For dark/light theme
-  const [logoSrc, setLogoSrc] = useState("/Logo.svg"); // For dynamic logo based on theme
-  const [textColor, setTextColor] = useState("text-textWhite"); // Dynamic text color
 
-  useEffect(() => {
-    setIsDark(pathname === "/" || pathname === "/social");
-    setTextColor(isDark ? "text-textWhite" : "text-textBlack");
-    setLogoSrc(!isDark ? "/LogoBlack.png" : "/Logo.svg");
-  }, [pathname, isDark]);
+  const pathname = usePathname();
+  const isDark = pathname === "/" || pathname === "/social";
+  const textColor = isDark ? "text-textWhite" : "text-textBlack";
+  const logoSrc = isDark ? "/Logo.svg" : "/LogoBlack.png";
 
   const toggleLanguage = (lang: string) => {
     changeLanguage(lang as "uz" | "en" | "ru");
@@ -46,7 +41,7 @@ const Header = () => {
   return (
     <div>
       <div
-        className={`absolute z-50 top-0 left-0 right-0 transition-all duration-300 font-poppins`}
+        className={`absolute z-40 top-0 left-0 right-0 transition-all duration-300 font-poppins`}
       >
         <div
           className={`pt-[25px] pb-5 ${
@@ -60,6 +55,7 @@ const Header = () => {
                 className="xl:w-[230px] xl:h-[61px] w-[90px] h-[40px] md:w-[110px] md:h-[51px]"
               >
                 <Image
+                  loading="lazy"
                   width={100}
                   height={100}
                   src={logoSrc}
@@ -69,7 +65,7 @@ const Header = () => {
               </Link>
 
               {/* Desktop nav */}
-              <div className="hidden  lg:flex gap-4 xl:gap-[62px] lg:text-[20px] text-base font-medium lg:justify-between">
+              <div className="hidden  lg:flex gap-4 xxl:gap-[62px] lg:text-[20px] text-base font-medium lg:justify-between">
                 <Link
                   href="/"
                   className={`${textColor} relative pb-[2px] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] ${
@@ -204,6 +200,9 @@ const Header = () => {
                   className="flex lg:gap-2 gap-1 items-center"
                 >
                   <Image
+                    width={50}
+                    height={50}
+                    loading="lazy"
                     src={!isDark ? phoneHeaderBlack : phoneHeader}
                     alt="img"
                     className="w-[22px] h-[22px] xl:w-[26px] xl:h-[26px]"
@@ -301,7 +300,13 @@ const Header = () => {
               </button>
             </div>
             <div className="flex gap-2 items-center pt-4">
-              <Image src={phoneHeader} alt="img" />
+              <Image
+                width={50}
+                height={50}
+                loading="lazy"
+                src={phoneHeader}
+                alt="img"
+              />
               <p className="text-white font-bold text-lg">{t.phone}</p>
             </div>
           </div>

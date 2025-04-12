@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Team from "@/components/Staff";
 import Contact from "@/components/Contact";
 import Counter from "@/components/Counter";
@@ -19,7 +19,7 @@ const WorldMap = dynamic(() => import("@/components/WorldMap"), {
 
 const Home = () => {
   return (
-    <main>
+    <div>
       {/* home top bg */}
       <HomeTop />
       <Container>
@@ -48,7 +48,7 @@ const Home = () => {
           <Contact page="/" />
         </section>
       </Container>
-    </main>
+    </div>
   );
 };
 

@@ -1,13 +1,15 @@
 import "@/styles/globals.css";
 import Footer from "@/components/Footer";
-import { Metadata } from "next";
 import Header from "@/components/Header";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { Zoom } from "react-toastify";
+import type { Metadata } from "next";
+import PageLoaderWrapper from "@/components/PageLoaderWrapper"; // 👈 loader wrapper
+
 export const metadata: Metadata = {
-  title: "Domani artichests",
+  title: "Domani Architects",
   description: "Modern Buildings",
 };
 
@@ -23,10 +25,12 @@ export default function RootLayout({
       </head>
       <body>
         <LanguageProvider>
-          <Header />
-          {children}
-          <Footer />
-          <ToastContainer position="top-center" transition={Zoom} />
+          <PageLoaderWrapper>
+            <Header />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+            <ToastContainer position="top-center" transition={Zoom} />
+          </PageLoaderWrapper>
         </LanguageProvider>
       </body>
     </html>

@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { useLanguage } from "./LanguageProvider";
 import { aboutBuilding } from "@/assets";
 
 const HomeAbout = () => {
-    const {  t } = useLanguage();
+  const { t } = useLanguage();
   return (
     <section>
       <div className="hidden md:flex pt-[70px] md:pt-[230px]">
@@ -18,6 +18,7 @@ const HomeAbout = () => {
           </p>
           <div className="mt-[30px] md:max-w-[909px] h-[235px] md:h-[635px] flex xl:hidden rounded-[12px] overflow-hidden">
             <Image
+              loading="lazy"
               width={400}
               height={200}
               src={aboutBuilding}
@@ -34,6 +35,9 @@ const HomeAbout = () => {
         </div>
         <div className="pt-[20px] hidden xl:flex">
           <Image
+            width={900}
+            height={650}
+            loading="lazy"
             src={aboutBuilding}
             alt="img"
             className="w-[909px] h-[635px] object-cover rounded-lg"

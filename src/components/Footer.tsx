@@ -17,23 +17,25 @@ const Footer = () => {
   return (
     <div>
       <div className="bg-rangoonGreen">
-        <div className="container mx-auto px-5">
+        <div className="container mx-auto px-1 md:px-5">
           <div className="flex flex-col">
             <div className="flex justify-center md:hidden pt-10">
               <Link href="#">
                 <Image
+                  loading="lazy"
                   width={200}
                   height={50}
-                  className="w-[244px] h-[60px]"
-                  src="Logo.svg"
+                  className="md:w-[244px] md:h-[60px] w-[153px] h-[38px]"
+                  src="/Logo.svg"
                   alt="Logo"
                 />
               </Link>
             </div>
-            <div className="flex pt-[92px] sm:gap-5 xxl:pr-[340px] justify-between  w-full">
+            <div className="flex pt-[50px] md:pt-[92px] sm:gap-5 xxl:pr-[340px] justify-between  w-full">
               <div className="hidden md:flex">
                 <Link href="#">
                   <Image
+                    loading="lazy"
                     width={200}
                     height={50}
                     className="md:w-[244px] md:h-[60px] w-[153px] h-[38px]"
@@ -79,10 +81,17 @@ const Footer = () => {
               <div className="flex flex-col gap-5">
                 <div className="flex items-center gap-5 text-lightGrey">
                   <Link
-                    className="  text-[14px] md:text-[20px]"
+                    className="text-[14px] md:text-[20px]"
                     href="tel:+998999443030"
                   >
-                    <Image src={phoneIcon} alt="image" className="w-8 h-8" />
+                    <Image
+                      loading="lazy"
+                      src={phoneIcon}
+                      alt="image"
+                      width={50}
+                      height={50}
+                      className="w-5 h-5 md:w-8 md:h-8"
+                    />
                   </Link>
 
                   <Link
@@ -94,22 +103,36 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center gap-5 text-lightGrey">
                   <Link href="mailto:domaniarchitect@gmail.com">
-                    <Image src={mailIcon} alt="image" className="w-8 h-8" />
+                    <Image
+                      width={50}
+                      height={50}
+                      loading="lazy"
+                      src={mailIcon}
+                      alt="image"
+                      className="w-5 h-5 md:w-8 md:h-8"
+                    />
                   </Link>
                   <Link
                     href="mailto:domaniarchitect@gmail.com"
-                    className="  text-[14px] md:text-[20px]"
+                    className="text-[14px] md:text-[20px]"
                   >
                     {t.femail}
                   </Link>
                 </div>
                 <div className="flex items-center gap-5 text-lightGrey">
                   <Link
-                    className="  text-[14px] md:text-[20px]"
+                    className="text-[14px] md:text-[20px]"
                     target="_blank"
                     href="https://www.google.com/maps?q=Mirzo+Ulug'bek+tumani,+Mirzo+Ulugbek+shoh+ko'chasi,+Stair+Academy+binosi+2-qavat"
                   >
-                    <Image src={locationIcon} alt="image" className="w-8 h-8" />
+                    <Image
+                      width={50}
+                      height={50}
+                      loading="lazy"
+                      src={locationIcon}
+                      alt="image"
+                      className="w-5 h-5 md:w-8 md:h-8"
+                    />
                   </Link>
                   <Link
                     target="_blank"
@@ -126,21 +149,39 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Image src={telegram} alt="Telegram" />
+                    <Image
+                      width={50}
+                      height={50}
+                      loading="lazy"
+                      src={telegram}
+                      alt="Telegram"
+                    />
                   </Link>
                   <Link
                     href="https://www.youtube.com/@domaniarchitects8449"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Image src={youtube} alt="YouTube" />
+                    <Image
+                      width={50}
+                      height={50}
+                      loading="lazy"
+                      src={youtube}
+                      alt="YouTube"
+                    />
                   </Link>
                   <Link
                     href="https://www.instagram.com/domani_architects/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Image src={instagram} alt="Instagram" />
+                    <Image
+                      width={50}
+                      height={50}
+                      loading="lazy"
+                      src={instagram}
+                      alt="Instagram"
+                    />
                   </Link>
                 </div>
               </div>
