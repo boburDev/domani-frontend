@@ -1,5 +1,5 @@
 "use client";
-import { aboutBuilding, abouThird, aboutSecond, archBereau } from "@/assets";
+import { aboutBuilding, aboutSecond, archBereau } from "@/assets";
 import Contact from "@/components/Contact";
 import { useLanguage } from "@/components/LanguageProvider";
 import Team from "@/components/Staff";
@@ -14,7 +14,7 @@ const About = () => {
     // Ma'lumotlar kelishi uchun simulyatsiya
     setTimeout(() => {
       setLoading(false);
-    }, 3000); // 3 soniya kutish
+    }, 400); // 3 soniya kutish
   }, []);
 
   return (
