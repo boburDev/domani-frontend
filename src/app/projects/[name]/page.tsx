@@ -20,7 +20,7 @@ const Projects = () => {
     // Ma'lumotlar kelishi uchun simulyatsiya
     setTimeout(() => {
       setLoading(false);
-    }, 3000); // 3 soniya kutish
+    }, 400); // 3 soniya kutish
   }, []);
 
   const projectData = ["non-residential", "low-rise", "multi-storey"].includes(
