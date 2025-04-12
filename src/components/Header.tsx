@@ -41,7 +41,7 @@ const Header = () => {
   return (
     <div>
       <div
-        className={`absolute z-50 top-0 left-0 right-0 transition-all duration-300 font-poppins`}
+        className={`absolute z-40 top-0 left-0 right-0 transition-all duration-300 font-poppins`}
       >
         <div
           className={`pt-[25px] pb-5 ${
@@ -200,8 +200,8 @@ const Header = () => {
                   className="flex lg:gap-2 gap-1 items-center"
                 >
                   <Image
-                   width={50}
-                   height={50}
+                    width={50}
+                    height={50}
                     loading="lazy"
                     src={!isDark ? phoneHeaderBlack : phoneHeader}
                     alt="img"
@@ -300,8 +300,13 @@ const Header = () => {
               </button>
             </div>
             <div className="flex gap-2 items-center pt-4">
-              <Image  width={50}
-                     height={50} loading="lazy" src={phoneHeader} alt="img" />
+              <Image
+                width={50}
+                height={50}
+                loading="lazy"
+                src={phoneHeader}
+                alt="img"
+              />
               <p className="text-white font-bold text-lg">{t.phone}</p>
             </div>
           </div>

@@ -38,6 +38,9 @@ const Social = () => {
                   className="w-[120px] h-[120px] lg:w-[220px] lg:h-[200px] flex flex-col items-center justify-center gap-4 rounded-xl text-textWhite backdrop-blur-lg bg-textWhite/30 transition-transform transform hover:scale-110 hover:-translate-y- duration-500"
                 >
                   <Image
+                    width={60}
+                    height={30}
+                    loading="lazy"
                     src={instagramIcon}
                     alt="img"
                     className="w-[28px] lg:w-[60px]"
@@ -52,6 +55,9 @@ const Social = () => {
                   className="w-[120px] h-[120px] lg:w-[220px] lg:h-[200px] flex flex-col items-center justify-center gap-4 rounded-xl text-textWhite backdrop-blur-lg bg-textWhite/30 transition-transform transform hover:scale-110 hover:-translate-y-2 duration-500"
                 >
                   <Image
+                    width={60}
+                    height={30}
+                    loading="lazy"
                     src={telegramIcon}
                     alt="img"
                     className="w-[28px] lg:w-[60px]"
@@ -66,6 +72,9 @@ const Social = () => {
                   className="w-[120px] h-[120px] lg:w-[220px] lg:h-[200px] flex flex-col items-center justify-center gap-4 rounded-xl text-textWhite backdrop-blur-lg bg-textWhite/30 transition-transform transform hover:scale-110 hover:-translate-y-2 duration-500"
                 >
                   <Image
+                    width={60}
+                    height={30}
+                    loading="lazy"
                     src={youtubeIcon}
                     alt="img"
                     className="w-[28px] lg:w-[60px]"

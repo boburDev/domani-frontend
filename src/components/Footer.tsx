@@ -17,7 +17,7 @@ const Footer = () => {
   return (
     <div>
       <div className="bg-rangoonGreen">
-        <div className=" container mx-auto px-5">
+        <div className="container mx-auto px-1 md:px-5">
           <div className="flex flex-col">
             <div className="flex justify-center md:hidden pt-10">
               <Link href="#">
@@ -81,7 +81,7 @@ const Footer = () => {
               <div className="flex flex-col gap-5">
                 <div className="flex items-center gap-5 text-lightGrey">
                   <Link
-                    className="  text-[14px] md:text-[20px]"
+                    className="text-[14px] md:text-[20px]"
                     href="tel:+998999443030"
                   >
                     <Image
@@ -114,14 +114,14 @@ const Footer = () => {
                   </Link>
                   <Link
                     href="mailto:domaniarchitect@gmail.com"
-                    className="  text-[14px] md:text-[20px]"
+                    className="text-[14px] md:text-[20px]"
                   >
                     {t.femail}
                   </Link>
                 </div>
                 <div className="flex items-center gap-5 text-lightGrey">
                   <Link
-                    className="  text-[14px] md:text-[20px]"
+                    className="text-[14px] md:text-[20px]"
                     target="_blank"
                     href="https://www.google.com/maps?q=Mirzo+Ulug'bek+tumani,+Mirzo+Ulugbek+shoh+ko'chasi,+Stair+Academy+binosi+2-qavat"
                   >

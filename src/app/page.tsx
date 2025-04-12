@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Team from "@/components/Staff";
 import Contact from "@/components/Contact";
 import Counter from "@/components/Counter";
