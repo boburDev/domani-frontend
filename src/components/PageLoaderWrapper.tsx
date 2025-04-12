@@ -7,17 +7,23 @@ const PageLoaderWrapper = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const handleLoad = () => {
-      setTimeout(() => setLoading(false), 300);
+    const handleDomContentLoaded = () => {
+      setLoading(false);
     };
 
-    if (document.readyState === "complete") {
-      handleLoad();
+    if (
+      document.readyState === "interactive" ||
+      document.readyState === "complete"
+    ) {
+      // DOMContentLoaded allaqachon bo‘lgan
+      setLoading(false);
     } else {
-      window.addEventListener("load", handleLoad);
+      // DOMContentLoaded bo‘lmagan bo‘lsa, tinglaymiz
+      document.addEventListener("DOMContentLoaded", handleDomContentLoaded);
     }
 
-    return () => window.removeEventListener("load", handleLoad);
+    return () =>
+      document.removeEventListener("DOMContentLoaded", handleDomContentLoaded);
   }, []);
 
   if (loading) return <Loader />;

@@ -19,7 +19,7 @@ const WorldMap = dynamic(() => import("@/components/WorldMap"), {
 
 const Home = () => {
   return (
-    <main>
+    <div>
       {/* home top bg */}
       <HomeTop />
       <Container>
@@ -49,7 +49,7 @@ const Home = () => {
           <Contact page="/" />
         </section>
       </Container>
-    </main>
+    </div>
   );
 };
 
