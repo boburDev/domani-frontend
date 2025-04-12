@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L, { LatLngExpression } from "leaflet";
 
-// Marker ikonkasi
+// Marker icon
 const markerIcon = new L.Icon({
   iconUrl:
     "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png",
@@ -14,6 +14,7 @@ const markerIcon = new L.Icon({
   popupAnchor: [1, -34],
 });
 
+// Location data
 const locations = [
   { lat: 41.2995, lng: 69.2401, label: "Toshkent, O‘zbekiston" },
   { lat: 39.6542, lng: 66.9597, label: "Samarqand, O‘zbekiston" },
@@ -30,7 +31,31 @@ const locations = [
   { lat: 38.861, lng: 71.2761, label: "Tojikiston" },
 ];
 
-const center: LatLngExpression = [41.2995, 69.2401]; // O‘zbekiston markazi (Toshkent)
+const center: LatLngExpression = [41.2995, 69.2401]; // Toshkent
+
+// Custom Component: Enables scroll zoom only when CTRL is pressed
+const ScrollZoomControl = () => {
+  const map = useMap();
+
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      if (e.ctrlKey) {
+        map.scrollWheelZoom.enable();
+      } else {
+        map.scrollWheelZoom.disable();
+      }
+    };
+
+    const container = map.getContainer();
+    container.addEventListener("wheel", handleWheel);
+
+    return () => {
+      container.removeEventListener("wheel", handleWheel);
+    };
+  }, [map]);
+
+  return null;
+};
 
 const WorldMap = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
@@ -46,26 +71,30 @@ const WorldMap = () => {
       <MapContainer
         center={center}
         zoom={5}
-        className="relative z-0 h-full w-full "
+        className="relative z-0 h-full w-full"
         style={{ height: "100%" }}
         minZoom={2}
         maxZoom={10}
+        scrollWheelZoom={false}
         dragging={true}
-        boxZoom={true}
-        scrollWheelZoom={true}
-        trackResize={true}
         zoomControl={true}
+        boxZoom={true}
+        worldCopyJump={true} // <-- Add this!
         maxBounds={L.latLngBounds([
           [-60, -180],
           [85, 180],
         ])}
         maxBoundsViscosity={1.0}
       >
+        {/* Our CTRL Zoom Handler */}
+        <ScrollZoomControl />
+
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          noWrap={true}
+          noWrap={false} // <-- Make sure this is false so it wraps horizontally
         />
+
         {locations.map((loc, index) => (
           <Marker key={index} position={[loc.lat, loc.lng]} icon={markerIcon}>
             <Popup>{loc.label}</Popup>

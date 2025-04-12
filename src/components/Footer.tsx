@@ -30,27 +30,27 @@ const Footer = () => {
         <Spinner />
       ) : (
         <div className="bg-rangoonGreen">
-          <div className="container mx-auto px-5">
+          <div className="container mx-auto px-2 md:px-5">
             <div className="flex flex-col">
               <div className="flex justify-center md:hidden pt-10">
-                <Link href="#">
+                <Link href="/">
                   <Image
                     width={200}
                     height={50}
-                    className="w-[244px] h-[60px]"
-                    src="Logo.svg"
+                    className="md:w-[244px] md:h-[60px] w-[153px] h-[38px]"
+                    src="/Logo.svg"
                     alt="Logo"
                   />
                 </Link>
               </div>
-              <div className="flex pt-[92px] sm:gap-5 xxl:pr-[340px] justify-between  w-full">
+              <div className="flex pt-[50px] md:pt-[92px] sm:gap-5 xxl:pr-[340px] justify-between  w-full">
                 <div className="hidden md:flex">
-                  <Link href="#">
+                  <Link href="/">
                     <Image
                       width={200}
                       height={50}
                       className="w-[244px] h-[60px]"
-                      src="Logo.svg"
+                      src="/Logo.svg"
                       alt="Logo"
                     />
                   </Link>
@@ -92,7 +92,7 @@ const Footer = () => {
                 <div className="flex flex-col gap-5">
                   <div className="flex items-center gap-5 text-lightGrey">
                     <Link
-                      className="  text-[14px] md:text-[20px]"
+                      className="text-[14px] md:text-[20px] w-5 h-5 md:w-8 md:h-8"
                       href="tel:+998999443030"
                     >
                       <Image src={phoneIcon} alt="image" className="w-8 h-8" />
@@ -106,7 +106,10 @@ const Footer = () => {
                     </Link>
                   </div>
                   <div className="flex items-center gap-5 text-lightGrey">
-                    <Link href="mailto:domaniarchitect@gmail.com">
+                    <Link
+                      href="mailto:domaniarchitect@gmail.com"
+                      className="w-5 h-5 md:w-8 md:h-8"
+                    >
                       <Image src={mailIcon} alt="image" className="w-8 h-8" />
                     </Link>
                     <Link
@@ -118,7 +121,7 @@ const Footer = () => {
                   </div>
                   <div className="flex items-center gap-5 text-lightGrey">
                     <Link
-                      className="  text-[14px] md:text-[20px]"
+                      className="w-5 h-5 md:w-8 md:h-8 text-[14px] md:text-[20px]"
                       target="_blank"
                       href="https://www.google.com/maps?q=Mirzo+Ulug'bek+tumani,+Mirzo+Ulugbek+shoh+ko'chasi,+Stair+Academy+binosi+2-qavat"
                     >
