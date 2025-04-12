@@ -88,16 +88,19 @@ const Contact = ({ page }: { page: string }) => {
                     {t.name_label}
                   </label>
                   <input
-                    className="appearance-none focus:outline-none focus:shadow-outline border border-lightGrey rounded-2xl w-full h-10 md:h-[60px] text-[#9696A1] text-[12px] md:text-[18px]  pl-6"
+                    className="appearance-none focus:outline-none focus:shadow-outline border border-lightGrey rounded-2xl w-full h-10 md:h-[60px] text-[#9696A1] text-[12px] md:text-[18px] pl-6"
                     type="text"
                     placeholder={t.name_placeholder}
-                    required
                     autoComplete="name"
-                    {...register("name", { required: true })}
+                    {...register("name", {
+                      required: t.errorContact,
+                      validate: (value) =>
+                        value.trim().length > 0 || t.errorContact,
+                    })}
                   />
                   {errors.name && (
                     <p className="text-red-500 text-xs mt-1">
-                      {t.errorContact}
+                      {errors.name.message}
                     </p>
                   )}
                 </div>
@@ -127,28 +130,34 @@ const Contact = ({ page }: { page: string }) => {
 
                 <div className="pt-10 max-w-[539px]">
                   <label
-                    className="block text-black text-[12px] md:text-[18px]  mb-[2px]"
+                    className="block text-black text-[12px] md:text-[18px] mb-[2px]"
                     htmlFor="tel"
                   >
                     {t.phone_label}
                   </label>
                   <input
                     className="appearance-none focus:outline-none focus:shadow-outline border border-lightGrey rounded-2xl
-                     w-full h-10 md:h-[60px] text-[#9696A1] text-[12px] md:text-[18px]  pl-6"
+           w-full h-10 md:h-[60px] text-[#9696A1] text-[12px] md:text-[18px] pl-6"
                     type="tel"
                     placeholder={t.phone_placeholder}
-                    required
-                    pattern="^\+998\s?\(?\d{2}\)?\s?\d{3}\s?\d{2}\s?\d{2}$"
                     title={t.phone_pattern_title}
                     autoComplete="tel"
-                    {...register("phone", { required: true })}
+                    {...register("phone", {
+                      required: t.errorContact,
+                      pattern: {
+                        value: /^\+998\s?\(?\d{2}\)?\s?\d{3}\s?\d{2}\s?\d{2}$/,
+                        message: t.phone_pattern_title,
+                      },
+                    })}
                   />
+
                   {errors.phone && (
                     <p className="text-red-500 text-xs mt-1">
-                      {t.errorContact}
+                      {errors.phone.message}
                     </p>
                   )}
                 </div>
+
                 <div className="max-w-[539px] mt-[45px]">
                   <button
                     className="required bg-black text-textWhite w-full h-[45px] md:h-[66px] font-bold text-[14px] md:text-[20px]  py-2 px-4 rounded-2xl focus:outline-none focus:shadow-outline"
@@ -163,6 +172,7 @@ const Contact = ({ page }: { page: string }) => {
         </div>
         <div className="pt-[20px] hidden lg:flex">
           <Image
+                  loading="lazy"
             src={mavridBuilding}
             alt="img"
             className="w-[909px] h-[635px]"

@@ -1,12 +1,17 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { useLanguage } from "./LanguageProvider";
 import Image from "next/image";
-import { firstService, fourthService, secondService, thirdService } from "@/assets";
+import {
+  firstService,
+  fourthService,
+  secondService,
+  thirdService,
+} from "@/assets";
 
 const HomeServices = () => {
-    const { t } = useLanguage();
+  const { t } = useLanguage();
   return (
     <section>
       <div className="pt-[80px] md:pt-[230px]">
@@ -20,6 +25,7 @@ const HomeServices = () => {
                 <Link href="/projects/multi-storey">
                   <div className="w-full h-full cursor-pointer">
                     <Image
+                      loading="lazy"
                       src={firstService}
                       alt={"asd"}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -39,6 +45,7 @@ const HomeServices = () => {
                 <Link href="/projects/low-rise">
                   <div className="w-full h-full cursor-pointer">
                     <Image
+                      loading="lazy"
                       src={secondService}
                       alt={"asd"}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -58,6 +65,7 @@ const HomeServices = () => {
                 <Link href="/projects/none-residential">
                   <div className="w-full h-full cursor-pointer">
                     <Image
+                      loading="lazy"
                       src={thirdService}
                       alt={"asd"}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -77,6 +85,7 @@ const HomeServices = () => {
                 <div>
                   <div className="w-full h-full cursor-pointer">
                     <Image
+                      loading="lazy"
                       src={fourthService}
                       alt={"asd"}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
