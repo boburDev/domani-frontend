@@ -25,7 +25,7 @@ const Projects = () => {
     all: `${t.allName}`,
   };
   return (
-    <div>
+    <>
       <div>
         <div className="container mx-auto pt-[100px] md:pt-[150px] lg:pt-[262px]">
           <p className="text-black px-5 font-semibold text-18 sm:text-[28px] lg:text-[48px]">
@@ -204,7 +204,7 @@ const Projects = () => {
           <Contact page={window.location.pathname} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
