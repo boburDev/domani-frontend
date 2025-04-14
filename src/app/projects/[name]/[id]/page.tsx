@@ -85,8 +85,8 @@ export default function ProjectDetails() {
                     <div className="relative w-full h-[504px] rounded-xl overflow-hidden group shadow-md">
                       <Image
                         loading="lazy"
-                        width={4000}
-                        height={2600}
+                        width={3840}
+                        height={2805}
                         src={`/images${row[1]}`}
                         alt={`Project image ${rowIndex * 5 + 2}`}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
