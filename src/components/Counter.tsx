@@ -7,7 +7,7 @@ const Counter = () => {
 
   const stats = [
     { id: 1, value: 14, label: `${t.countert1}` },
-    { id: 2, value: 350, label: `${t.countert2}` },
+    { id: 2, value: 400, label: `${t.countert2}` },
     { id: 3, value: 13, label: `${t.countert3}` },
     { id: 4, value: 20, label: `${t.countert4}` },
   ];
