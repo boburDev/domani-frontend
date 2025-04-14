@@ -60,7 +60,7 @@
       "/mavrid/14.png",
       "/mavrid/15.png",
       "/mavrid/16.png",
-      "/mavrid/17.png",
+      "/mavrid/17.jpg",
       "/mavrid/18.png",
       "/mavrid/19.png",
       "/mavrid/20.png",
@@ -145,9 +145,9 @@
     "location_uz": "Toshkent",
     "location_ru": "Ташкент",
     "location_en": "Tashkent",
-    "imgPath": "/nashqband/1.jpg",
+    "imgPath": "/nashqband/1.png",
     "type": "low-rise",
-    "images": ["/nashqband/1.jpg", "/nashqband/2.jpg", "/nashqband/3.jpg"]
+    "images": ["/nashqband/1.png", "/nashqband/2.png", "/nashqband/3.png"]
   },
   {
     "id": 6,
