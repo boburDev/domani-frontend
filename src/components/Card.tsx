@@ -24,10 +24,10 @@ const Card = ({ name, location, img }: CardProps) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t lg:group-hover:bg-gradient-to-t from-black/70 via-transparent to-transparent z-10" />
         <div className="absolute w-full bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-center">
-          <p className="text-textWhite font-bold text-[18px] sm:text-[24px] lg:opacity-0 lg:translate-y-4 transition-all duration-500 ease-out lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
+          <p className="text-textWhite font-bold text-[18px] md:text-[24px] lg:opacity-0 lg:translate-y-4 transition-all duration-500 ease-out lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
             {name}
           </p>
-          <p className="text-[16px] sm:text-[20px] text-iron mt-1 lg:opacity-0 lg:translate-y-4 transition-all duration-500 ease-out lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
+          <p className="text-[16px] md:text-[20px] text-iron mt-1 lg:opacity-0 lg:translate-y-4 transition-all duration-500 ease-out lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
             {location}
           </p>
         </div>

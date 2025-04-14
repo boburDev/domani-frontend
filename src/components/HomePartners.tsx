@@ -26,7 +26,7 @@ const HomePartners = () => {
               loading="lazy"
               src={iskanderPartner}
               alt="img"
-              className="w-[112px] lg:w-[393px]  opacity-20 bg-lightGrey hover:opacity-100 hover:scale-105 transition-transform duration-300"
+              className="w-[112px] lg:w-[393px]  md:opacity-20 bg-lightGrey hover:opacity-100 hover:scale-105 transition-transform duration-300"
             />
           </Link>
 
@@ -37,7 +37,7 @@ const HomePartners = () => {
               loading="lazy"
               src={osiyoPartner}
               alt="img"
-              className="w-[67px] h-[35px] lg:w-[251px] lg:h-[129px] opacity-20 bg-lightGrey hover:opacity-100 hover:scale-105 transition-transform duration-300"
+              className="w-[67px] h-[35px] lg:w-[251px] lg:h-[129px] md:opacity-20 bg-lightGrey hover:opacity-100 hover:scale-105 transition-transform duration-300"
             />
           </Link>
 
@@ -48,7 +48,7 @@ const HomePartners = () => {
               loading="lazy"
               src={muradB_partner}
               alt="img"
-              className="duration-300 opacity-20 bg-lightGrey hover:opacity-100 hover:scale-105 transition-transform w-[54px] h-[54px] lg:w-[165px] lg:h-[165px]"
+              className="duration-300 md:opacity-20 bg-lightGrey hover:opacity-100 hover:scale-105 transition-transform w-[54px] h-[54px] lg:w-[165px] lg:h-[165px]"
             />
           </Link>
 
@@ -59,7 +59,7 @@ const HomePartners = () => {
               loading="lazy"
               src={insidePartner}
               alt="img"
-              className="w-[74px] h-[44px] lg:w-[205px] lg:h-[120px] opacity-20 bg-lightGrey hover:opacity-100 hover:scale-105 transition-transform duration-300"
+              className="w-[74px] h-[44px] lg:w-[205px] lg:h-[120px] md:opacity-20 bg-lightGrey hover:opacity-100 hover:scale-105 transition-transform duration-300"
             />
           </Link>
         </div>

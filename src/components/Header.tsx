@@ -269,9 +269,9 @@ const Header = () => {
             >
               {t.nonResidential}
             </Link>
-            <Link href="/" onClick={() => setIsMenuOpen(false)}>
+            {/* <Link href="/articles" onClick={() => setIsMenuOpen(false)}>
               {t.articles}
-            </Link>
+            </Link> */}
             <Link href="/about" onClick={() => setIsMenuOpen(false)}>
               {t.about}
             </Link>
@@ -306,6 +306,7 @@ const Header = () => {
                 loading="lazy"
                 src={phoneHeader}
                 alt="img"
+                className="w-8 h-8"
               />
               <p className="text-white font-bold text-lg">{t.phone}</p>
             </div>

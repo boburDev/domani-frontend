@@ -10,7 +10,10 @@ export default function ProjectDetails() {
   const id = params?.id;
   const pageName = params?.name;
   const project = projectData.find((p) => p.id === Number(id));
-  const { t } = useLanguage();
+  const { t, language } = useLanguage() as {
+    t: any;
+    language: "uz" | "ru" | "en";
+  };
 
   if (!project) notFound();
 
@@ -21,11 +24,10 @@ export default function ProjectDetails() {
     }
     return chunks;
   };
-  const projectsNames = {
-    "non-residential": `${t.serviceNonresidentialAll}`,
-    "low-rise": `${t.serviceLowriseAll}`,
-    "multi-storey": `${t.servicemultiAll}`,
-    all: `${t.allName}`,
+  const nameMap = {
+    uz: project.name_uz,
+    ru: project.name_ru,
+    en: project.name_en,
   };
   const imageRows = chunkImages(project.images);
 
@@ -33,8 +35,7 @@ export default function ProjectDetails() {
     <>
       <div className="container mx-auto px-5 ">
         <p className="pt-[120px] pb-5 sm:pt-[180px] lg:pt-[306px] px-5 text-black font-semibold text-[18px] sm:text-[28px] lg:text-[48px]">
-          {projectsNames[params.name as keyof typeof projectsNames] || ""}{" "}
-          {t.theName}
+          {nameMap[language]}
         </p>
 
         {project?.description && (
@@ -165,7 +166,7 @@ export default function ProjectDetails() {
                 loading="lazy"
                 width={500}
                 height={600}
-                src={`/images/${img}`}
+                src={`/images${img}`}
                 alt={`Project image ${idx + 1}`}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
