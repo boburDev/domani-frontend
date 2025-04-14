@@ -43,7 +43,6 @@ const Home = () => {
         <HomeServices />
         {/* principles */}
         <HomePrinciples />
-
         <Team />
         <section>
           <Contact page="/" />
