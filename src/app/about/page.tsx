@@ -59,14 +59,14 @@ const About = () => {
                 <span className="inline-block">{t.about_future}</span>
               </p>
             </div>
-            <div className="pt-10">
+            <div className="pt-10 flex justify-start items-start">
               <Image
-                width={850}
-                height={850}
+                width={14527}
+                height={6224}
                 loading="lazy"
                 src={aboutBuilding}
                 alt="img"
-                className="w-[793px] h-[full] lg:h-[509px] rounded-xl object-cover"
+                className="w-[793px] h-[full] rounded-xl object-contain"
               />
             </div>
           </div>

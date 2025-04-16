@@ -44,7 +44,7 @@ const Social = () => {
           <div className="absolute inset-0 bg-black opacity-55 z-0" />
           <div className="container mx-auto px-5">
             <div className="relative z-10">
-              <p className="max-w-[1477px] text-[25px] md:text-[48px] lg:text-[56px] xl:text-[84px] font-bold text-center md:text-start text-textWhite pt-[140px] md:pt-[180px] lg:pt-[237px] font-poppins">
+              <p className="max-w-[1477px] text-[25px] md:text-[48px] lg:text-[56px] xl:text-[54px] font-bold text-center md:text-start text-textWhite pt-[140px] md:pt-[180px] lg:pt-[237px] font-poppins">
                 {t.social_title}
               </p>
             </div>

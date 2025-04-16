@@ -6,7 +6,7 @@
     "position_uz": "Bosh arxitektor, Domani architects byurosi asoschisi",
     "position_ru": "Главный архитектор, соучредитель Domani architects бюро",
     "position_en": "Chief Architect, Co-founder of Domani Architects Bureau",
-    "img": "/staff.png"
+    "img": "/images/staff/dm_azamat.jpg"
   },
   {
     "name_uz": "Sherzod Murtazoyev",
@@ -15,7 +15,7 @@
     "position_uz": "Art direktor, Domani architects byurosi asoschisi",
     "position_ru": "Арт-директор, соучредитель Domani architects бюро",
     "position_en": "Art Director, Co-founder of Domani Architects Bureau",
-    "img": "/staff.png"
+    "img": "/images/staff/dm_sherzod.jpg"
   },
   {
     "name_uz": "Murod Yoʻldashev",
@@ -33,7 +33,7 @@
     "position_uz": "Bosh konstruktor",
     "position_ru": "Главный конструктор",
     "position_en": "Chief Structural Engineer",
-    "img": "/staff.png"
+    "img": "/images/staff/dm_akmal.jpg"
   },
   {
     "name_uz": "Fahriddin Negmatov",
@@ -42,7 +42,7 @@
     "position_uz": "CGI mutaxassis",
     "position_ru": "CGI специалист",
     "position_en": "CGI Specialist",
-    "img": "/staff.png"
+    "img": "/images/staff/dm_faxriddin.jpg"
   },
   {
     "name_uz": "Islom Odilov",
@@ -51,7 +51,7 @@
     "position_uz": "CGI mutaxassis",
     "position_ru": "CGI специалист",
     "position_en": "CGI Specialist",
-    "img": "/staff.png"
+    "img": "/images/staff/dm_islom.jpg"
   },
   {
     "name_uz": "Abdulloh Yusufjonov",
@@ -60,7 +60,7 @@
     "position_uz": "Arxitektor",
     "position_ru": "Архитектор",
     "position_en": "Architect",
-    "img": "/staff.png"
+    "img": "/images/staff/dm_abdulloh.jpg"
   },
   {
     "name_uz": "Komil Shaxiyev",
@@ -69,7 +69,7 @@
     "position_uz": "Proyekt menejer",
     "position_ru": "Менеджер проекта",
     "position_en": "Project Manager",
-    "img": "/staff.png"
+    "img": "/images/staff/dm_komil.jpg"
   },
   {
     "name_uz": "Ilhom Tohirjonov",
@@ -78,6 +78,6 @@
     "position_uz": "Bosh dizayner",
     "position_ru": "Главный дизайнер",
     "position_en": "Chief Designer",
-    "img": "/staff.png"
+    "img": "/images/staff/dm_ilhom.jpg"
   }
 ]

@@ -27,8 +27,8 @@ const Team = () => {
               loading="lazy"
               src={person.img}
               alt={person[`name_${language}`]}
-              width={350}
-              height={400}
+              width={3357}
+              height={4700}
               className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
             />
 
