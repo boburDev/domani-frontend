@@ -11,7 +11,7 @@ import iskanderPartner from "./images/iskandar-partner.png";
 import osiyoPartner from "./images/osiyo-partner.png";
 import insidePartner from "./images/inside-partner.png";
 import muradB_partner from "./images/muradB-partner.png";
-import aboutBuilding from "./images/about-building.jpg";
+import aboutBuilding from "./images/about-second.jpg";
 import functionImg from "./icons/functions.png";
 import leaf from "./icons/leaf.png";
 import city from "./icons/city.png";

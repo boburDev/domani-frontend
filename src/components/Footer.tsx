@@ -58,12 +58,12 @@ const Footer = () => {
                 >
                   {t.fprojects}
                 </Link>
-                <Link
+                {/* <Link
                   href="/"
                   className="text-lightGrey text-[14px] md:text-[20px] hover:underline hover:decoration-white hover:underline-offset-8 duration-200"
                 >
                   {t.farticles}
-                </Link>
+                </Link> */}
                 <Link
                   href="/about"
                   className="text-lightGrey  text-[14px] md:text-[20px] hover:underline hover:decoration-white hover:underline-offset-8 duration-200"
