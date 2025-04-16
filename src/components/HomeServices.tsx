@@ -25,8 +25,8 @@ const HomeServices = () => {
                 <Link href="/projects/multi-storey">
                   <div className="w-full h-full cursor-pointer">
                     <Image
-                    width={150}
-                    height={150}
+                      width={3840}
+                      height={2805}
                       loading="lazy"
                       src={firstService}
                       alt={"asd"}

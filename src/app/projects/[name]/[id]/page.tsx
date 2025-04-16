@@ -85,6 +85,7 @@ export default function ProjectDetails() {
                     <div className="relative w-full h-[504px] rounded-xl overflow-hidden group shadow-md">
                       <Image
                         loading="lazy"
+                        onClick={() => handleOpen(`/images${row[1]}`)}
                         width={3840}
                         height={2805}
                         src={`/images${row[1]}`}
@@ -99,8 +100,8 @@ export default function ProjectDetails() {
                           <Image
                             loading="lazy"
                             onClick={() => handleOpen(`/images${row[1]}`)}
-                            width={4000}
-                            height={2600}
+                            width={3840}
+                            height={2805}
                             src={`/images${row[1]}`}
                             alt={`Project image ${rowIndex * 5 + 2}`}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -112,8 +113,8 @@ export default function ProjectDetails() {
                           <Image
                             loading="lazy"
                             onClick={() => handleOpen(`/images${row[2]}`)}
-                            width={500}
-                            height={600}
+                            width={3840}
+                            height={2805}
                             src={`/images${row[2]}`}
                             alt={`Project image ${rowIndex * 5 + 3}`}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -133,8 +134,8 @@ export default function ProjectDetails() {
                       <Image
                         loading="lazy"
                         onClick={() => handleOpen(`/images${row[3]}`)}
-                        width={2500}
-                        height={2000}
+                        width={3840}
+                        height={2805}
                         src={`/images${row[3]}`}
                         alt={`Project image ${rowIndex * 5 + 4}`}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -147,8 +148,8 @@ export default function ProjectDetails() {
                           <Image
                             loading="lazy"
                             onClick={() => handleOpen(`/images${row[3]}`)}
-                            width={500}
-                            height={600}
+                            width={3840}
+                            height={2805}
                             src={`/images${row[3]}`}
                             alt={`Project image ${rowIndex * 5 + 4}`}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -160,8 +161,8 @@ export default function ProjectDetails() {
                           <Image
                             loading="lazy"
                             onClick={() => handleOpen(`/images${row[4]}`)}
-                            width={500}
-                            height={600}
+                            width={3840}
+                            height={2805}
                             src={`/images${row[4]}`}
                             alt={`Project image ${rowIndex * 5 + 5}`}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

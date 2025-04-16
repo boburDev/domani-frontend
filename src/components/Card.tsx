@@ -16,8 +16,8 @@ const Card = ({ name, location, img }: CardProps) => {
       <div className="w-full h-full group cursor-pointer">
         <Image
           loading="lazy"
-          width={546}
-          height={400}
+          width={3840}
+          height={2805}
           src={`/images${img}`}
           alt={name}
           className="w-[365px] h-full sm:w-[420px] md:w-[546px] md:h-[441px] object-cover transition-transform duration-500 lg:group-hover:scale-105"

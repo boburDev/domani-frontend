@@ -46,8 +46,8 @@ const Projects = () => {
                     <div className="w-full h-full">
                       <Image
                         loading="lazy"
-                        width={500}
-                        height={600}
+                        width={3840}
+                        height={2805}
                         src={`/images${project.imgPath}`}
                         alt="Card"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -79,8 +79,8 @@ const Projects = () => {
                     <div className="relative h-[441px] rounded-xl overflow-hidden shadow-md">
                       <Image
                         loading="lazy"
-                        width={500}
-                        height={600}
+                        width={3840}
+                        height={2805}
                         src={`/images${projectData[3].imgPath}`}
                         alt="Card"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -116,8 +116,8 @@ const Projects = () => {
                         <>
                           <Image
                             loading="lazy"
-                            width={500}
-                            height={600}
+                            width={3840}
+                            height={2805}
                             src={`/images${projectData[4].imgPath}`}
                             alt="Card"
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -159,8 +159,8 @@ const Projects = () => {
                     <div className="w-full h-full">
                       <Image
                         loading="lazy"
-                        width={500}
-                        height={600}
+                        width={3840}
+                        height={2805}
                         src={`/images${project.imgPath}`}
                         alt="Card"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

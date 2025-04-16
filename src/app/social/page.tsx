@@ -38,7 +38,7 @@ const Social = () => {
         <section
           ref={sectionRef}
           className={`relative bg-cover object-contain w-full h-[100vh] transition-opacity duration-700 ${
-            isVisible ? "bg-[url('/main-bg.png')]" : "bg-none"
+            isVisible ? "bg-[url('/images/barxan/5.png')]" : "bg-none"
           }`}
         >
           <div className="absolute inset-0 bg-black opacity-55 z-0" />
