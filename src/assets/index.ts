@@ -43,6 +43,7 @@ export {
   osiyoPartner,
   insidePartner,
   muradB_partner,
+  // team
   aboutBuilding,
   functionImg,
   leaf,
