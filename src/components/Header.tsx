@@ -18,7 +18,7 @@ const Header = () => {
   const pathname = usePathname();
   const isDark = pathname === "/" || pathname === "/social";
   const textColor = isDark ? "text-textWhite" : "text-textBlack";
-  const logoSrc = isDark ? "/Logo.svg" : "/LogoBlack.png";
+  const logoSrc = isDark ? "/Logo.png" : "/LogoBlack.png";
 
   const toggleLanguage = (lang: string) => {
     changeLanguage(lang as "uz" | "en" | "ru");
@@ -56,8 +56,8 @@ const Header = () => {
               >
                 <Image
                   loading="lazy"
-                  width={110}
-                  height={51}
+                  width={2880}
+                  height={2880}
                   src={logoSrc}
                   alt="logo"
                   className="w-full h-full object-contain"
@@ -235,14 +235,23 @@ const Header = () => {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="lg:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 z-40 flex flex-col pt-8 items-center text-textWhite text-xl font-semibold gap-y-4">
-            <button
-              onClick={() => setIsMenuOpen(false)}
-              className="absolute top-6 right-6 z-50"
-            >
-              <X size={32} color="white" />
-            </button>
+          <div className="lg:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-95 z-40 flex flex-col pt-[25px] items-center text-textWhite text-xl font-semibold gap-y-4">
+            {/* LOGO + CLOSE BUTTON */}
+            <div className="w-full px-[17px] flex justify-between items-center">
+              <Image
+                loading="lazy"
+                width={2880}
+                height={2880}
+                src="/Logo.png"
+                alt="logo"
+                className="object-contain w-[110px] h-[51px] lg:w-[160px] lg:h-[55px] xl:w-[215px] xl:h-[61px]"
+              />
+              <button onClick={() => setIsMenuOpen(false)}>
+                <X size={32} color="white" />
+              </button>
+            </div>
 
+            {/* NAVIGATION LINKS */}
             <Link
               href="/"
               className="pt-12"
@@ -271,9 +280,6 @@ const Header = () => {
             >
               {t.nonResidential}
             </Link>
-            {/* <Link href="/articles" onClick={() => setIsMenuOpen(false)}>
-              {t.articles}
-            </Link> */}
             <Link href="/about" onClick={() => setIsMenuOpen(false)}>
               {t.about}
             </Link>
@@ -281,7 +287,8 @@ const Header = () => {
               {t.social}
             </Link>
 
-            <div className="flex gap-4 pt-6">
+            {/* LANGUAGE SWITCHER */}
+            <div className="flex gap-4 pt-5">
               <button
                 onClick={() => toggleLanguage("uz")}
                 className="text-white"
@@ -301,6 +308,8 @@ const Header = () => {
                 РУ
               </button>
             </div>
+
+            {/* PHONE SECTION */}
             <div className="flex gap-2 items-center pt-4">
               <Image
                 width={50}
