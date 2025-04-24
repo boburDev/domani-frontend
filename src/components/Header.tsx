@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { phoneHeader, phoneHeaderBlack } from "@/assets"; // images to be conditionally loaded
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useLanguage } from "./LanguageProvider";
 import Container from "./Container";
 
@@ -52,15 +52,15 @@ const Header = () => {
             <div className="w-full flex lg:gap-3 gap-4 2xl:gap-[110px] justify-between items-center">
               <Link
                 href="/"
-                className="xl:w-[230px] xl:h-[61px] w-[90px] h-[40px] md:w-[110px] md:h-[51px]"
+                className="w-[110px] h-[51px] lg:w-[160px] lg:h-[55px] xl:w-[215px] xl:h-[61px]"
               >
                 <Image
                   loading="lazy"
-                  width={100}
-                  height={100}
+                  width={110}
+                  height={51}
                   src={logoSrc}
                   alt="logo"
-                  className="w-full h-full"
+                  className="w-full h-full object-contain"
                 />
               </Link>
 
@@ -84,26 +84,28 @@ const Header = () => {
                 >
                   <div
                     onClick={() => setIsOpen((prev) => !prev)}
-                    className="font-medium"
+                    className="font-medium flex items-center gap-1"
                   >
                     {t.countert2}
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-300 ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                    />
                   </div>
 
                   {isOpen && (
                     <div className="w-[158px] h-[180px] p-5 text-[14px] text-textBlack absolute bg-[#f0f0f0] font-semibold rounded-xl flex flex-col gap-[15px] mt-1 z-50">
                       {[
-                        { href: "/projects/all", label: `${t.allProjects} ` },
+                        { href: "/projects/all", label: `${t.allProjects}` },
                         {
                           href: "/projects/multi-storey",
-                          label: `${t.multiStorey} `,
+                          label: `${t.multiStorey}`,
                         },
-                        {
-                          href: "/projects/low-rise",
-                          label: `${t.lowRise} `,
-                        },
+                        { href: "/projects/low-rise", label: `${t.lowRise}` },
                         {
                           href: "/projects/non-residential",
-                          label: `${t.nonResidential} `,
+                          label: `${t.nonResidential}`,
                         },
                       ].map((link) => (
                         <Link
@@ -150,7 +152,7 @@ const Header = () => {
               </div>
 
               {/* Language switch + phone */}
-              <div className="hidden lg:flex items-center xl:gap-[23px] gap-1">
+              <div className="hidden lg:flex items-center xl:gap-[23px] gap-2">
                 <div className="flex xl:gap-3.5 gap-[15px] justify-between items-center ">
                   <button
                     onClick={() => toggleLanguage("uz")}
