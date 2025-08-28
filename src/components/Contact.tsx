@@ -92,11 +92,12 @@ const Contact = ({ page }: { page: string }) => {
                     type="text"
                     placeholder={t.name_placeholder}
                     autoComplete="name"
-                    {...register("name", {
-                      required: t.errorContact,
-                      validate: (value) =>
-                        value.trim().length > 0 || t.errorContact,
-                    })}
+                    {...register("name")}
+                    // {...register("name", {
+                    //   required: t.errorContact,
+                    //   validate: (value) =>
+                    //     value.trim().length > 0 || t.errorContact,
+                    // })}
                   />
                   {errors.name && (
                     <p className="text-red-500 text-xs mt-1">
@@ -143,14 +144,14 @@ const Contact = ({ page }: { page: string }) => {
                     title={t.phone_pattern_title}
                     autoComplete="tel"
                     inputMode="numeric"
-                    required
-                    {...register("phone", {
-                      required: t.errorContact,
-                      pattern: {
-                        value: /^[\d+\-()]+$/, // faqat raqam va + - ( ) belgilariga ruxsat
-                        message: t.phone_pattern_title, // Masalan: "Telefon raqami faqat raqam va (+ - ( )) bo'lishi kerak"
-                      },
-                    })}
+                    {...register("phone")}
+                    // {...register("phone", {
+                    //   required: t.errorContact,
+                    //   pattern: {
+                    //     value: /^[\d+\-()]+$/, // faqat raqam va + - ( ) belgilariga ruxsat
+                    //     message: t.phone_pattern_title, // Masalan: "Telefon raqami faqat raqam va (+ - ( )) bo'lishi kerak"
+                    //   },
+                    // })}
                   />
 
                   {errors.phone && (
