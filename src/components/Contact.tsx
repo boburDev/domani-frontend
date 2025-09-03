@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React from "react";
 import Image from "next/image";
@@ -53,6 +54,9 @@ const Contact = ({ page }: { page: string }) => {
           "Content-Type": "application/json",
         },
       });
+      if (typeof window !== "undefined" && (window as any).fbq) {
+        (window as any).fbq("track", "Lead");
+      }
       toast.success(t.contactSucess, { theme: "colored" });
       reset();
     } catch (error) {
