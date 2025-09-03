@@ -44,11 +44,8 @@ const Contact = ({ page }: { page: string }) => {
     formState: { errors },
   } = useForm<SubmitRequset>();
   const onSubmit = async (data: SubmitRequset) => {
-    console.log("Form data before sending:", data);
     try {
       data["page"] = getName(page);
-      console.log("Sending form data:", data);
-
       await axios.post("https://leads.domani.uz/submit", data, {
         headers: {
           "Content-Type": "application/json",
