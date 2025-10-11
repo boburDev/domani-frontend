@@ -3,7 +3,6 @@
 import {
   insidePartner,
   iskanderPartner,
-  muradB_partner,
   osiyoPartner,
 } from "@/assets";
 import Image from "next/image";
@@ -41,16 +40,7 @@ const HomePartners = () => {
             />
           </Link>
 
-          <Link className="cursor-pointer" href="https://mbc.uz/">
-            <Image
-              width={150}
-              height={150}
-              loading="lazy"
-              src={muradB_partner}
-              alt="img"
-              className="duration-300 md:opacity-20 bg-lightGrey hover:opacity-100 hover:scale-105 transition-transform w-[54px] h-[54px] lg:w-[165px] lg:h-[165px]"
-            />
-          </Link>
+
 
           <Link className="cursor-pointer" href="#">
             <Image
